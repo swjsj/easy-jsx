@@ -1,4 +1,5 @@
 const { join } = require('path');
+const path = require('path')
 const ExtractText = require('extract-text-webpack-plugin');
 const babelOpts = require('./babel');
 const styles = require('./styles');
@@ -6,6 +7,8 @@ const setup = require('./setup');
 
 const dist = join(__dirname, '..', 'dist');
 const exclude = /(node_modules|bower_components)/;
+
+var _package = require('../package'); 
 
 module.exports = env => {
 	const isProd = env && env.production;
@@ -18,16 +21,21 @@ module.exports = env => {
 
 	return {
 		entry: {
-			app: './src/index.js',
-			vendor: [
-				// pull these to a `vendor.js` file
-				'preact'
-			]
+			index: './src/index.js',
+			// vendor: [
+			// 	// pull these to a `vendor.js` file
+			// 	'preact'
+			// ]
 		},
 		output: {
 			path: dist,
-			filename: '[name].[hash].js',
-			publicPath: '/'
+			filename: '[name].js',
+			publicPath: '/',
+			//filename: _package.name + '.js',
+			library:'saul',
+			libraryTarget: 'umd',
+			umdNamedDefine: true,
+			//path: path.resolve(__dirname, './bundle')
 		},
 		resolve: {
 			alias: {
@@ -50,7 +58,7 @@ module.exports = env => {
 			}]
 		},
 		plugins: setup(isProd),
-		devtool: !isProd && 'eval',
+		devtool: !isProd && "eval-source-map",
 		devServer: {
 			contentBase: dist,
 			port: process.env.PORT || 3000,
