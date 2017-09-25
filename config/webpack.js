@@ -32,7 +32,7 @@ module.exports = env => {
 			filename: '[name].js',
 			publicPath: '/',
 			//filename: _package.name + '.js',
-			library:'saul',
+			library:'EasyJSX',
 			libraryTarget: 'umd',
 			umdNamedDefine: true,
 			//path: path.resolve(__dirname, './bundle')
