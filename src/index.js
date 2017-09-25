@@ -26,3 +26,11 @@ export function renderJSXScriptElements(jsxScriptArray) {
         preact.render(evaled, warp);
     }
 }
+
+let elem, App;
+function init() {
+	App = require('./views').default;
+	elem = render(App, document.getElementById('root'), elem);
+}
+
+init();
