@@ -6,6 +6,7 @@ import Button from './Button/Button'
 import Icon from './Icon/Icon'
 import Sliders from './Sliders/Sliders'
 import Timeline from './Timeline/Timeline'
+import Modals from './Modals/Modals'
 import Error404 from '../views/pages/errors/404';
 
 // track pages on route change
@@ -25,25 +26,10 @@ export default (
 					<Timeline />
 				</div>
 				<div class="view-box">
-					<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">Launch Default Modal</button>
-					<div class="modal fade" id="modal-default">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										<span aria-hidden="true">×</span></button>
-									<h4 class="modal-title">Default Modal</h4>
-								</div>
-								<div class="modal-body">
-									<p>One fine body…</p>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-									<button type="button" class="btn btn-primary">Save changes</button>
-								</div>
-							</div>
-						</div>
-					</div>
+					<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-info">Launch Default Modal</button>
+					<Modals type="info" id="modal-info" title="这是一个模态框" onClick={() => { alert('关闭') }}>
+						<p>One fine body…</p>
+					</Modals>
 				</div>
 			</div>
 			<Icon path="/blog" />
