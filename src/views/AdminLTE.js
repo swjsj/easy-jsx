@@ -1,7 +1,7 @@
 import { h } from 'preact'
 import { Router } from 'preact-router';
 
-import Layout from './tags/layout';
+import Layout from '../components/Layout';
 import Button from '../components/Button/Button'
 import Icon from '../components/Icon/Icon'
 import Sliders from '../components/Sliders/Sliders'

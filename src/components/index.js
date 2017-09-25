@@ -3,5 +3,6 @@ export default {
     Icon:require('./Icon/Icon').default,
     Modals:require('./Modals/Modals').default,
     Sliders:require('./Sliders/Sliders').default,
-    Timeline:require('./Timeline/Timeline').default
+    Timeline:require('./Timeline/Timeline').default,
+    Layout:require('./Layout').default
 }
