@@ -1,11 +1,14 @@
 import {render,h} from 'preact';
-
+import './index.sass';
 export var preact = require('preact')
 export var parser = require('./parser')
-export var components = {
-    Home: require('./components').default
-}
+import _components from './components'
 
+export var components = {
+    Home: require('./components').default,
+    ..._components
+}
+console.log(components)
 
 /**
  * 渲染页面中的jsx元素
@@ -29,7 +32,7 @@ export function renderJSXScriptElements(jsxScriptArray) {
 
 let elem, App;
 function init() {
-	App = require('./components').default;
+	App = require('./views').default;
 	elem = render(App, document.getElementById('root'), elem);
 }
 
