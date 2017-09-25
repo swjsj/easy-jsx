@@ -2,15 +2,22 @@ import {render,h} from 'preact';
 import './index.sass';
 export var preact = require('preact')
 export var parser = require('./parser')
-import _components from './components'
 
+export var config = require('./config').default
+
+import _components from './components'
+import jQuery from 'jquery'
+if(window){
+    window.jQuery = jQuery    
+    window.$ = jQuery
+}
 export var components = {
     App:require('./views').default,
     Home: require('./views/pages/home').default,
     AdminLTE:require('./views/AdminLTE').default,
+    ZZAdmin:require('./views/ZZAdmin').default,
     ..._components
 }
-console.log(components)
 
 /**
  * 渲染页面中的jsx元素
@@ -34,9 +41,9 @@ export function renderJSXScriptElements(jsxScriptArray) {
 
 let elem, App;
 function init() {
-	App = components.AdminLTE
+	App = components.ZZAdmin
 	elem = render(App, document.getElementById('root'), elem);
-}
+} 
 
 
 
