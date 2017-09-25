@@ -1,6 +1,5 @@
 import Head from 'next/head'
 
-
 export default ({ children, user, title = 'AdminLTE 2 | Dashboard' }) => (
     <div>
         <Head>

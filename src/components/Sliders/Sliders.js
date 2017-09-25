@@ -1,6 +1,6 @@
-import React from 'preact'
+import { Component, h } from 'preact'
 
-export default class Sliders extends React.Component {
+export default class Sliders extends Component {
     componentDidMount() {
         $(function () {
             $('.slider').slider()

@@ -1,8 +1,8 @@
-import React from 'preact'
+import { Component, h } from 'preact'
 
-export default class Button extends React.Component {
+export default class Button extends Component {
     render() {
-        let ButtonClass = "btn"
+        let ButtonClass = `btn`
         let ButtonDisabled = false
         if (this.props.disabled != undefined) {
             if (this.props.disabled == "disabled" || this.props.disabled == true) {
