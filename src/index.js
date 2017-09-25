@@ -3,7 +3,7 @@ import {render,h} from 'preact';
 export var preact = require('preact')
 export var parser = require('./parser')
 export var components = {
-    Home: require('./views/pages/home').default
+    Home: require('./components').default
 }
 
 
@@ -29,7 +29,7 @@ export function renderJSXScriptElements(jsxScriptArray) {
 
 let elem, App;
 function init() {
-	App = require('./views').default;
+	App = require('./components').default;
 	elem = render(App, document.getElementById('root'), elem);
 }
 

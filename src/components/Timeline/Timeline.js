@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'preact'
 import Icon from '../Icon/Icon'
 
 export default class Timeline extends React.Component {

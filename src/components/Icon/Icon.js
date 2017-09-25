@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'preact'
 
 export default class Icon extends React.Component {
     render() {
