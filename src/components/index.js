@@ -1,7 +1,7 @@
 export default {
-    Button:require('./Button/Button'),
-    Icon:require('./Icon/Icon'),
-    Modals:require('./Modals/Modals'),
-    Sliders:require('./Sliders/Sliders'),
-    Timeline:require('./Timeline/Timeline')
+    Button:require('./Button/Button').default,
+    Icon:require('./Icon/Icon').default,
+    Modals:require('./Modals/Modals').default,
+    Sliders:require('./Sliders/Sliders').default,
+    Timeline:require('./Timeline/Timeline').default
 }

@@ -5,7 +5,9 @@ export var parser = require('./parser')
 import _components from './components'
 
 export var components = {
-    Home: require('./components').default,
+    App:require('./views').default,
+    Home: require('./views/pages/home').default,
+    AdminLTE:require('./views/AdminLTE').default,
     ..._components
 }
 console.log(components)
@@ -32,7 +34,7 @@ export function renderJSXScriptElements(jsxScriptArray) {
 
 let elem, App;
 function init() {
-	App = require('./views').default;
+	App = components.AdminLTE
 	elem = render(App, document.getElementById('root'), elem);
 }
 
