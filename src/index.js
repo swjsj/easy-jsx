@@ -33,4 +33,8 @@ function init() {
 	elem = render(App, document.getElementById('root'), elem);
 }
 
-init();
+
+
+if(location.search.indexOf('show_components') > -1){
+    init();    
+}

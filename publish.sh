@@ -1,5 +1,5 @@
 #!/bin/sh
-target=/home/allay/createFile/src/main/webapp/static/saul 
+target=/home/allay/createFile/src/main/webapp/static/easy-jsx
 rm -rf $target
 cp -rf dist $target
 #sed -i '' -e '/\/\/# sourceMappingURL.*/d' $target/index.js
