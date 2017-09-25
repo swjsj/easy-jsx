@@ -15,9 +15,9 @@ export var components = {
     App:require('./views').default,
     Home: require('./views/pages/home').default,
     AdminLTE:require('./views/AdminLTE').default,
+    ZZAdmin:require('./views/ZZAdmin').default,
     ..._components
 }
-console.log(components)
 
 /**
  * 渲染页面中的jsx元素
@@ -41,7 +41,7 @@ export function renderJSXScriptElements(jsxScriptArray) {
 
 let elem, App;
 function init() {
-	App = components.AdminLTE
+	App = components.ZZAdmin
 	elem = render(App, document.getElementById('root'), elem);
 } 
 
