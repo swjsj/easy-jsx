@@ -13,7 +13,7 @@ export default class InputGroup extends Component {
         }
         return (
             <div class={GroupClass}>
-                {this.props.beforeBtn ? <InputGroupBtn type="" /> : null}
+                {this.props.beforeBtn ? <InputGroupBtn type={this.props.beforeBtn.type} data={this.props.beforeBtn} /> : null}
                 {this.props.beforeGroup ? <span class="input-group-addon">{this.props.beforeGroup}</span> : null}
                 <Input type="text" placeholder={this.props.placeholder} />
                 {this.props.afterBtn ? <span class="input-group-btn">{this.props.beforeGroup}</span> : null}

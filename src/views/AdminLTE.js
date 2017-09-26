@@ -11,6 +11,7 @@ import InputGroup from '../components/Input/InputGroup'
 import Form from '../components/Form/Form'
 import FormItem from '../components/Form/FormItem'
 import Sidebar from '../components/Sidebar/Sidebar'
+import Select from '../components/Select/Select'
 import Error404 from './pages/errors/404';
 
 // track pages on route change
@@ -68,6 +69,28 @@ let slidebardata = [
 		link: 'www.baidu.com'
 	}
 ]
+let InputGroupBtn = {
+	text: '这个是下拉按钮',
+	type: 'warning',
+	content: [
+		{
+			link: 'www.baidu.com',
+			text: '第一个'
+		},
+		{
+			link: 'www.baidu.com',
+			text: '第二个'
+		},
+		{
+			link: 'www.baidu.com',
+			text: '第三个'
+		},
+		{
+			link: 'www.baidu.com',
+			text: '第四个'
+		}
+	]
+}
 export default (
 	<Layout>
 		<Router onChange={onChange}>
@@ -76,13 +99,56 @@ export default (
 					<Sidebar data={slidebardata} />
 				</div>
 				<div class="view-box">
-					<Form>
+					<Form className="form-horizontal">
+						<FormItem>
+							<Select />
+						</FormItem>
+						<FormItem>
+							<Input type="checkbox" />
+						</FormItem>
+						<FormItem>
+							<Input type="radio" />
+						</FormItem>
+						<FormItem>
+							<InputGroup beforeBtn={InputGroupBtn} afterGroup={<Icon type="anchor" />} placeholder="" />
+						</FormItem>
 						<FormItem>
 							<Input />
 						</FormItem>
 						<FormItem>
+							<div className="row">
+								<div className="col-xs-3">
+									<Input />
+								</div>
+								<div className="col-xs-3">
+									<Input />
+								</div>
+								<div className="col-xs-3">
+									<Input />
+								</div>
+								<div className="col-xs-3">
+									<Input />
+								</div>
+							</div>
+						</FormItem>
+						<FormItem>
+							<label htmlFor="" className="control-label">请输入手机号</label>
+							<Input />
+						</FormItem>
+						<FormItem>
+							<div className="row">
+								<div className="col-xs-4">
+									<label htmlFor="" className="control-label">请输入手机号</label>
+								</div>
+								<div className="col-xs-8">
+									<Input />
+								</div>
+							</div>
+						</FormItem>
+						<FormItem>
 							<InputGroup beforeGroup={<Input type="checkbox" />} afterGroup={<Icon type="anchor" />} placeholder="" />
 						</FormItem>
+
 					</Form>
 				</div>
 				<div class="view-box">
@@ -93,6 +159,9 @@ export default (
 				</div>
 				<div class="view-box">
 					<Timeline />
+				</div>
+				<div class="view-box">
+					<Sliders id="" />
 				</div>
 				<div class="view-box">
 					<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">Launch Default Modal</button>

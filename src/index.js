@@ -41,7 +41,7 @@ export function renderJSXScriptElements(jsxScriptArray) {
 
 let elem, App;
 function init() {
-	App = components.ZZAdmin
+	App = components.AdminLTE
 	elem = render(App, document.getElementById('root'), elem);
 } 
 

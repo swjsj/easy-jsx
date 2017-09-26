@@ -38,7 +38,8 @@ export default ({ children, user, title = 'AdminLTE 2 | Dashboard' ,staticFileDi
                 <!-- Google Font --> */}
             <link rel="stylesheet" href={staticFileDir + "/plugins/bootstrap-slider/slider.css"} />
             <link rel="stylesheet" href={staticFileDir + "/fonts/SansPro.css"} />
-            <link rel="stylesheet" href={staticFileDir + "/css/AdminLTE.min.css"} />
+            <link rel="stylesheet" href={staticFileDir + "/css/AdminLTE.css"} />
+            <link rel="stylesheet" href={staticFileDir + "/css/style.css"} />
         </Head>
 
         <div>
@@ -89,5 +90,6 @@ export default ({ children, user, title = 'AdminLTE 2 | Dashboard' ,staticFileDi
         {/* <!-- Bootstrap slider --> */}
         <script src={staticFileDir + "/plugins/bootstrap-slider/bootstrap-slider.js"}></script>
         <script src={staticFileDir + "/plugins/bootstrap-slider/bootstrap-slider-start.js"}></script>
+        <script src={staticFileDir + "/bower_components/select2/dist/js/select2.min.js"}></script>
     </div>
 )
