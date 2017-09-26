@@ -10,7 +10,7 @@ export default class Input extends Component {
         if (this.props.type) {
             InputType = `${this.props.type}`
         }
-        if (this.props.type == "checkbox") {
+        if (this.props.type == "checkbox" || this.props.type == "radio") {
             return (
                 <input type={InputType} />
             )

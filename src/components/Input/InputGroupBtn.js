@@ -8,7 +8,7 @@ export default class InputGroupBtn extends Component {
             GroupBtnClass = `${GroupBtnClass} input-group-${this.props.size}`
         }
         if (this.props.type) {
-            GroupBtnClass = `${GroupBtnClass} ${this.props.type}`
+            GroupBtnClass = `${GroupBtnClass} btn-${this.props.type}`
         }
         return (
             <div className="input-group-btn">
@@ -17,15 +17,16 @@ export default class InputGroupBtn extends Component {
                     class={GroupBtnClass}
                     data-toggle="dropdown"
                     aria-expanded="false">
-                    {this.props.children}
+                    {this.props.data.text}
                     <span class="fa fa-caret-down"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
+                    {
+                        this.props.data.content.map((item) => {
+                            return <li><a href={item.link}>{item.text}</a></li>
+                        })
+                    }
                     <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
                 </ul>
             </div>
         )

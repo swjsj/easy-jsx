@@ -5,7 +5,6 @@ export default class Sliders extends Component {
         $(function () {
             $('.slider').slider()
         })
-
     }
     render() {
         let props = this.props
@@ -21,8 +20,8 @@ export default class Sliders extends Component {
                 data-slider-orientation={props.orientation}
                 data-slider-selection={props.selection}
                 data-slider-tooltip={props.tooltip}
-                data-slider-id={props.type} 
-                />
+                data-slider-id={props.type}
+            />
         )
     }
 }
