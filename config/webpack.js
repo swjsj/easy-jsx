@@ -8,7 +8,7 @@ const setup = require('./setup');
 const dist = join(__dirname, '..', 'dist');
 const exclude = /(node_modules|bower_components)/;
 
-var _package = require('../package'); 
+var _package = require('../package');
 
 module.exports = env => {
 	const isProd = env && env.production;
@@ -16,7 +16,7 @@ module.exports = env => {
 	if (isProd) {
 		babelOpts.presets.push('babili');
 	} else {
-		styles.unshift({ loader:'style-loader' });
+		styles.unshift({ loader: 'style-loader' });
 	}
 
 	return {
@@ -32,7 +32,7 @@ module.exports = env => {
 			filename: '[name].js',
 			publicPath: '/',
 			//filename: _package.name + '.js',
-			library:'EasyJSX',
+			library: 'EasyJSX',
 			libraryTarget: 'umd',
 			umdNamedDefine: true,
 			//path: path.resolve(__dirname, './bundle')
@@ -54,8 +54,12 @@ module.exports = env => {
 				}
 			}, {
 				test: /\.(sass|scss)$/,
-				use: isProd ? ExtractText.extract({ fallback:'style-loader', use:styles }) : styles
-			}]
+				use: isProd ? ExtractText.extract({ fallback: 'style-loader', use: styles }) : styles
+			}, {
+				test: /\.css$/,
+				use: ['style-loader', 'css-loader']
+			}
+			]
 		},
 		plugins: setup(isProd),
 		devtool: !isProd && "eval-source-map",
@@ -65,7 +69,13 @@ module.exports = env => {
 			historyApiFallback: true,
 			compress: isProd,
 			inline: !isProd,
-			hot: !isProd
-		}
+			hot: !isProd,
+			
+		},
+		watchOptions: {
+			aggregateTimeout: 300,
+			poll: 1000,
+			ignored: /node_modules/
+		  }
 	};
 };
