@@ -1,12 +1,12 @@
 
-import ZZAdminLayout from '../components/ZZAdminLayout'
-import Menu from '../components/Menu'
-import Table from '../components/Table'
+import ZZAdminLayout from '../components/zzlayout/ZZAdminLayout'
+
 
 
 const Item = ({ children }) => <div>{children}</div>
 const SubMenu = ({ children }) => <div>{children}</div>
 const Content = ({ children }) => <div>{children}</div>
+const Table = ({ children }) => <div>{children}</div>
 import { Component, h } from 'preact'
 
 var treeview = {
@@ -44,6 +44,7 @@ export class ZZAdmin extends Component {
             text:'司空管理中心'
         }}
         user = {{
+            username:'二花爱猫咪123',
             img:'tmp/photo.jpg'
         }}
         menu={

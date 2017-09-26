@@ -1,5 +1,5 @@
 import { Component, h } from 'preact'
-import Icon from './Icon/Icon'
+import Icon from '../Icon/Icon'
 
 export default class SidebarMenu extends Component {
 
