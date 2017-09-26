@@ -52,6 +52,24 @@ module.exports = env => {
 					loader: 'babel-loader',
 					options: babelOpts
 				}
+			},
+			{
+				test: /.\.less$/,
+				use: [
+					'style-loader',
+					'css-loader',
+					{
+						loader: 'postcss-loader',
+						options: {
+							plugins: function () {
+								return [
+									require('autoprefixer')
+								];
+							}
+						}
+					},
+					'less-loader' //使用less或者sass时不用为@import的less/sass添加importLoaders:1因为自动添加
+				]
 			}, {
 				test: /\.(sass|scss)$/,
 				use: isProd ? ExtractText.extract({ fallback: 'style-loader', use: styles }) : styles
@@ -70,12 +88,12 @@ module.exports = env => {
 			compress: isProd,
 			inline: !isProd,
 			hot: !isProd,
-			
+
 		},
 		watchOptions: {
 			aggregateTimeout: 300,
 			poll: 1000,
 			ignored: /node_modules/
-		  }
+		}
 	};
 };

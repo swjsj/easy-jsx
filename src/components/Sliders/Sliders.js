@@ -2,7 +2,9 @@ import { Component, h } from 'preact'
 
 export default class Sliders extends Component {
     componentDidMount() {
-        $('.slider').slider()
+        $(function () {
+            $('.slider').slider()
+        })
     }
     render() {
         let props = this.props
