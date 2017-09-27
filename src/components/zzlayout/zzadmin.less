@@ -1,0 +1,74 @@
+@headerHight: 50px;
+.zzadmin-header {
+    background: #ffffff;
+    box-shadow: 0 1px 0 0 #efefef;
+    width: 100%;
+    height: @headerHight;
+    position: relative;
+    z-index: 820;
+    .logo {
+        float: left;
+        text {
+            font-family: MicrosoftYaHei;
+            font-size: 14px;
+            color: #000000;
+            letter-spacing: 0;
+            line-height: 14px;
+            text-align: left;
+        }
+    }
+}
+
+.user {
+    float: right;
+    img {
+        background: #d8d8e1;
+        width: 28px;
+        height: 28px;
+		border-radius: 100%;
+        line-height: @headerHight;		
+    }
+    .username {
+		padding-left: 10px;
+        font-family: MicrosoftYaHei;
+        font-size: 12px;
+        color: #333333;
+        letter-spacing: 0;
+        line-height: @headerHight;
+        text-align: left;
+    }
+    .edit-passwd {
+		padding-left: 20px;
+        opacity: 0.9;
+        font-family: MicrosoftYaHei;
+        font-size: 12px;
+        color: #4a5d82;
+        letter-spacing: 0;
+        line-height: @headerHight;
+        text-align: center;
+        border: none;
+    }
+    .exit {
+        font-family: MicrosoftYaHei;
+        font-size: 12px;
+        color: #999999;
+        text-align: center;
+		border: none;
+        line-height: @headerHight;
+		
+    }
+}
+
+
+.zzadmin-body {
+    .sidebar {
+        background: #333333;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: @headerHight;
+        min-height: 100%;
+        width: 230px;
+        z-index: 810;
+    }
+}
