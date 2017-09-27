@@ -1,4 +1,6 @@
 @headerHight: 50px;
+
+@sidebarWidth:230px;
 .zzadmin-header {
     background: #ffffff;
     box-shadow: 0 1px 0 0 #efefef;
@@ -68,7 +70,16 @@
         left: 0;
         padding-top: @headerHight;
         min-height: 100%;
-        width: 230px;
+        width: @sidebarWidth;
         z-index: 810;
+    }
+
+    .container{
+        position: absolute;
+        top:0;
+        left: @sidebarWidth;
+        margin-top: 50px;
+        padding-top: @headerHight;
+        padding-left: 30px;
     }
 }

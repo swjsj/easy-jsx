@@ -23,9 +23,13 @@ export default ({ logo,user, menu, children }) => (
             <div class="sidebar">
                 <SidebarMenu data={[menu]} />
             </div>
+            <div class="container">
+            {children}
+
+            </div>
+            
         </div>
 
-        {children}
     </Layout>
 )
 
