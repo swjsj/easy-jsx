@@ -15,6 +15,7 @@ import Select from '../components/Select/Select'
 import SelectOption from '../components/Select/SelectOption'
 import DatePicker from '../components/Input/DatePicker'
 import Editor from '../components/Editor/Editor'
+import Modals from '../components/Modals/Modals'
 import Error404 from './pages/errors/404';
 
 // track pages on route change
@@ -98,16 +99,16 @@ export default (
 	<Layout>
 		<Router onChange={onChange}>
 			<div path="/">
-				<div class="view-box">
-					<Editor class="Editor"/>
+				<div className="view-box">
+					<Editor className="Editor"/>
 				</div>
-				<div class="view-box">
+				<div className="view-box">
 					<DatePicker beforeGroup={<Icon type="anchor" />} id="datepicker" />
 				</div>
-				<div class="view-box">
+				<div className="view-box">
 					<Sidebar data={slidebardata} />
 				</div>
-				<div class="view-box">
+				<div className="view-box">
 					<Form className="form-horizontal">
 						<FormItem>
 							<Select>
@@ -164,41 +165,25 @@ export default (
 						<FormItem>
 							<InputGroup beforeGroup={<Input type="checkbox" />} afterGroup={<Icon type="anchor" />} placeholder="" />
 						</FormItem>
-
 					</Form>
 				</div>
-				<div class="view-box">
+				<div className="view-box">
 					<Button type="success" size="Large" flat="true">1222222</Button>
 				</div>
-				<div class="view-box">
+				<div className="view-box">
 					<Icon type="anchor" />
 				</div>
-				<div class="view-box">
+				<div className="view-box">
 					<Timeline />
 				</div>
-				<div class="view-box">
+				<div className="view-box">
 					<Sliders id="" />
 				</div>
-				<div class="view-box">
-					<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">Launch Default Modal</button>
-					<div class="modal fade" id="modal-default">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										<span aria-hidden="true">×</span></button>
-									<h4 class="modal-title">Default Modal</h4>
-								</div>
-								<div class="modal-body">
-									<p>One fine body…</p>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-									<button type="button" class="btn btn-primary">Save changes</button>
-								</div>
-							</div>
-						</div>
-					</div>
+				<div className="view-box">
+					<button type="button" className="btn btn-default" data-toggle="modal" data-target="#modal-default">Launch Default Modal</button>
+					<Modals type="default" id="modal-default" title="这个是标题">
+						<p>这里是主体内容</p>
+					</Modals>
 				</div>
 			</div>
 

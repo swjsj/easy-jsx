@@ -13,7 +13,7 @@ export default class DatePicker extends Component {
     render() {
         console.log(this.props.id)
         return (
-            <InputGroup class={this.props.class} id={this.props.id} beforeGroup={this.props.beforeGroup} beforeBtn={this.props.beforeBtn} afterGroup={this.props.afterGroup} placeholder="" />
+            <InputGroup class={this.props.className} id={this.props.id} beforeGroup={this.props.beforeGroup} beforeBtn={this.props.beforeBtn} afterGroup={this.props.afterGroup} placeholder="" />
         )
     }
 }

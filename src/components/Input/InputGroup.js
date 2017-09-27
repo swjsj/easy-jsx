@@ -8,8 +8,8 @@ export default class InputGroup extends Component {
         if (this.props.size) {
             GroupClass = `${GroupClass} input-group-${this.props.size}`
         }
-        if (this.props.class) {
-            GroupClass = `${GroupClass} ${this.props.class}`
+        if (this.props.className) {
+            GroupClass = `${GroupClass} ${this.props.className}`
         }
         if (this.props.type) {
             InputType = `${this.props.type}`
