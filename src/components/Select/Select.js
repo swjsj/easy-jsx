@@ -9,14 +9,8 @@ export default class Select extends Component {
 
 	render() {
 		return (
-			<select className="form-control select2" style="width: 100%;">
-				<option selected="selected">Alabama</option>
-				<option>Alaska</option>
-				<option>California</option>
-				<option>Delaware</option>
-				<option>Tennessee</option>
-				<option>Texas</option>
-				<option>Washington</option>
+			<select className="form-control select2 select2-hidden-accessible" style="width: 100%;">
+				{this.props.children}
 			</select>
 		)
 	}

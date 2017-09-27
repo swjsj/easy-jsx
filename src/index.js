@@ -6,12 +6,9 @@ export var parser = require('./parser')
 export var config = require('./config').default
 
 require('./static/css/style.less')
+
 import _components from './components'
 // import jQuery from 'jquery'
-// if(window){
-//     window.jQuery = jQuery    
-//     window.$ = jQuery
-// }
 export var components = {
     App:require('./views').default,
     Home: require('./views/pages/home').default,

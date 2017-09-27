@@ -12,6 +12,8 @@ import Form from '../components/Form/Form'
 import FormItem from '../components/Form/FormItem'
 import Sidebar from '../components/Sidebar/Sidebar'
 import Select from '../components/Select/Select'
+import SelectOption from '../components/Select/SelectOption'
+import DatePicker from '../components/Input/DatePicker'
 import Error404 from './pages/errors/404';
 
 // track pages on route change
@@ -96,12 +98,22 @@ export default (
 		<Router onChange={onChange}>
 			<div path="/">
 				<div class="view-box">
+					<DatePicker id="datepicker"/>
+				</div>
+				<div class="view-box">
 					<Sidebar data={slidebardata} />
 				</div>
 				<div class="view-box">
 					<Form className="form-horizontal">
 						<FormItem>
-							<Select />
+							<Select>
+								<SelectOption>Alaska</SelectOption>
+								<SelectOption selected="selected">California</SelectOption>
+								<SelectOption>Delaware</SelectOption>
+								<SelectOption>Tennessee</SelectOption>
+								<SelectOption>Texas</SelectOption>
+								<SelectOption>Washington</SelectOption>
+							</Select>
 						</FormItem>
 						<FormItem>
 							<Input type="checkbox" />

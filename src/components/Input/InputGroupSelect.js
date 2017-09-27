@@ -1,6 +1,6 @@
 import { Component, h } from 'preact'
 import Input from './Input'
-export default class InputGroupBtn extends Component {
+export default class InputGroupSelect extends Component {
     render() {
         let GroupBtnClass = `btn dropdown-toggle`
         let GroupBtnType = 'default'

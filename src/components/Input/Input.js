@@ -16,7 +16,7 @@ export default class Input extends Component {
             )
         } else {
             return (
-                <input type={InputType} className="form-control" placeholder={this.props.placeholder} />
+                <input type={InputType} className="form-control" placeholder={this.props.placeholder} id={this.props.id} />
             )
         }
     }
