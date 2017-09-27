@@ -13,6 +13,8 @@ export default {
     Sliders:require('./Sliders/Sliders').default,
     Timeline:require('./Timeline/Timeline').default,
     Layout:require('./Layout').default,
-    Select:require('./Select/Select').default
+	Select:require('./Select/Select').default,
+	ZZAdminLayout:require('./zzlayout/ZZAdminLayout').default,
+	Table:require('./table/Table').default
 }
  

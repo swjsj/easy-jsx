@@ -52,20 +52,20 @@ export default class Table extends Component {
                     <thead>
                         <tr>
                             <th data-field="state" data-checkbox="true"
-                                data-formatter={ (value, row, index) => {
-                                   
-        if (index === 2) {
-            return {
-                disabled: true
-            };
-        }
-        if (index === 5) {
-            return {
-                disabled: true,
-                checked: true
-            }
-        }
-        return value;
+                                data-formatter={(value, row, index) => {
+
+                                    if (index === 2) {
+                                        return {
+                                            disabled: true
+                                        };
+                                    }
+                                    if (index === 5) {
+                                        return {
+                                            disabled: true,
+                                            checked: true
+                                        }
+                                    }
+                                    return value;
                                 }}></th>
                             <th data-field="id">ID</th>
                             <th data-field="name">Item Name</th>
