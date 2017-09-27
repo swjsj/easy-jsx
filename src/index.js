@@ -8,15 +8,7 @@ export var config = require('./config').default
 require('./static/css/style.less')
 
 import _components from './components'
-<<<<<<< HEAD
 // import jQuery from 'jquery'
-=======
-import jQuery from 'jquery'
-if(window){
-    window.jQuery = jQuery    
-    window.$ = jQuery
-}
->>>>>>> a3e14cc51708d7f434aa94a4c1ede4426d9873c2
 export var components = {
     App:require('./views').default,
     Home: require('./views/pages/home').default,
@@ -47,7 +39,7 @@ export function renderJSXScriptElements(jsxScriptArray) {
 
 let elem, App;
 function init() {
-	App = components.ZZAdmin
+	App = components.AdminLTE
 	elem = render(App, document.getElementById('root'), elem);
 } 
 
