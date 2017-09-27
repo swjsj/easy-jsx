@@ -14,6 +14,7 @@ import Sidebar from '../components/Sidebar/Sidebar'
 import Select from '../components/Select/Select'
 import SelectOption from '../components/Select/SelectOption'
 import DatePicker from '../components/Input/DatePicker'
+import Editor from '../components/Editor/Editor'
 import Error404 from './pages/errors/404';
 
 // track pages on route change
@@ -98,7 +99,10 @@ export default (
 		<Router onChange={onChange}>
 			<div path="/">
 				<div class="view-box">
-					<DatePicker id="datepicker"/>
+					<Editor class="Editor"/>
+				</div>
+				<div class="view-box">
+					<DatePicker beforeGroup={<Icon type="anchor" />} id="datepicker" />
 				</div>
 				<div class="view-box">
 					<Sidebar data={slidebardata} />
