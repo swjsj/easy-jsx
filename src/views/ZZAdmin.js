@@ -1,13 +1,12 @@
 
-import ZZAdminLayout from '../components/zzlayout/ZZAdminLayout'
+import ZZStyleLayout from '../components/zzstyle/ZZStyleLayout'
 import Table from '../components/table/Table'
 
-const Item = ({ children }) => <div>{children}</div>
-const SubMenu = ({ children }) => <div>{children}</div>
-const Content = ({ children }) => <div>{children}</div>
+
 
 import { Component, h } from 'preact'
-
+import Sidebar from '../components/sidebar/Sidebar'
+import Topbar from '../components/topbar/Topbar'
 var treeview = {
     treeview: 'Dashboard',
     content: [
@@ -35,7 +34,7 @@ var treeview = {
     ]
 }
 
-var data =data = [
+var data = data = [
     {
         "id": 0,
         "name": "Item 0",
@@ -71,24 +70,21 @@ var data =data = [
 export class ZZAdmin extends Component {
 
     render() {
-        return <ZZAdminLayout
-            logo={{
-                img: 'tmp/google.png',
-                text: '司空管理中心'
-            }}
-            user={{
-                username: '二花爱猫咪123',
-                img: 'tmp/photo.jpg'
-            }}
-            menu={
-                treeview
-            }>
-
-
-            <Content>
+        return <ZZStyleLayout
+            topbar={
+                <Topbar logo={{
+                    img: 'tmp/google.png',
+                    text: '司空管理中心'
+                }}
+                    user={{
+                        username: '二花爱猫咪123',
+                        img: 'tmp/photo.jpg'
+                    }} />
+            }
+            sidebar={<Sidebar data={[treeview]} />}
+        >
                 <Table data={data}></Table>
-            </Content>
-        </ZZAdminLayout>
+        </ZZStyleLayout>
     }
 }
 

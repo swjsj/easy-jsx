@@ -1,4 +1,4 @@
-.zzadmin-header {
+.zzstyle .topbar {
   background: #ffffff;
   box-shadow: 0 1px 0 0 #efefef;
   width: 100%;
@@ -8,11 +8,11 @@
   position: relative;
   z-index: 820;
 }
-.zzadmin-header .logo {
+.zzstyle .topbar .logo {
   float: left;
   margin-left: 30px;
 }
-.zzadmin-header .logo span {
+.zzstyle .topbar .logo span {
   font-family: MicrosoftYaHei;
   font-size: 14px;
   color: #000000;
@@ -23,17 +23,17 @@
   height: 50px;
   line-height: 50px;
 }
-.zzadmin-header .user {
+.zzstyle .topbar .user {
   float: right;
 }
-.zzadmin-header .user img {
+.zzstyle .topbar .user img {
   background: #d8d8e1;
   width: 28px;
   height: 28px;
   border-radius: 100%;
   line-height: 50px;
 }
-.zzadmin-header .user .username {
+.zzstyle .topbar .user .username {
   padding-left: 10px;
   font-family: MicrosoftYaHei;
   font-size: 12px;
@@ -42,7 +42,7 @@
   line-height: 50px;
   text-align: left;
 }
-.zzadmin-header .user .edit-passwd {
+.zzstyle .topbar .user .edit-passwd {
   padding-left: 20px;
   opacity: 0.9;
   font-family: MicrosoftYaHei;
@@ -53,7 +53,7 @@
   text-align: center;
   border: none;
 }
-.zzadmin-header .user .exit {
+.zzstyle .topbar .user .exit {
   font-family: MicrosoftYaHei;
   font-size: 12px;
   color: #999999;
@@ -61,7 +61,7 @@
   border: none;
   line-height: 50px;
 }
-.zzadmin-body .sidebar {
+.zzstyle .container .sidebar {
   background: #333333;
   position: absolute;
   top: 0;
@@ -71,7 +71,7 @@
   width: 230px;
   z-index: 810;
 }
-.zzadmin-body .container {
+.zzstyle .container .container {
   position: absolute;
   top: 0;
   left: 230px;

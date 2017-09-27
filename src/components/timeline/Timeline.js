@@ -1,6 +1,6 @@
 import { Component, h } from 'preact'
 import { Link } from 'preact-router';
-import Icon from '../Icon/Icon'
+import Icon from '../icon/Icon'
 
 export default class Timeline extends Component {
 

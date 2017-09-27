@@ -1,7 +1,7 @@
 import { Component, h } from 'preact'
-import Icon from '../Icon/Icon'
+import Icon from '../icon/Icon'
 
-export default class SidebarMenu extends Component {
+export default class Sidebar extends Component {
 
     getTreeView() {
         return this.props.data.map((item) => {
@@ -63,9 +63,12 @@ export default class SidebarMenu extends Component {
         )
     }
     render() {
-        var view = <ul className="sidebar-menu tree" data-widget="tree">
-            {this.getTreeView()}
-        </ul>
-        return view;
+        return (
+            <section className="sidebar">
+                <ul className="sidebar-menu tree" data-widget="tree">
+                    {this.getTreeView()}
+                </ul>
+            </section>
+        )
     }
 }
