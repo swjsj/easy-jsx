@@ -34,7 +34,7 @@ var treeview = {
     ]
 }
 
-var data = data = [
+var data = [
     {
         "id": 0,
         "name": "Item 0",
@@ -76,10 +76,10 @@ export class ZZAdmin extends Component {
                     img: 'tmp/google.png',
                     text: '司空管理中心'
                 }}
-                    user={{
-                        username: '二花爱猫咪123',
-                        img: 'tmp/photo.jpg'
-                    }} />
+                user={{
+                    username: '二花爱猫咪123',
+                    img: 'tmp/photo.jpg'
+                }} />
             }
             sidebar={<Sidebar data={[treeview]} />}
         >

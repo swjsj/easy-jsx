@@ -15,6 +15,7 @@ export default {
     Layout:require('./Layout').default,
 	Select:require('./select/Select').default,
 	ZZStyleLayout:require('./zzstyle/ZZStyleLayout').default,
-	Table:require('./table/Table').default
+	Table:require('./table/Table').default,
+	Topbar:require('./topbar/Topbar').default
 }
  
