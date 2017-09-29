@@ -12,9 +12,13 @@ const root = join(__dirname, '..');
 module.exports = isProd => {
 	// base plugins array
 	const plugins = [
-		new Clean(['dist'], { root }),
-		new Copy([{ context: 'src/static/', from: '**/*.*' }]),
+		//new Copy([{ context: 'src/static/', from: '**/*.*' }]),
 		//new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
+		new webpack.DllReferencePlugin({
+			context: __dirname,
+			manifest: require('../manifest.json'),
+		}),
+		// new webpack.IgnorePlugin(/static/),
 		new HTML({ template: 'src/index.html' }),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : 'development')
@@ -23,8 +27,10 @@ module.exports = isProd => {
 
 	if (isProd) {
 		plugins.push(
-			new webpack.LoaderOptionsPlugin({ minimize:true }),
-			new webpack.LoaderOptionsPlugin({ minimize:false }),
+			new Clean(['dist'], { root }),
+			new Copy([{ context: 'src/static/', from: '**/*.*' }]),
+			new webpack.LoaderOptionsPlugin({ minimize: true }),
+			new webpack.LoaderOptionsPlugin({ minimize: false }),
 			new webpack.optimize.UglifyJsPlugin(uglify),
 			new ExtractText('styles.[hash].css'),
 			new SWPrecache({

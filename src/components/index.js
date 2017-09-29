@@ -13,10 +13,10 @@ export default {
 	Sliders: require('./sliders/Sliders').default,
 	Timeline: require('./timeline/Timeline').default,
 	Layout: require('./Layout').default,
-	Alert: require('./Alert/Alert').default,
+	Alert: require('./alert/Alert').default,
 	Select: require('./select/Select').default,
 	ZZStyleLayout: require('./zzstyle/ZZStyleLayout').default,
 	Table: require('./table/Table').default,
 	Topbar: require('./topbar/Topbar').default,
-	Tree: require('./tree/Tree').default,
+	Tree: require('./tree/Tree').default, 
 }

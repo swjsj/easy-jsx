@@ -16,8 +16,8 @@ import SelectOption from '../components/select/SelectOption'
 import DatePicker from '../components/input/DatePicker'
 import Editor from '../components/editor/Editor'
 import Modals from '../components/modals/Modals'
-import Alert from '../components/alert/Alert'
- 
+import Error404 from './pages/errors/404';
+
 // track pages on route change
 const onChange = obj => window.ga && ga.send('pageview', { dp: obj.url });
 
