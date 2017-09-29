@@ -2,23 +2,6 @@ import { h } from 'preact'
 import { Router } from 'preact-router';
 
 import Layout from '../components/Layout';
-<<<<<<< HEAD
-import Button from '../components/Button/Button'
-import Icon from '../components/Icon/Icon'
-import Sliders from '../components/Sliders/Sliders'
-import Timeline from '../components/Timeline/Timeline'
-import Input from '../components/Input/Input'
-import InputGroup from '../components/Input/InputGroup'
-import Form from '../components/Form/Form'
-import FormItem from '../components/Form/FormItem'
-import Sidebar from '../components/Sidebar/Sidebar'
-import Select from '../components/Select/Select'
-import SelectOption from '../components/Select/SelectOption'
-import DatePicker from '../components/Input/DatePicker'
-import Editor from '../components/Editor/Editor'
-import Modals from '../components/Modals/Modals'
-import Alert from '../components/Alert/Alert'
-=======
 import Button from '../components/button/Button'
 import Icon from '../components/icon/Icon'
 import Sliders from '../components/sliders/Sliders'
@@ -33,7 +16,6 @@ import SelectOption from '../components/select/SelectOption'
 import DatePicker from '../components/input/DatePicker'
 import Editor from '../components/editor/Editor'
 import Modals from '../components/modals/Modals'
->>>>>>> 55a04517ece6792c099dcdcdb5ab2764680603db
 import Error404 from './pages/errors/404';
 
 // track pages on route change
