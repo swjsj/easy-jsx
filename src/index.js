@@ -29,7 +29,8 @@ export function renderJSXScriptElements(jsxScriptArray) {
     var tArray = jsxScriptArray;
     for (var i = 0, len = tArray.length; i < len; i++) {
         var template = tArray[i];
-        var evaled = parser.evalJSX(template.innerHTML,components)
+        var str = template.innerHTML;       
+        var evaled = parser.evalJSX(str,components)
         var warp = document.createElement('div');
         warp.className = "rendered-jsx";
         template.after(warp);
@@ -39,7 +40,7 @@ export function renderJSXScriptElements(jsxScriptArray) {
 
 let elem, App;
 function init() {
-	App = components.AdminLTE
+	App = components.ZZAdmin
 	elem = render(App, document.getElementById('root'), elem);
 } 
 

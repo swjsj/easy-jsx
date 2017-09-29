@@ -15,9 +15,7 @@
     "watch": "webpack-dev-server --config config/webpack"
   },
   "dependencies": {
-    "ganalytics": "^2.0.1",
     "jquery": "^3.2.1",
-    "jsx-parser": "^1.0.8",
     "md-colors": "^1.0.0",
     "preact": "^8.2.5",
     "preact-head": "^1.0.2",

@@ -1,3 +1,5 @@
+
+
 import { h } from 'preact'
 import { Router } from 'preact-router';
 
@@ -9,11 +11,11 @@ import Credit from './pages/credit';
 import Blog from './pages/blog';
 
 // track pages on route change
-const onChange = obj => window.ga && ga.send('pageview', { dp:obj.url });
+const onChange = obj => window.ga && ga.send('pageview', { dp: obj.url });
 
 export default (
 	<Layout>
-		<Router onChange={ onChange }>
+		<Router onChange={onChange}>
 			<Home path="/" />
 			<Blog path="/blog" />
 			<Article path="/blog/:title" />
