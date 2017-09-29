@@ -69,78 +69,80 @@ var data = [
 
 
 var menu = [{
-	"id": 1,
-	"text": "总经办",
-	"state": "open",
-	"checked": false,
-	"attributes": null,
-	"iconCls": "fi-social-windows",
-	"pid": null,
-	"openMode": null
+    "id": 1,
+    "text": "总经办",
+    "state": "open",
+    "checked": false,
+    "attributes": null,
+    "iconCls": "fi-social-windows",
+    "pid": null,
+    "openMode": null
 }, {
-	"id": 6,
-	"text": "测试组",
-	"state": "open",
-	"checked": false,
-	"attributes": null,
-	"iconCls": "fi-social-snapchat",
-	"pid": 3,
-	"openMode": null
+    "id": 6,
+    "text": "测试组",
+    "state": "open",
+    "checked": false,
+    "attributes": null,
+    "iconCls": "fi-social-snapchat",
+    "pid": 3,
+    "openMode": null
 }, {
-	"id": 7,
-	"text": "开发组",
-	"state": "open",
-	"checked": false,
-	"attributes": null,
-	"iconCls": "fi-folder",
-	"pid": 3,
-	"openMode": null
+    "id": 7,
+    "text": "开发组",
+    "state": "open",
+    "checked": false,
+    "attributes": null,
+    "iconCls": "fi-folder",
+    "pid": 3,
+    "openMode": null
 }, {
-	"id": 3,
-	"text": "技术部",
-	"state": "open",
-	"checked": false,
-	"attributes": null,
-	"iconCls": "fi-social-github",
-	"pid": null,
-	"openMode": null
+    "id": 3,
+    "text": "技术部",
+    "state": "open",
+    "checked": false,
+    "attributes": null,
+    "iconCls": "fi-social-github",
+    "pid": null,
+    "openMode": null
 }, {
-	"id": 5,
-	"text": "产品部",
-	"state": "open",
-	"checked": false,
-	"attributes": null,
-	"iconCls": "fi-social-apple",
-	"pid": null,
-	"openMode": null
+    "id": 5,
+    "text": "产品部",
+    "state": "open",
+    "checked": false,
+    "attributes": null,
+    "iconCls": "fi-social-apple",
+    "pid": null,
+    "openMode": null
 }, {
-	"id": 8,
-	"text": "下游客户",
-	"state": "open",
-	"checked": false,
-	"attributes": null,
-	"iconCls": "fi-folder",
-	"pid": null,
-	"openMode": null
+    "id": 8,
+    "text": "下游客户",
+    "state": "open",
+    "checked": false,
+    "attributes": null,
+    "iconCls": "fi-folder",
+    "pid": null,
+    "openMode": null
 }]
+
 
 export class ZZAdmin extends Component {
 
     render() {
-        return <ZZStyleLayout
-            topbar={
-                <Topbar logo={{
-                    img: 'tmp/google.png',
-                    text: '司空管理中心'
-                }}
+        return <ZZStyleLayout>
+            <Topbar logo={{
+                img: 'tmp/google.png',
+                text: '司空管理中心'
+            }}
                 user={{
                     username: '二花爱猫咪123',
                     img: 'tmp/photo.jpg'
                 }} />
-            }
-            sidebar={<Sidebar data={{menu:menu}} />}
-        >
-                <Table data={data}></Table>
+            <div class="container">
+                <Sidebar data={{ menu: menu }} />
+                <div class="content">
+                    <Table data={data}></Table>
+                </div>
+            </div>
         </ZZStyleLayout>
     }
 }

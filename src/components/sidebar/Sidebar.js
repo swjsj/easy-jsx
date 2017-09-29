@@ -6,75 +6,33 @@ export default class Sidebar extends Component {
     getTreeView() {
         var menu = this.props.data.menu;
         menu = this.list2tree(menu);
-        
-        return menu.map((item) => {
-            // if (item.header) {
-            //     return (
-            //         <li className="header">{item.header}</li>
-            //     )
-            // }
-            // if (item.link) {
-            //     return (
-            //         <li>
-            //             <a href={item.link}>
-            //                 <span>{item.treeview}</span>
-            //             </a>
-            //         </li>
-            //     )
-            // } else {
-                return (
-                    <li className={this.getClassName(item)}>
-                        <a href="               #">
-                            <span>{item.text}</span>
-                            {this.getAngle(item)}
-                        </a>
-                        {item.content ? this.getContent(item) : null}
-                    </li>
-                )
-           // }
-        })
+        var viewList = menu.map((item) => { return this.getTreeItemView(item) })
+        return viewList;
     }
 
 
-    list2tree(list){
+    list2tree(list) {
         var idMap = {};  //id:[]
         var treeList = [];
-        for(var item of list){
+        for (var item of list) {
             idMap[item.id] = item;
         }
-        for(var id in idMap){
+        for (var id in idMap) {
             var item = idMap[id];
-            if(item.pid){
+            if (item.pid) {
                 var parent = idMap[item.pid]
-                parent.content = parent.content ? parent.content.concat(item) : [item];
+                parent.children = parent.children ? parent.children.concat(item) : [item];
                 item.parent = parent;
-            }else{
+            } else {
                 treeList.push(item)
             }
         }
         return treeList;
     }
 
-    getClassName(option) {
-        var classStr = '';
-        if(option.content){
-            classStr += 'treeview';
-            if(option.state == "open"){
-                classStr += ' menu-open'
-            }
-        }
-        return classStr
-    }
 
-    getDisplaySytle(item){
-        if(!item.parent || item.parent.state == "open"){
-            return "display:block;"
-        }else{
-            return "display:none;"
-        }
-    }
     getAngle(option) {
-        if (option.content) {
+        if (option.children) {
             return (
                 <span className="pull-right-container">
                     <Icon type="angle-left" />
@@ -83,27 +41,21 @@ export default class Sidebar extends Component {
         }
     }
 
-    // getTreeStateClass(item){
-    //     return item.state == "open" ? "treeview-menu menu-open" :'treeview-menu '
-    // }
-    getContent(option) {
-        return (
-            <ul className="treeview-menu" style={this.getDisplaySytle(option)}>
-                {
-                    option.content.map((item) => {
-                        return (
-                            <li className={this.getClassName(item)}>
-                                <a href={item.link}>
-                                    {item.text}
-                                    {this.getAngle(item)}
-                                </a>
-                                {item.content ? this.getContent(item) : null}
-                            </li>
-                        )
-                    })
-                }
+
+    getTreeItemView(item) {
+        var view = <li className={"treeview " + (item.state == "open" ? "menu-open" : '')}>
+            <a href={item.link}>
+                {item.text}
+                {this.getAngle(item)}
+            </a>
+
+            <ul className={"treeview-menu "}
+                style={"display:" + ((!item.parent || item.parent.state == "open") ? "block;" : "none;")}
+            >
+                {item.children && item.children.map((item) => { return this.getTreeItemView(item) })}
             </ul>
-        )
+        </li>
+        return view;
     }
     render() {
         return (
