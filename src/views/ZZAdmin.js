@@ -67,6 +67,63 @@ var data = [
     }
 ];
 
+
+var menu = [{
+	"id": 1,
+	"text": "总经办",
+	"state": "open",
+	"checked": false,
+	"attributes": null,
+	"iconCls": "fi-social-windows",
+	"pid": null,
+	"openMode": null
+}, {
+	"id": 6,
+	"text": "测试组",
+	"state": "open",
+	"checked": false,
+	"attributes": null,
+	"iconCls": "fi-social-snapchat",
+	"pid": 3,
+	"openMode": null
+}, {
+	"id": 7,
+	"text": "开发组",
+	"state": "open",
+	"checked": false,
+	"attributes": null,
+	"iconCls": "fi-folder",
+	"pid": 3,
+	"openMode": null
+}, {
+	"id": 3,
+	"text": "技术部",
+	"state": "open",
+	"checked": false,
+	"attributes": null,
+	"iconCls": "fi-social-github",
+	"pid": null,
+	"openMode": null
+}, {
+	"id": 5,
+	"text": "产品部",
+	"state": "open",
+	"checked": false,
+	"attributes": null,
+	"iconCls": "fi-social-apple",
+	"pid": null,
+	"openMode": null
+}, {
+	"id": 8,
+	"text": "下游客户",
+	"state": "open",
+	"checked": false,
+	"attributes": null,
+	"iconCls": "fi-folder",
+	"pid": null,
+	"openMode": null
+}]
+
 export class ZZAdmin extends Component {
 
     render() {
@@ -81,7 +138,7 @@ export class ZZAdmin extends Component {
                     img: 'tmp/photo.jpg'
                 }} />
             }
-            sidebar={<Sidebar data={[treeview]} />}
+            sidebar={<Sidebar data={{menu:menu}} />}
         >
                 <Table data={data}></Table>
         </ZZStyleLayout>
