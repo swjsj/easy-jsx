@@ -3,9 +3,11 @@ import { Component, h } from 'preact'
 export default class Modals extends Component {
     render() {
         let ModalsClass = `modal fade`
+        let type = "default"
         if (this.props.type) {
-            ModalsClass = `${ModalsClass} modal-${this.props.type}`
+            type = this.props.type
         }
+        ModalsClass = `${ModalsClass} modal-${type}`
         return (
             <div class={ModalsClass} id={this.props.id}>
                 <div class="modal-dialog">

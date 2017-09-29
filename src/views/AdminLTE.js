@@ -16,6 +16,7 @@ import SelectOption from '../components/Select/SelectOption'
 import DatePicker from '../components/Input/DatePicker'
 import Editor from '../components/Editor/Editor'
 import Modals from '../components/Modals/Modals'
+import Alert from '../components/Alert/Alert'
 import Error404 from './pages/errors/404';
 
 // track pages on route change
@@ -100,7 +101,12 @@ export default (
 		<Router onChange={onChange}>
 			<div path="/">
 				<div className="view-box">
-					<Editor className="Editor"/>
+					<Alert icon={<Icon type="anchor" />} title="这个是标题" type="info">
+						这里是正文这里是正文这里是正文这里是正文这里是正文
+					</Alert>
+				</div>
+				<div className="view-box">
+					<Editor className="Editor" />
 				</div>
 				<div className="view-box">
 					<DatePicker beforeGroup={<Icon type="anchor" />} id="datepicker" />
