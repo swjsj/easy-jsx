@@ -9,18 +9,20 @@
     "url": "https://github.com/GateOS/easy-jsx"
   },
   "scripts": {
-    "build": "webpack --config config/webpack ; sh publish.sh ",
-    "min-build": "webpack --env.production --config config/webpack  ; sh publish.sh",
+    "build": "webpack --env.production  --config config/webpack",
+    "pub2java":"sh publish.sh",
+    "pub": "run-s build pub2java",
     "start": "serve dist -s",
     "mock": "json-server --watch db.json --port 3001",
     "watch": "webpack-dev-server --config config/webpack --client-log-level error",
     "dll": "webpack --config config/webpack.dll.js",
     "stats": "webpack --config config/webpack  --profile --json > stats.json",
-    "profile":"webpack --config config/webpack --profile --display-modules"
+    "profile": "webpack --config config/webpack --profile --display-modules"
   },
   "dependencies": {
     "jquery": "^3.2.1",
     "md-colors": "^1.0.0",
+    "npm-run-all": "^4.1.1",
     "preact": "^8.2.5",
     "preact-head": "^1.0.2",
     "preact-router": "^2.5.7"
