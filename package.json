@@ -9,7 +9,8 @@
     "url": "https://github.com/GateOS/easy-jsx"
   },
   "scripts": {
-    "build": "webpack --env.production  --config config/webpack",
+    "build":"run-s dll _build",
+    "_build": "webpack --env.production  --config config/webpack",
     "pub2java":"sh publish.sh",
     "pub": "run-s build pub2java",
     "start": "serve dist -s",
