@@ -15,7 +15,7 @@ export default class Sidebar extends Component {
         var idMap = {};  //id:[]
         var treeList = [];
         for (var id in list) {
-            var item = list[id];
+            var item = list[id]; 
             idMap[item.id] = item;
         }
         for (var id in idMap) {

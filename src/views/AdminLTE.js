@@ -17,7 +17,8 @@ import DatePicker from '../components/input/DatePicker'
 import Editor from '../components/editor/Editor'
 import Modals from '../components/modals/Modals'
 import Alert from '../components/alert/Alert'
- 
+import Tree from '../components/tree/Tree'
+
 // track pages on route change
 const onChange = obj => window.ga && ga.send('pageview', { dp: obj.url });
 
@@ -95,10 +96,52 @@ let InputGroupBtn = {
 		}
 	]
 }
+let treeData = [
+	{
+		"id": 1,
+		"text": "admin",
+		"state": "open",
+		"checked": false,
+		"attributes": null,
+		"iconCls": null,
+		"pid": null,
+		"openMode": null
+	}, {
+		"id": 2,
+		"text": "de",
+		"state": "open",
+		"checked": false,
+		"attributes": null,
+		"iconCls": null,
+		"pid": null,
+		"openMode": null
+	}, {
+		"id": 7,
+		"text": "pm",
+		"state": "open",
+		"checked": false,
+		"attributes": null,
+		"iconCls": null,
+		"pid": null,
+		"openMode": null
+	}, {
+		"id": 8,
+		"text": "test",
+		"state": "open",
+		"checked": false,
+		"attributes": null,
+		"iconCls": null,
+		"pid": null,
+		"openMode": null
+	}
+]
 export default (
 	<Layout>
 		<Router onChange={onChange}>
 			<div path="/">
+				<div className="view-box">
+					<Tree data={treeData} />
+				</div>
 				<div className="view-box">
 					<Alert icon={<Icon type="anchor" />} title="这个是标题" type="info">
 						这里是正文这里是正文这里是正文这里是正文这里是正文
@@ -195,7 +238,6 @@ export default (
 			<Icon path="/blog" />
 			<Sliders path="/blog/:title" />
 			<Timeline path="/credit" />
-			<Error404 default />
 		</Router>
 	</Layout>
 );

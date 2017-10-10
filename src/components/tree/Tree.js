@@ -13,7 +13,7 @@ export default class Tree extends Component {
     list2tree(list) {
         var idMap = {};  //id:[]
         var treeList = [];
-        for (var item of list) {
+        for (var item in list) {
             idMap[item.id] = item;
         }
         for (var id in idMap) {
