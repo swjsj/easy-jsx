@@ -1,36 +1,17 @@
 import { Component, h } from 'preact'
 import Icon from '../icon/Icon'
-
+import * as util from '../util'
 export default class Sidebar extends Component {
 
     getTreeView() {
         var menu = this.props.data.menu;
-        menu = this.list2tree(menu);
+        menu = util.list2tree(menu);
         var viewList = menu.map((item) => { return this.getTreeItemView(item) })
         return viewList;
     }
 
 
-    list2tree(list) {
-        var idMap = {};  //id:[]
-        var treeList = [];
-        for (var id in list) {
-            var item = list[id]; 
-            idMap[item.id] = item;
-        }
-        for (var id in idMap) {
-            var item = idMap[id];
-            if (item.pid) {
-                var parent = idMap[item.pid]
-                parent.children = parent.children ? parent.children.concat(item) : [item];
-                item.parent = parent;
-            } else {
-                treeList.push(item)
-            }
-        }
-        return treeList;
-    }
-
+  
 
     getAngle(option) {
         if (option.children) {

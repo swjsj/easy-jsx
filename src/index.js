@@ -9,7 +9,7 @@ export var config = require('./config').default
 import _components from './components'
 // import jQuery from 'jquery'
 export var components = {
-    //AdminLTE:require('./views/AdminLTE').default,
+    AdminLTE:require('./views/AdminLTE').default,
     ZZAdmin:require('./views/ZZAdmin').default,
     ..._components
 }
@@ -37,7 +37,7 @@ export function renderJSXScriptElements(jsxScriptArray) {
 
 let elem, App;
 function init() {
-	App = components.ZZAdmin
+	App = components.AdminLTE
 	elem = render(App, document.getElementById('root'), elem);
 } 
 
