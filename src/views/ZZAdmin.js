@@ -7,6 +7,7 @@ import TreeTable from '../components/table/TreeTable'
 import { Component, h } from 'preact'
 import Sidebar from '../components/sidebar/Sidebar'
 import Topbar from '../components/topbar/Topbar'
+import Content from './Content'
 var treeview = {
     treeview: 'Dashboard',
     content: [
@@ -252,6 +253,7 @@ export class ZZAdmin extends Component {
                 <div class="content">
                     {/* <Table data={data}></Table> */}
                     <TreeTable data={treeTableData}></TreeTable>
+                    <Content></Content>
                 </div>
             </div>
         </ZZStyleLayout>
