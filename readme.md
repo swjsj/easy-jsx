@@ -1,9 +1,10 @@
 ## 查看所有组件
 
 ```sh
-git clone https://github.com/GateOS/easy-jsx
+git clone http://gitlab.skong.com/npm/easy-jsx.git
 cd easy-jsx
 npm install
+npm run buld
 npm run watch
 ```
 
