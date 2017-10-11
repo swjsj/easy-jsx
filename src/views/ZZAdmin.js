@@ -69,62 +69,7 @@ var data = [
 ];
 
 
-var menu = [{
-    "id": 1,
-    "text": "总经办",
-    "state": "open",
-    "checked": false,
-    "attributes": null,
-    "iconCls": "fi-social-windows",
-    "pid": null,
-    "openMode": null
-}, {
-    "id": 6,
-    "text": "测试组",
-    "state": "open",
-    "checked": false,
-    "attributes": null,
-    "iconCls": "fi-social-snapchat",
-    "pid": 3,
-    "openMode": null
-}, {
-    "id": 7,
-    "text": "开发组",
-    "state": "open",
-    "checked": false,
-    "attributes": null,
-    "iconCls": "fi-folder",
-    "pid": 3,
-    "openMode": null
-}, {
-    "id": 3,
-    "text": "技术部",
-    "state": "open",
-    "checked": false,
-    "attributes": null,
-    "iconCls": "fi-social-github",
-    "pid": null,
-    "openMode": null
-}, {
-    "id": 5,
-    "text": "产品部",
-    "state": "open",
-    "checked": false,
-    "attributes": null,
-    "iconCls": "fi-social-apple",
-    "pid": null,
-    "openMode": null
-}, {
-    "id": 8,
-    "text": "下游客户",
-    "state": "open",
-    "checked": false,
-    "attributes": null,
-    "iconCls": "fi-folder",
-    "pid": null,
-    "openMode": null
-}]
-
+var menu = [{ "id": 1, "text": "权限管理", "state": "open", "checked": false, "attributes": "", "iconCls": "fi-folder", "pid": null, "openMode": "" }, { "id": 227, "text": "登录日志", "state": "open", "checked": false, "attributes": "/sysLog/manager", "iconCls": "fi-info", "pid": 221, "openMode": "ajax" }, { "id": 228, "text": "Druid监控", "state": "open", "checked": false, "attributes": "/druid", "iconCls": "fi-monitor", "pid": 221, "openMode": "iframe" }, { "id": 229, "text": "系统图标", "state": "open", "checked": false, "attributes": "/icons.html", "iconCls": "fi-photo", "pid": 221, "openMode": "ajax" }, { "id": 241, "text": "司空生活", "state": "open", "checked": false, "attributes": "http://www.skong.com", "iconCls": "fi-home", "pid": 222, "openMode": "iframe" }, { "id": 11, "text": "资源管理", "state": "open", "checked": false, "attributes": "/resource/manager", "iconCls": "fi-database", "pid": 1, "openMode": "ajax" }, { "id": 224, "text": "善忘书籍", "state": "open", "checked": false, "attributes": "http://book.swjsj.com", "iconCls": "fi-video", "pid": 222, "openMode": "iframe" }, { "id": 12, "text": "角色管理", "state": "open", "checked": false, "attributes": "/role/manager", "iconCls": "fi-torso-business", "pid": 1, "openMode": "ajax" }, { "id": 222, "text": "我的地盘", "state": "closed", "checked": false, "attributes": "", "iconCls": "fi-folder", "pid": null, "openMode": "" }, { "id": 13, "text": "用户管理", "state": "open", "checked": false, "attributes": "/user/manager", "iconCls": "fi-torsos-all", "pid": 1, "openMode": "ajax" }, { "id": 221, "text": "日志监控", "state": "closed", "checked": false, "attributes": "", "iconCls": "fi-folder", "pid": null, "openMode": null }, { "id": 14, "text": "部门管理", "state": "open", "checked": false, "attributes": "/organization/manager", "iconCls": "fi-results-demographics", "pid": 1, "openMode": "ajax" }]
 var treeTableData = [
     {
         "id": 1,
@@ -549,69 +494,69 @@ var treeTableData = [
 ]
 
 var datagrid = {
-    url : '${path }/organization/treeGrid',
-    idField : 'id',
-    treeField : 'name',
-    parentField : 'pid',
-    fit : true,
-    fitColumns : false,
-    border : false,
-    frozenColumns : [ [ {
-        title : 'id',
-        field : 'id',
-        width : 40,
-        hidden : true
-    } ] ],
-    columns : [ [ {
-        field : 'id',
-        title : '编号',
-        width : 40
-    },{
-        field : 'name',
-        title : '部门名称',
-        width : 180
+    url: '${path }/organization/treeGrid',
+    idField: 'id',
+    treeField: 'name',
+    parentField: 'pid',
+    fit: true,
+    fitColumns: false,
+    border: false,
+    frozenColumns: [[{
+        title: 'id',
+        field: 'id',
+        width: 40,
+        hidden: true
+    }]],
+    columns: [[{
+        field: 'id',
+        title: '编号',
+        width: 40
     }, {
-        field : 'seq',
-        title : '排序',
-        width : 40
+        field: 'name',
+        title: '部门名称',
+        width: 180
     }, {
-        field : 'iconCls',
-        title : '图标',
-        width : 120
-    },  {
-        width : '130',
-        title : '创建时间',
-        field : 'createTime'
-    },{
-        field : 'pid',
-        title : '上级资源ID',
-        width : 150,
-        hidden : true
+        field: 'seq',
+        title: '排序',
+        width: 40
     }, {
-        field : 'address',
-        title : '地址',
-        width : 120
-    } , {
-        field : 'action',
-        title : '操作',
-        width : 130,
-        formatter : function(value, row, index) {
+        field: 'iconCls',
+        title: '图标',
+        width: 120
+    }, {
+        width: '130',
+        title: '创建时间',
+        field: 'createTime'
+    }, {
+        field: 'pid',
+        title: '上级资源ID',
+        width: 150,
+        hidden: true
+    }, {
+        field: 'address',
+        title: '地址',
+        width: 120
+    }, {
+        field: 'action',
+        title: '操作',
+        width: 130,
+        formatter: function (value, row, index) {
             var str = '';
-               // <@shiro.hasPermission name="/organization/edit">
-                    str += `<a href="javascript:void(0)" class="organization-easyui-linkbutton-edit" data-options="plain:true,iconCls:\'fi-pencil icon-blue\'" onclick="editOrganizationFun(${row.id});" >编辑</a>`
-               // </@shiro.hasPermission>
-               // <@shiro.hasPermission name="/organization/delete">
-                    str += '&nbsp;&nbsp;|&nbsp;&nbsp;';
-                    str += `<a href="javascript:void(0)" class="organization-easyui-linkbutton-del" data-options="plain:true,iconCls:\'fi-x icon-red\'" onclick="deleteOrganizationFun(${ row.id});" >删除</a>`
-               // </@shiro.hasPermission>
+            // <@shiro.hasPermission name="/organization/edit">
+            str += `<a href="javascript:void(0)" class="organization-easyui-linkbutton-edit" data-options="plain:true,iconCls:\'fi-pencil icon-blue\'" onclick="editOrganizationFun(${row.id});" >编辑</a>`
+            // </@shiro.hasPermission>
+            // <@shiro.hasPermission name="/organization/delete">
+            str += '&nbsp;&nbsp;|&nbsp;&nbsp;';
+            str += `<a href="javascript:void(0)" class="organization-easyui-linkbutton-del" data-options="plain:true,iconCls:\'fi-x icon-red\'" onclick="deleteOrganizationFun(${row.id});" >删除</a>`
+            // </@shiro.hasPermission>
             return str;
         }
-    } ] ],
-    onLoadSuccess:function(data){
-        $('.organization-easyui-linkbutton-edit').linkbutton({text:'编辑'});
-        $('.organization-easyui-linkbutton-del').linkbutton({text:'删除'});
+    }]],
+    onLoadSuccess: function (data) {
+        $('.organization-easyui-linkbutton-edit').linkbutton({ text: '编辑' });
+        $('.organization-easyui-linkbutton-del').linkbutton({ text: '删除' });
     },
-    toolbar : '#orgToolbar'
+    toolbar: '#orgToolbar'
 };
 
 
@@ -629,7 +574,7 @@ export class ZZAdmin extends Component {
                 }} />
             <div class="container">
                 <Sidebar data={{ menu: menu }} />
-                <div class="content">
+                <div class="content" id="content">
                     {/* <Table data={data}></Table> */}
                     <TreeTable data={treeTableData} datagrid={datagrid}></TreeTable>
                     <Content></Content>

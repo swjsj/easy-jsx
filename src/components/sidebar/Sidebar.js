@@ -5,8 +5,9 @@ export default class Sidebar extends Component {
 
     getTreeView() {
         var menu = this.props.data.menu;
-        menu = util.list2tree(menu);
-        var viewList = menu.map((item) => { return this.getTreeItemView(item) })
+        var map = this.map = util.list2map(menu)
+        var menuTree = util.list2tree(menu);
+        var viewList = menuTree.map((item) => { return this.getTreeItemView(item) })
         return viewList;
     }
 
@@ -23,10 +24,45 @@ export default class Sidebar extends Component {
         }
     }
 
+    isVisiableItem(item) {
+        return item.state == "open"
+    }
+
+    getTrClassStr(item) {
+        var str = ''
+        if (!this.isVisiableItem(item)) {
+            str += " hide"
+        }
+        console.log(str)
+        return str;
+    }
+
+    click(item,event){
+        var target = $(event.currentTarget);
+        if(item.children){
+            var parent = target.parent();
+            if(parent.hasClass('menu-open')){
+                target.next().hide();
+                parent.removeClass('menu-open');
+            }else{
+                target.next().show();
+                parent.addClass('menu-open');
+            }
+        }else{
+            event.stopPropagation()
+            console.log(item.attributes)
+            if(item.openMode == "ajax"){
+                debugger
+                $.get(item.attributes,function(res){
+                    $('#content').html(res)
+                })
+            }
+        }
+    }
 
     getTreeItemView(item) {
         var view = <li className={"treeview " + (item.state == "open" ? "menu-open" : '')}>
-            <a href={item.link}>
+            <a onClick={this.click.bind(this,item)}>
                 {item.text}
                 {this.getAngle(item)}
             </a>

@@ -12,7 +12,6 @@ export default {
 	Modals: require('./modals/Modals').default,
 	Sliders: require('./sliders/Sliders').default,
 	Timeline: require('./timeline/Timeline').default,
-	Layout: require('./Layout').default,
 	Alert: require('./alert/Alert').default,
 	Select: require('./select/Select').default,
 	ZZStyleLayout: require('./zzstyle/ZZStyleLayout').default,
