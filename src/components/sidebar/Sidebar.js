@@ -9,10 +9,6 @@ export default class Sidebar extends Component {
         var viewList = menu.map((item) => { return this.getTreeItemView(item) })
         return viewList;
     }
-
-
-  
-
     getAngle(option) {
         if (option.children) {
             return (
@@ -22,8 +18,6 @@ export default class Sidebar extends Component {
             )
         }
     }
-
-
     getTreeItemView(item) {
         var view = <li className={"treeview " + (item.state == "open" ? "menu-open" : '')}>
             <a href={item.link}>

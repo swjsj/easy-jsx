@@ -18,6 +18,7 @@ import Editor from '../components/editor/Editor'
 import Modals from '../components/modals/Modals'
 import Alert from '../components/alert/Alert'
 import Tree from '../components/tree/Tree'
+import TreeSelect from '../components/select/TreeSelect'
 
 // track pages on route change
 const onChange = obj => window.ga && ga.send('pageview', { dp: obj.url });
@@ -99,7 +100,7 @@ let InputGroupBtn = {
 let treeData = [
 	{
 		"id": 1,
-		"text": "admin",
+		"text": "1111111",
 		"state": "open",
 		"checked": false,
 		"attributes": null,
@@ -108,7 +109,16 @@ let treeData = [
 		"openMode": null
 	}, {
 		"id": 2,
-		"text": "de",
+		"text": "222222222",
+		"state": "open",
+		"checked": false,
+		"attributes": null,
+		"iconCls": null,
+		"pid": 1,
+		"openMode": null
+	}, {
+		"id": 3,
+		"text": "333333333333",
 		"state": "open",
 		"checked": false,
 		"attributes": null,
@@ -116,8 +126,20 @@ let treeData = [
 		"pid": null,
 		"openMode": null
 	}, {
-		"id": 7,
-		"text": "pm",
+		"id": 4,
+		"text": "44444444",
+		"state": "open",
+		"checked": false,
+		"attributes": null,
+		"iconCls": null,
+		"pid": 3,
+		"openMode": null
+	}
+]
+let treeSelectData = [
+	{
+		"id": 1,
+		"text": "1111111",
 		"state": "open",
 		"checked": false,
 		"attributes": null,
@@ -125,13 +147,31 @@ let treeData = [
 		"pid": null,
 		"openMode": null
 	}, {
-		"id": 8,
-		"text": "test",
+		"id": 2,
+		"text": "222222222",
+		"state": "open",
+		"checked": false,
+		"attributes": null,
+		"iconCls": null,
+		"pid": 1,
+		"openMode": null
+	}, {
+		"id": 3,
+		"text": "333333333333",
 		"state": "open",
 		"checked": false,
 		"attributes": null,
 		"iconCls": null,
 		"pid": null,
+		"openMode": null
+	}, {
+		"id": 4,
+		"text": "44444444",
+		"state": "open",
+		"checked": false,
+		"attributes": null,
+		"iconCls": null,
+		"pid": 3,
 		"openMode": null
 	}
 ]
@@ -141,6 +181,9 @@ export default (
 			<div path="/">
 				<div className="view-box">
 					<Tree data={treeData} />
+				</div>
+				<div className="view-box">
+					<TreeSelect data={treeSelectData} />
 				</div>
 				<div className="view-box">
 					<Alert icon={<Icon type="anchor" />} title="这个是标题" type="info">
