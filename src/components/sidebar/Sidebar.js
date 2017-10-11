@@ -10,10 +10,6 @@ export default class Sidebar extends Component {
         var viewList = menuTree.map((item) => { return this.getTreeItemView(item) })
         return viewList;
     }
-
-
-  
-
     getAngle(option) {
         if (option.children) {
             return (
