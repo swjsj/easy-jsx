@@ -53,7 +53,11 @@ export default class TreeTable extends Component {
     }
 
     isVisiableItem(item) {
-        return !item.parent || item.parent.opened
+        if (!item.parent) {
+            return true
+        } else {
+            return item.parent.opened && this.isVisiableItem(item.parent)
+        }
     }
 
     getTrClassStr(item) {
