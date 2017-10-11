@@ -35,15 +35,16 @@ export function evalJSX(str, obj, config) {
         if (cacheFns[args]) {
             fn = cacheFns[args]
         } else {
-            console.log(args)
+           // console.log(args)
             fn = cacheFns[args] = Function(args)
         }
-        console.log('function: ', fn.toString());
-        console.log('arguments: ', [obj]);
+        // console.log('function: ', fn.toString());
+        // console.log('arguments: ', [obj]);
         var a = fn.call(obj.this, obj)
         return a
     } catch (e) {
-        console.log(e, args)
+        console.error(e)
+        debugger
     }
 
 }

@@ -19,4 +19,5 @@ export default {
 	Table: require('./table/Table').default,
 	Topbar: require('./topbar/Topbar').default,
 	Tree: require('./tree/Tree').default, 
+	TreeTable:require('./table/TreeTable').default
 }
