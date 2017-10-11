@@ -10,7 +10,8 @@ export default class TreeTable extends Component {
 
 
     render() {
-        var { data } = { ...this.props };
+        var { data, datagrid } = { ...this.props };
+        var columns = datagrid.columns[0];
         var map = this.map = util.list2map(data)
         var tree = this.tree = util.list2tree(data)
         var itemList = this.getLeafView(tree);
@@ -34,10 +35,11 @@ export default class TreeTable extends Component {
                 <table>
                     <thead>
                         <tr>
-                            <th data-field="state" data-checkbox="true"></th>
-                            <th data-field="id">ID</th>
-                            <th data-field="name">Item Name</th>
-                            <th data-field="price">Item Price</th>
+                            {
+                                columns.map((col) => {
+                                    return <th style={"width:" + col.width + "px;"}>{col.title}</th>
+                                })
+                            }
                         </tr>
                     </thead>
 
@@ -51,7 +53,7 @@ export default class TreeTable extends Component {
     }
 
     isVisiableItem(item) {
-        return !item.parent || item.parent.state == "open"
+        return !item.parent || item.parent.opened
     }
 
     getTrClassStr(item) {
@@ -64,18 +66,49 @@ export default class TreeTable extends Component {
 
     toggle(item) {
         var originItem = this.map[item.id];
-        originItem.state = item.state == "open" ? "closed" : "open";
+        originItem.opened = item.opened ? 0 : 1;
         this.forceUpdate();
     }
 
     getTrView(item, padding) {
+        var { datagrid } = { ...this.props };
+        var columns = datagrid.columns[0];
+        //debugger
+
+        var tds = columns.map((col) => {
+            var html = col.formatter ? col.formatter(item[col.field], item) : item[col.field]
+            var style = "width:" + col.width + "px;"
+            var eventHander = {};
+
+            if (col.field == datagrid.treeField) {
+                style += "padding-left:" + padding * 10 + "px;cursor: pointer;"
+                eventHander.onClick = this.toggle.bind(this, item)
+            }
+
+            return <td class={this.getTrClassStr(item)} {...eventHander} style={style} dangerouslySetInnerHTML={{ __html: html }}> </td>
+        })
         return <tr>
-            <td class={this.getTrClassStr(item)}
+            {/* <td class={this.getTrClassStr(item)}
                 style={"padding-left:" + padding * 10 + "px;cursor: pointer;"}
                 onClick={this.toggle.bind(this, item)}
             >
-                {item.text}
+                {item.text} 
             </td>
+            <td>
+                {item.attributes}
+            </td>
+            <td>
+                {item.openMode}
+            </td>
+            <td>
+                {item.state}
+            </td>
+            <td>
+                {item.iconCls}
+            </td> */}
+            {
+                tds
+            }
         </tr>
     }
 

@@ -175,13 +175,12 @@ let treeSelectData = [
 		"openMode": null
 	}
 ]
-export default (
-	<Layout>
-		<Router onChange={onChange}>
+export default ()=>(
+	<div>
 			<div path="/">
-				<div className="view-box">
+				{/* <div className="view-box">
 					<Tree data={treeData} />
-				</div>
+				</div> */}
 				<div className="view-box">
 					<TreeSelect data={treeSelectData} />
 				</div>
@@ -196,9 +195,9 @@ export default (
 				<div className="view-box">
 					<DatePicker beforeGroup={<Icon type="anchor" />} id="datepicker" />
 				</div>
-				<div className="view-box">
+				{/* <div className="view-box">
 					<Sidebar data={slidebardata} />
-				</div>
+				</div> */}
 				<div className="view-box">
 					<Form className="form-horizontal">
 						<FormItem>
@@ -281,6 +280,6 @@ export default (
 			<Icon path="/blog" />
 			<Sliders path="/blog/:title" />
 			<Timeline path="/credit" />
-		</Router>
-	</Layout>
+
+	</div>
 );
