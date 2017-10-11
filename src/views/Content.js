@@ -180,9 +180,9 @@ export default ()=>(
 				{/* <div className="view-box">
 					<Tree data={treeData} />
 				</div> */}
-				<div className="view-box">
+				{/* <div className="view-box">
 					<TreeSelect data={treeSelectData} />
-				</div>
+				</div> */}
 				<div className="view-box">
 					<Alert icon={<Icon type="anchor" />} title="这个是标题" type="info">
 						这里是正文这里是正文这里是正文这里是正文这里是正文
