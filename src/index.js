@@ -10,6 +10,7 @@ import _components from './components'
 // import jQuery from 'jquery'
 export var components = {
     //ZZAdmin:require('./views/ZZAdmin').default,
+    Content:require('./views/Content').default,
     ..._components
 }
 
