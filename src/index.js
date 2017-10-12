@@ -9,7 +9,7 @@ export var config = require('./config').default
 import _components from './components'
 // import jQuery from 'jquery'
 export var components = {
-    ZZAdmin:require('./views/ZZAdmin').default,
+    //ZZAdmin:require('./views/ZZAdmin').default,
     ..._components
 }
 
