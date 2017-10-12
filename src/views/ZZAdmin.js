@@ -572,7 +572,7 @@ export class ZZAdmin extends Component {
                     username: '二花爱猫咪123',
                     img: 'tmp/photo.jpg'
                 }} />
-            <div class="container">
+            <div class="content-wrapper">
                 <Sidebar data={{ menu: menu }} />
                 <div class="content" id="content">
                     {/* <Table data={data}></Table> */}

@@ -4,6 +4,7 @@ import * as util from '../util'
 export default class Sidebar extends Component {
 
     getTreeView() {
+        
         var menu = this.props.data.menu;
         var map = this.map = util.list2map(menu)
         var menuTree = util.list2tree(menu);
