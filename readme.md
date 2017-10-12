@@ -4,7 +4,7 @@
 git clone http://gitlab.skong.com/npm/easy-jsx.git
 cd easy-jsx
 npm install
-npm run buld
+npm run build
 npm run watch
 ```
 
