@@ -81,7 +81,81 @@ var menu = [
     { "id": 222, "text": "我的地盘", "state": "closed", "checked": false, "attributes": "", "iconCls": "fi-folder", "pid": null, "openMode": "" },
     { "id": 13, "text": "用户管理", "state": "open", "checked": false, "attributes": "/user/manager", "iconCls": "fi-torsos-all", "pid": 1, "openMode": "ajax" },
     { "id": 221, "text": "日志监控", "state": "closed", "checked": false, "attributes": "", "iconCls": "fi-folder", "pid": null, "openMode": null },
-    { "id": 14, "text": "部门管理", "state": "open", "checked": false, "attributes": "/organization/manager", "iconCls": "fi-results-demographics", "pid": 1, "openMode": "ajax" }]
+    { "id": 14, "text": "部门管理", "state": "open", "checked": false, "attributes": "/organization/manager", "iconCls": "fi-results-demographics", "pid": 1, "openMode": "ajax" }
+]
+
+
+var menu2 = [
+    {
+        "text": "Dashboard",
+        "state": "open",
+        "checked": false,
+        "attributes": "",
+        "iconCls": "fi-folder",
+        "openMode": "",
+        children: [
+            {
+                "text": "Dashboard v1",
+                "state": "open",
+                "checked": false,
+                "attributes": "",
+                "iconCls": "fi-folder",
+                "openMode": ""
+            },
+            {
+                "text": "Dashboard v2",
+                "state": "open",
+                "checked": false,
+                "attributes": "",
+                "iconCls": "fi-folder",
+                "openMode": ""
+            }
+        ]
+    },
+    {
+        "text": "Layout options",
+        "state": "open",
+        "checked": false,
+        "attributes": "",
+        "iconCls": "fi-folder",
+        "openMode": "",
+        children: [
+            {
+                "text": "Top Navigation",
+                "state": "open",
+                "checked": false,
+                "attributes": "",
+                "iconCls": "fi-folder",
+                "openMode": ""
+            },
+            {
+                "text": "Boxed",
+                "state": "open",
+                "checked": false,
+                "attributes": "",
+                "iconCls": "fi-folder",
+                "openMode": ""
+            },
+            {
+                
+                "text": "Fixed",
+                "state": "open",
+                "checked": false,
+                "attributes": "",
+                "iconCls": "fi-folder",
+                "openMode": ""
+            },{
+                "text": "Collapsed Sidebar",
+                "state": "open",
+                "checked": false,
+                "attributes": "",
+                "iconCls": "fi-folder",
+                "openMode": ""
+            }
+        ]
+    },
+]
+
 var treeTableData = [
     {
         "id": 1,
@@ -585,7 +659,7 @@ export class ZZAdmin extends Component {
                     img: 'tmp/photo.jpg'
                 }} />
             <div class="content-wrapper">
-                <Sidebar data={{ menu: menu }} />
+                <Sidebar data={{ menu: menu2 }} />
                 <div class="content" id="content">
                     {/* <Table data={data}></Table> */}
                     <TreeTable data={treeTableData} datagrid={datagrid}></TreeTable>

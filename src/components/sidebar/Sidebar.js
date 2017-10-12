@@ -6,8 +6,15 @@ export default class Sidebar extends Component {
     getTreeView() {
         
         var menu = this.props.data.menu;
-        var map = this.map = util.list2map(menu)
-        var menuTree = util.list2tree(menu);
+        var menuTree = null;
+        if(menu && (menu[0].id || menu[0].pid)){
+            this.map = util.list2map(menu)
+            menuTree = util.list2tree(menu);
+        }else{
+            this.map = util.tree2map(menu)
+            menuTree = menu
+        }
+     
         var viewList = menuTree.map((item) => { return this.getTreeItemView(item) })
         return viewList;
     }
@@ -49,7 +56,6 @@ export default class Sidebar extends Component {
             event.stopPropagation()
             console.log(item.attributes)
             if(item.openMode == "ajax"){
-                debugger
                 $.get(item.attributes,function(res){
                     $('#content').html(res)
                 })

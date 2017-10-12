@@ -20,6 +20,7 @@ module.exports = isProd => {
 		}),
 		// new webpack.IgnorePlugin(/static/),
 		new HTML({ template: 'src/index.html' }),
+		new Copy([{ context: 'src/views/', from: '**/*.*',to:'views' }]),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : 'development')
 		})
@@ -28,7 +29,7 @@ module.exports = isProd => {
 	if (isProd) {
 		plugins.push(
 			new Clean(['dist'], { root }),
-			new Copy([{ context: 'src/static/', from: '**/*.*' }]),
+			new Copy([{ context: 'src/static/', from: '**/*.*',to:'static' }]),
 			new webpack.LoaderOptionsPlugin({ minimize: true }),
 			new webpack.LoaderOptionsPlugin({ minimize: false }),
 			new webpack.optimize.UglifyJsPlugin(uglify),
