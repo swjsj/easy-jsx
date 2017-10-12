@@ -69,7 +69,19 @@ var data = [
 ];
 
 
-var menu = [{ "id": 1, "text": "权限管理", "state": "open", "checked": false, "attributes": "", "iconCls": "fi-folder", "pid": null, "openMode": "" }, { "id": 227, "text": "登录日志", "state": "open", "checked": false, "attributes": "/sysLog/manager", "iconCls": "fi-info", "pid": 221, "openMode": "ajax" }, { "id": 228, "text": "Druid监控", "state": "open", "checked": false, "attributes": "/druid", "iconCls": "fi-monitor", "pid": 221, "openMode": "iframe" }, { "id": 229, "text": "系统图标", "state": "open", "checked": false, "attributes": "/icons.html", "iconCls": "fi-photo", "pid": 221, "openMode": "ajax" }, { "id": 241, "text": "司空生活", "state": "open", "checked": false, "attributes": "http://www.skong.com", "iconCls": "fi-home", "pid": 222, "openMode": "iframe" }, { "id": 11, "text": "资源管理", "state": "open", "checked": false, "attributes": "/resource/manager", "iconCls": "fi-database", "pid": 1, "openMode": "ajax" }, { "id": 224, "text": "善忘书籍", "state": "open", "checked": false, "attributes": "http://book.swjsj.com", "iconCls": "fi-video", "pid": 222, "openMode": "iframe" }, { "id": 12, "text": "角色管理", "state": "open", "checked": false, "attributes": "/role/manager", "iconCls": "fi-torso-business", "pid": 1, "openMode": "ajax" }, { "id": 222, "text": "我的地盘", "state": "closed", "checked": false, "attributes": "", "iconCls": "fi-folder", "pid": null, "openMode": "" }, { "id": 13, "text": "用户管理", "state": "open", "checked": false, "attributes": "/user/manager", "iconCls": "fi-torsos-all", "pid": 1, "openMode": "ajax" }, { "id": 221, "text": "日志监控", "state": "closed", "checked": false, "attributes": "", "iconCls": "fi-folder", "pid": null, "openMode": null }, { "id": 14, "text": "部门管理", "state": "open", "checked": false, "attributes": "/organization/manager", "iconCls": "fi-results-demographics", "pid": 1, "openMode": "ajax" }]
+var menu = [
+    { "id": 1, "text": "权限管理", "state": "open", "checked": false, "attributes": "", "iconCls": "fi-folder", "pid": null, "openMode": "" },
+    { "id": 227, "text": "登录日志", "state": "open", "checked": false, "attributes": "/sysLog/manager", "iconCls": "fi-info", "pid": 221, "openMode": "ajax" },
+    { "id": 228, "text": "Druid监控", "state": "open", "checked": false, "attributes": "/druid", "iconCls": "fi-monitor", "pid": 221, "openMode": "iframe" },
+    { "id": 229, "text": "系统图标", "state": "open", "checked": false, "attributes": "/icons.html", "iconCls": "fi-photo", "pid": 221, "openMode": "ajax" },
+    { "id": 241, "text": "司空生活", "state": "open", "checked": false, "attributes": "http://www.skong.com", "iconCls": "fi-home", "pid": 222, "openMode": "iframe" },
+    { "id": 11, "text": "资源管理", "state": "open", "checked": false, "attributes": "/resource/manager", "iconCls": "fi-database", "pid": 1, "openMode": "ajax" },
+    { "id": 224, "text": "善忘书籍", "state": "open", "checked": false, "attributes": "http://book.swjsj.com", "iconCls": "fi-video", "pid": 222, "openMode": "iframe" },
+    { "id": 12, "text": "角色管理", "state": "open", "checked": false, "attributes": "/role/manager", "iconCls": "fi-torso-business", "pid": 1, "openMode": "ajax" },
+    { "id": 222, "text": "我的地盘", "state": "closed", "checked": false, "attributes": "", "iconCls": "fi-folder", "pid": null, "openMode": "" },
+    { "id": 13, "text": "用户管理", "state": "open", "checked": false, "attributes": "/user/manager", "iconCls": "fi-torsos-all", "pid": 1, "openMode": "ajax" },
+    { "id": 221, "text": "日志监控", "state": "closed", "checked": false, "attributes": "", "iconCls": "fi-folder", "pid": null, "openMode": null },
+    { "id": 14, "text": "部门管理", "state": "open", "checked": false, "attributes": "/organization/manager", "iconCls": "fi-results-demographics", "pid": 1, "openMode": "ajax" }]
 var treeTableData = [
     {
         "id": 1,
