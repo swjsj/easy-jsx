@@ -6,6 +6,20 @@
 // }
 
 .zzstyle {
+    ul{
+        margin: 0;
+        padding: 0;
+    }
+    a{
+        text-decoration: none;
+    }
+    @sidebarBackground: #222d32;
+    @sidebarMenuBackground: #181f23;
+    @sidebarMenuBackgroundHover: #1c2529;
+    @sidebarMenuColor: #b8c7ce;
+    @sidebarMenuColorHover: #fff;
+    @sidebarTreeviewMenuBackgrund: #2c3b41;
+    @sidebarTreeviewMenuColor: #8aa4af;
     .topbar {
         background: #ffffff;
         box-shadow: 0 1px 0 0 #efefef;
@@ -26,6 +40,7 @@
                 line-height: 14px;
                 text-align: left;
                 margin-left: 30px;
+                font-weight: bold;
                 height: @headerHight;
                 line-height: @headerHight;
             }
@@ -41,6 +56,7 @@
             }
             .username {
                 padding-left: 10px;
+                margin-right: 10px;
                 font-family: MicrosoftYaHei;
                 font-size: 12px;
                 color: #333333;
@@ -69,25 +85,79 @@
             }
         }
     }
-    .container {
+    .content-wrapper {     
+        position: relative;
         .sidebar {
-            background: #333333;
+            background: @sidebarBackground;
             position: absolute;
             top: 0;
             left: 0;
-            padding-top: @headerHight;
             min-height: 100%;
             width: @sidebarWidth;
             z-index: 810;
         }
         .content {
-            position: absolute;
-            top: 0;
-            left: @sidebarWidth;
-            margin-top: 50px;
+            margin-left: @sidebarWidth;
             padding-top: @headerHight;
             padding-left: 30px;
             background: #ffffff;
+        }
+    }
+    .sidebar-menu{
+        &>li>a{
+            background: @sidebarMenuBackground;
+            color: @sidebarMenuColor;
+            position: relative;
+            padding: 12px 5px 12px 15px;
+            display: block;
+            font-size: 14px;
+            cursor: pointer;
+            &:hover,a:focus,&:active{
+                background: @sidebarMenuBackgroundHover;
+                color: @sidebarMenuColorHover;
+            }
+            .pull-right-container{
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                margin-top: -10px;
+            }
+        }
+        .treeview-menu{
+            background: @sidebarTreeviewMenuBackgrund;
+            &>li>a{
+                padding: 5px 5px 5px 15px;
+                display: block;
+                font-size: 12px;
+                color: @sidebarTreeviewMenuColor;
+                cursor: pointer;
+                &:hover,a:focus,&:active{
+                    color: @sidebarMenuColorHover;
+                }
+            }
+        }
+    }
+    table{
+        width: 100%;
+        font-size: 12px;
+        color: #666;
+        th{
+            padding: 17px 10px 15px;
+            background:#efefef;
+            text-align: center;
+            font-weight: normal;
+            border:1px solid #efefef;
+        }
+        td{
+            text-align: center;
+            padding: 17px 10px 15px;
+            border:1px solid #efefef;
+            a{
+                color:#4a5d82;
+            }
+        }
+        tr:nth-child(2n){
+            background: #f8f9f9;
         }
     }
 }
