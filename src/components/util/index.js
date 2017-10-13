@@ -17,6 +17,19 @@ export function list2map(list,options = {idKey:'id'}) {
     return map;
 }
 
+export function tree2map(tree,options = {idKey:'id',pidKey:'pid'}){
+    var pidKey = options.pidKey;
+    var idKey = options.idKey;
+    var map = {};
+    map[tree[idKey]] = tree;  
+    if(tree.children){
+        tree.children.forEach(function(item) {
+            map = {...map,...tree2map(item)}
+        }, this);
+    }
+    return map;
+}
+
 export function list2tree(list,options = {idKey:'id',pidKey:'pid'}) {
     var treeList = [];
     var pidKey = options.pidKey;
@@ -41,3 +54,5 @@ export function list2tree(list,options = {idKey:'id',pidKey:'pid'}) {
     }
     return treeList;
 }
+
+

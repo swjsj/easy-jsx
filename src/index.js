@@ -9,7 +9,8 @@ export var config = require('./config').default
 import _components from './components'
 // import jQuery from 'jquery'
 export var components = {
-    ZZAdmin:require('./views/ZZAdmin').default,
+    //ZZAdmin:require('./views/ZZAdmin').default,
+    Content:require('./views/Content').default,
     ..._components
 }
 
@@ -34,15 +35,15 @@ export function renderJSXScriptElements(jsxScriptArray) {
     }
 }
 
-let elem, App;
-function init() {
-	App = components.ZZAdmin
-	elem = render(App, document.getElementById('root'));
-} 
+// let elem, App;
+// function init() {
+// 	App = components.ZZAdmin
+// 	elem = render(App, document.getElementById('root'));
+// } 
 
  
 
-if(location.search.indexOf('show_components') > -1){
-    init();    
-}
+// if(location.search.indexOf('show_components') > -1){
+//     init();    
+// }
  

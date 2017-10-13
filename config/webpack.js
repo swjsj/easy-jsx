@@ -83,7 +83,7 @@ module.exports = env => {
 			]
 		},
 		plugins: setup(isProd),
-		devtool: !isProd && "eval-source-map",
+	//	devtool: !isProd && "eval-source-map",
 		devtool: "eval-source-map",
 		devServer: {
 			contentBase: dist,
