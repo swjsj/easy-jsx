@@ -18,11 +18,11 @@ export default class Sidebar extends Component {
         var viewList = menuTree.map((item) => { return this.getTreeItemView(item) })
         return viewList;
     }
-    getAngle(option) {
-        if (option.children) {
+    getAngle(item) {
+        if (item.children) {
             return (
                 <span className="pull-right-container">
-                    <Icon type="angle-left" />
+                    <Icon type={this.isVisiableItem(item)?"angle-down": "angle-left"} />
                 </span>
             )
         }
@@ -37,10 +37,14 @@ export default class Sidebar extends Component {
         if(item.children){
             var parent = target.parent();
             if(parent.hasClass('menu-open')){
-                target.next().addClass('hide')
+                target.next().addClass('hide');
+                target.find('i').removeClass('fa-angle-down').addClass('fa-angle-left')
+                
                 parent.removeClass('menu-open');
             }else{
                 target.next().removeClass('hide')
+                target.find('i').removeClass('fa-angle-left').addClass('fa-angle-down')
+                
                 parent.addClass('menu-open');
             }
         }else{
@@ -71,7 +75,7 @@ export default class Sidebar extends Component {
 
     getTreeItemView(item) {
         var view = <li className={"treeview " + (this.isVisiableItem(item) ? "menu-open" : '')}>
-            <a onClick={this.click.bind(this,item)}>
+            <a onClick={this.click.bind(this,item)} style="user-select: none;">
                 {item.text}
                 {this.getAngle(item)}
             </a>
