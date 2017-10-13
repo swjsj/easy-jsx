@@ -64,7 +64,7 @@ export default class Sidebar extends Component {
                 })
             }
             if(item.openMode == "iframe"){
-                var frame = $('iframe').attr('src',item.attributes)
+                var frame = $(document.createElement('iframe')).attr('src',item.attributes)
                 for(var i in item.frameStyle){
                     frame.css(i,item.frameStyle[i]);
                 }
