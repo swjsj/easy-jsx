@@ -60,6 +60,14 @@ export default class Sidebar extends Component {
                     $('#content').html(res)
                 })
             }
+            if(item.openMode == "ajax-jsx"){
+                $.get(item.attributes,function(res){
+                    $('#content').html('')
+                    var warp = document.createElement('div'); 
+                    util.renderJsx(res,warp)
+                    $(warp).appendTo($('#content'))
+                })
+            }
         }
     }
 
