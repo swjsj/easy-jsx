@@ -32,24 +32,15 @@ export default class Sidebar extends Component {
         return item.state == "open"
     }
 
-    getTrClassStr(item) {
-        var str = ''
-        if (!this.isVisiableItem(item)) {
-            str += " hide"
-        }
-        console.log(str)
-        return str;
-    }
-
     click(item,event){
         var target = $(event.currentTarget);
         if(item.children){
             var parent = target.parent();
             if(parent.hasClass('menu-open')){
-                target.next().hide();
+                target.next().addClass('hide')
                 parent.removeClass('menu-open');
             }else{
-                target.next().show();
+                target.next().removeClass('hide')
                 parent.addClass('menu-open');
             }
         }else{
@@ -60,16 +51,31 @@ export default class Sidebar extends Component {
                     $('#content').html(res)
                 })
             }
+            if(item.openMode == "ajax-jsx"){
+                $.get(item.attributes,function(res){
+                    $('#content').html('')
+                    var warp = document.createElement('div'); 
+                    util.renderJsx(res,warp)
+                    $(warp).appendTo($('#content'))
+                })
+            }
+            if(item.openMode == "iframe"){
+                var frame = $('iframe').attr('src',item.attributes)
+                for(var i in item.frameStyle){
+                    frame.css(i,item.frameStyle[i]);
+                }
+                $('#content').html('').append(frame);
+            }
         }
     }
 
     getTreeItemView(item) {
-        var view = <li className={"treeview " + (item.state == "open" ? "menu-open" : '')}>
+        var view = <li className={"treeview " + (this.isVisiableItem(item) ? "menu-open" : '')}>
             <a onClick={this.click.bind(this,item)}>
                 {item.text}
                 {this.getAngle(item)}
             </a>
-            <ul className={"treeview-menu "}
+            <ul className={"treeview-menu " + (this.isVisiableItem(item) ? ' ':' hide')}
                 style={"display:" + ((!item.parent || item.parent.state == "open") ? "block;" : "none;")}
             >
                 {item.children && item.children.map((item) => { return this.getTreeItemView(item) })}
