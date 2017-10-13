@@ -68,6 +68,13 @@ export default class Sidebar extends Component {
                     $(warp).appendTo($('#content'))
                 })
             }
+            if(item.openMode == "iframe"){
+                var frame = $('iframe').attr('src',item.attributes)
+                for(var i in item.frameStyle){
+                    frame.css(i,item.frameStyle[i]);
+                }
+                $('#content').html('').append(frame);
+            }
         }
     }
 
