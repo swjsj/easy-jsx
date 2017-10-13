@@ -32,24 +32,15 @@ export default class Sidebar extends Component {
         return item.state == "open"
     }
 
-    getTrClassStr(item) {
-        var str = ''
-        if (!this.isVisiableItem(item)) {
-            str += " hide"
-        }
-        console.log(str)
-        return str;
-    }
-
     click(item,event){
         var target = $(event.currentTarget);
         if(item.children){
             var parent = target.parent();
             if(parent.hasClass('menu-open')){
-                target.next().hide();
+                target.next().addClass('hide')
                 parent.removeClass('menu-open');
             }else{
-                target.next().show();
+                target.next().removeClass('hide')
                 parent.addClass('menu-open');
             }
         }else{
@@ -79,12 +70,12 @@ export default class Sidebar extends Component {
     }
 
     getTreeItemView(item) {
-        var view = <li className={"treeview " + (item.state == "open" ? "menu-open" : '')}>
+        var view = <li className={"treeview " + (this.isVisiableItem(item) ? "menu-open" : '')}>
             <a onClick={this.click.bind(this,item)}>
                 {item.text}
                 {this.getAngle(item)}
             </a>
-            <ul className={"treeview-menu "}
+            <ul className={"treeview-menu " + (this.isVisiableItem(item) ? ' ':' hide')}
                 style={"display:" + ((!item.parent || item.parent.state == "open") ? "block;" : "none;")}
             >
                 {item.children && item.children.map((item) => { return this.getTreeItemView(item) })}
