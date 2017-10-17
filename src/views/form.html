@@ -1,0 +1,78 @@
+<Form className="form-horizontal">
+	<FormItem>
+		<Select>
+			<SelectOption>Alaska</SelectOption>
+			<SelectOption selected="selected">California</SelectOption>
+			<SelectOption>Delaware</SelectOption>
+			<SelectOption>Tennessee</SelectOption>
+			<SelectOption>Texas</SelectOption>
+			<SelectOption>Washington</SelectOption>
+		</Select>
+	</FormItem>
+	<FormItem>
+		<Input type="checkbox" />
+	</FormItem>
+	<FormItem>
+		<Input type="radio" />
+	</FormItem>
+	<FormItem>
+		<InputGroup beforeBtn={{
+            text: '这个是下拉按钮',
+            type: 'warning',
+            content: [
+                {
+                    link: 'www.baidu.com',
+                    text: '第一个'
+                },
+                {
+                    link: 'www.baidu.com',
+                    text: '第二个'
+                },
+                {
+                    link: 'www.baidu.com',
+                    text: '第三个'
+                },
+                {
+                    link: 'www.baidu.com',
+                    text: '第四个'
+                }
+            ]
+        }} afterGroup={<Icon type="anchor" />} placeholder="" />
+	</FormItem>
+	<FormItem>
+		<Input />
+	</FormItem>
+	<FormItem>
+		<div className="row">
+			<div className="col-xs-3">
+				<Input />
+			</div>
+			<div className="col-xs-3">
+				<Input />
+			</div>
+			<div className="col-xs-3">
+				<Input />
+			</div>
+			<div className="col-xs-3">
+				<Input />
+			</div>
+		</div>
+	</FormItem>
+	<FormItem>
+		<label htmlFor="" className="control-label">请输入手机号</label>
+		<Input />
+	</FormItem>
+	<FormItem>
+		<div className="row">
+			<div className="col-xs-4">
+				<label htmlFor="" className="control-label">请输入手机号</label>
+			</div>
+			<div className="col-xs-8">
+				<Input />
+			</div>
+		</div>
+	</FormItem>
+	<FormItem>
+		<InputGroup beforeGroup={<Input type="checkbox" />} afterGroup={<Icon type="anchor" />} placeholder="" />
+	</FormItem>
+</Form>

@@ -18,5 +18,12 @@ export default {
 	Table: require('./table/Table').default,
 	Topbar: require('./topbar/Topbar').default,
 	Tree: require('./tree/Tree').default, 
-	TreeTable:require('./table/TreeTable').default
+	TreeTable:require('./table/TreeTable').default,
+	Select:require('./select/Select').default,
+	SelectOption:require('./select/SelectOption').default,
+	TreeSelect:require('./select/TreeSelect').default,
+	Input:require('./input/Input').default,
+	InputGroup:require('./input/InputGroup').default,
+	DatePicker:require('./input/DatePicker').default,
+	InputGroupSelect:require('./input/InputGroupSelect').default
 }

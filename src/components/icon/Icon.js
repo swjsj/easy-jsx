@@ -3,7 +3,6 @@ import { Component, h } from 'preact'
 export default class Icon extends Component {
     render() {
         let IconClass = `fa fa-fw fa-`
-
         if (this.props.type) {
             IconClass = `${IconClass}${this.props.type}`
         }
