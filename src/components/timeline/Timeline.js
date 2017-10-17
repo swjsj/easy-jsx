@@ -1,75 +1,12 @@
 import { Component, h } from 'preact'
 import { Link } from 'preact-router';
 import Icon from '../icon/Icon'
+require('./style.less')
 
 export default class Timeline extends Component {
 
     getTimeline() {
-        var data = [
-            {
-                timeLabel: {
-                    type: 'bg-red',
-                    content: '10 Feb. 2014'
-                },
-                timelineItem: {
-                    icon: {
-                        type: 'envelope',
-                        colorType: 'bg-blue'
-                    },
-                    content: {
-                        time: {
-                            content: '12:05',
-                            icon: {
-                                type: 'clock-o',
-                                colorType: ''
-                            }
-                        },
-                        header: {
-                            link: 'www.baidu.comn',
-                            content: 'Support Team'
-                        },
-                        body: {
-                            content: '...Content goes here'
-                        },
-                        footer: {
-                            content: '<a className="btn btn-primary btn-xs">...</a>'
-                        }
-                    }
-                }
-            },
-            {
-                timeLabel: {
-                    type: 'bg-red',
-                    content: '10 Feb. 2014'
-                },
-                timelineItem: {
-                    icon: {
-                        type: 'envelope',
-                        colorType: 'bg-blue'
-                    },
-                    content: {
-                        time: {
-                            content: '12:05',
-                            icon: {
-                                type: 'clock-o',
-                                colorType: ''
-                            }
-                        },
-                        header: {
-                            link: 'www.baidu.comn',
-                            content: 'Support Team'
-                        },
-                        body: {
-                            content: '...Content goes here'
-                        },
-                        footer: {
-                            content: '<a className="btn btn-primary btn-xs">...</a>'
-                        }
-                    }
-                }
-            }
-        ]
-        return data.map((item) => {
+        return this.props.data.map((item) => {
             return (
                 <div className="time-warp">
                     <li className="time-label" key={item}>
@@ -90,7 +27,6 @@ export default class Timeline extends Component {
     }
 
     render() {
-
         return (
             <ul className="timeline" >
                 {this.getTimeline()}
