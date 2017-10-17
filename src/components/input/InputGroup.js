@@ -14,7 +14,6 @@ export default class InputGroup extends Component {
         if (this.props.type) {
             InputType = `${this.props.type}`
         }
-        console.log(this.props.id)
         return (
             <div class={GroupClass}>
                 {this.props.beforeBtn ? <InputGroupSelect type={this.props.beforeBtn.type} data={this.props.beforeBtn} /> : null}
