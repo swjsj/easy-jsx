@@ -107,3 +107,4 @@ export function openContentPage($content,pageUrl,openMode){
 
 
 export * from './url'
+export * from './config'

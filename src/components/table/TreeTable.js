@@ -3,14 +3,22 @@ import * as util from '../util'
 import './table.less'
 export default class TreeTable extends Component {
 
-    componentDidMount() {
-        //debugger
+
+    componentWillMount(){
+        var {datagrid} = {...this.props}; 
+        console.log(util.getConfig())
+        var url = util.getReqUrl(datagrid.url)
+        $.get(url,(res)=>{
+            this.setState({
+                data:res
+            })
+        })
     }
 
 
-
     render() {
-        var { data, datagrid } = { ...this.props };
+        var {  datagrid } = { ...this.props };
+        var { data } = { ...this.state};
         var columns = datagrid.columns[0];
         var map = this.map = util.list2map(data)
         var tree = this.tree = util.list2tree(data)

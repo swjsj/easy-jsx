@@ -16,9 +16,11 @@ export default class Table extends Component {
     }
 
     render() {
+        var { data, datagrid } = { ...this.props };
+        var columns = datagrid.columns[0];
         return (
             <div>
-                <div id="toolbar">
+                {/* <div id="toolbar">
                     <div class="form-inline" role="form">
                         <div class="form-group">
                             <span>Offset: </span>
@@ -31,7 +33,7 @@ export default class Table extends Component {
 
                         <button id="ok" type="submit" class="btn btn-default" ref={(ok) => this.ok = ok}>OK</button>
                     </div>
-                </div>
+                </div> */}
 
                 <table id="table"
                     data-toggle="table"
@@ -67,9 +69,14 @@ export default class Table extends Component {
                                     }
                                     return value;
                                 }}></th>
-                            <th data-field="id">ID</th>
-                            <th data-field="name">Item Name</th>
-                            <th data-field="price">Item Price</th>
+                   
+                            {
+                                columns.map((col) => {
+                                    return <th data-field={col.field} style={"width:" + col.width + "px;"} 
+                                    data-formatter={col.formatter}
+                                    >{col.title}</th>
+                                })
+                            }
                         </tr>
                     </thead>
                 </table>

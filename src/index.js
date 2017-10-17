@@ -1,9 +1,8 @@
+
 import {render,h} from 'preact';
 import './index.sass';
 export var preact = require('preact')
 export var parser = require('./components/util/parser')
-
-export var config = require('./config').default
 
 import * as util from '././components/util';
 export {util as util}
