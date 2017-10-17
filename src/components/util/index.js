@@ -89,3 +89,21 @@ export function openIframe($content,url){
     }
     $content.html('').append(frame);
 }
+
+
+export function openContentPage($content,pageUrl,openMode){
+    if(openMode == "ajax"){
+        openHtml($content,pageUrl)
+    }
+    if(openMode == "ajax-jsx"){
+        openJsx($content,pageUrl);
+    }
+    if(openMode == "iframe"){
+       openIframe($content,pageUrl)
+    }
+
+    history.pushState(null,null,`?contentPageUrl=${pageUrl}&openMode=${openMode}`)
+}
+
+
+export * from './url'
