@@ -72,9 +72,22 @@ export function openJsx($content,url){
         $content.html('')
         var warp = document.createElement('div'); 
         renderJsx(res,warp)
-        $(warp).appendTo($content)
+        $(warp).appendTo($content);
+        ///var jsxCode = 
+
+
+        var code = $('<code class="language-jsx"></code>')[0];
+        var pre = $('<pre class="language-jsx"></pre>');
+        $(code).appendTo(pre);
+        pre.appendTo($content);
+
+        code.textContent = res;
+        Prism.highlightElement(code);
+
     })
 }
+
+
 
 export function openHtml($content,url){
     $.get(url,function(res){

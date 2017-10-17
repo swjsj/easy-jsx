@@ -8,6 +8,5 @@ export function getConfig(){
 }
 
 export function setConfig(config){
-    debugger    
     _config = config;
 }

@@ -26,7 +26,7 @@
       "pid": null,
       "seq": 0,
       "status": 0,
-      "opened": 1,
+      "opened": 0,
       "resourceType": 0,
       "createTime": "2014-02-19 01:00:00",
       "iconCls": "fi-folder"
