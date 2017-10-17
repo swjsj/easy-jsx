@@ -8,7 +8,7 @@ export default class Icon extends Component {
             IconClass = `${IconClass}${this.props.type}`
         }
         if (this.props.colorType) {
-            IconClass = `${IconClass}${this.props.colorType}`
+            IconClass = `${IconClass} ${this.props.colorType}`
         }
         return (
             <i className={IconClass} onClick={this.props.onClick ? this.props.onClick.bind(this) : null}></i>

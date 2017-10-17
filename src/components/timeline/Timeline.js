@@ -1,11 +1,11 @@
 import { Component, h } from 'preact'
 import { Link } from 'preact-router';
 import Icon from '../icon/Icon'
+require('./style.less')
 
 export default class Timeline extends Component {
 
     getTimeline() {
-        
         return this.props.data.map((item) => {
             return (
                 <div className="time-warp">
@@ -27,7 +27,6 @@ export default class Timeline extends Component {
     }
 
     render() {
-
         return (
             <ul className="timeline" >
                 {this.getTimeline()}
