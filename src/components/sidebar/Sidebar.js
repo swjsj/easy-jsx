@@ -48,27 +48,17 @@ export default class Sidebar extends Component {
                 parent.addClass('menu-open');
             }
         }else{
-            event.stopPropagation()
+            event.stopPropagation();
+            var $content = $('#content')
             console.log(item.attributes)
             if(item.openMode == "ajax"){
-                $.get(item.attributes,function(res){
-                    $('#content').html(res)
-                })
+                util.openHtml($content,item.attributes)
             }
             if(item.openMode == "ajax-jsx"){
-                $.get(item.attributes,function(res){
-                    $('#content').html('')
-                    var warp = document.createElement('div'); 
-                    util.renderJsx(res,warp)
-                    $(warp).appendTo($('#content'))
-                })
+                util.openJsx($content,item.attributes);
             }
             if(item.openMode == "iframe"){
-                var frame = $(document.createElement('iframe')).attr('src',item.attributes)
-                for(var i in item.frameStyle){
-                    frame.css(i,item.frameStyle[i]);
-                }
-                $('#content').html('').append(frame);
+               util.openIframe($content,item.attributes)
             }
         }
     }
