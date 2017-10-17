@@ -15,17 +15,8 @@ export default class Button extends Component {
         if (this.props.type) {
             ButtonClass = `${ButtonClass} btn-${this.props.type}`
         }
-
-        switch (this.props.size) {
-            case "Large":
-                ButtonClass = `${ButtonClass} btn-lg`
-                break
-            case "Small":
-                ButtonClass = `${ButtonClass} btn-sm`
-                break
-            case "X-Small":
-                ButtonClass = `${ButtonClass} btn-xs`
-                break
+        if (this.props.size) {
+            ButtonClass = `${ButtonClass} btn-${this.props.size}`
         }
         return (
             <button type="button" className={ButtonClass} disabled={ButtonDisabled}>{this.props.children}</button>
