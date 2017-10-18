@@ -51,6 +51,6 @@ export default class InfoPalette extends Component {
                 </div>
             </div>
         )
-        
+
     }
 }
