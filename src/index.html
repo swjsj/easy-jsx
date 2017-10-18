@@ -2,569 +2,555 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>管理中心</title>
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
-    <link rel="stylesheet" href="./static/components/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./static/components/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="./static/components/Ionicons/css/ionicons.min.css" />
-    <link rel="stylesheet" href="./static/components/morris.js/morris.css" />
-    <link rel="stylesheet" href="./static/components/jvectormap/jquery-jvectormap.css" />
-    <link rel="stylesheet" href="./static/components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" />
-    <link rel="stylesheet" href="./static/components/bootstrap-daterangepicker/daterangepicker.css" />
-    <link rel="stylesheet" href="./static/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" />
-    <link rel="stylesheet" href="./static/plugins/bootstrap-slider/slider.css" />
-    <link rel="stylesheet" href="./static/fonts/SansPro.css" />
-    <link rel="stylesheet" href="./static/css/style.less" />
-    <script src="./static/components/jquery/dist/jquery.min.js"></script>
-    <script src="./static/components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="./static/components/bootstrap-table/dist/bootstrap-table.js"></script>
-    <script src="./static/components/raphael/raphael.min.js"></script>
-    <script src="./static/components/morris.js/morris.min.js"></script>
-    <script src="./static/components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-    <script src="./static/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-    <script src="./static/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="./static/components/jquery-knob/dist/jquery.knob.min.js"></script>
-    <script src="./static/components/moment/min/moment.min.js"></script>
-    <script src="./static/components/bootstrap-daterangepicker/daterangepicker.js"></script>
-    <script src="./static/components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-    <script src="./static/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-    <script src="./static/components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="./static/components/fastclick/lib/fastclick.js"></script>
-    <script src="./static/js/adminlte.js"></script>
-    <script src="./static/js/demo.js"></script>
-    <script src="./static/plugins/bootstrap-slider/bootstrap-slider.js"></script>
-    <script src="./static/components/select2/dist/js/select2.full.min.js"></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>管理中心</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+	<link rel="stylesheet" href="./static/components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="./static/components/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="./static/components/Ionicons/css/ionicons.min.css" />
+	<link rel="stylesheet" href="./static/components/morris.js/morris.css" />
+	<link rel="stylesheet" href="./static/components/jvectormap/jquery-jvectormap.css" />
+	<link rel="stylesheet" href="./static/components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" />
+	<link rel="stylesheet" href="./static/components/bootstrap-daterangepicker/daterangepicker.css" />
+	<link rel="stylesheet" href="./static/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" />
+	<link rel="stylesheet" href="./static/plugins/bootstrap-slider/slider.css" />
+	<link rel="stylesheet" href="./static/fonts/SansPro.css" />
+	<link rel="stylesheet" href="./static/css/style.less" />
+	<script src="./static/components/jquery/dist/jquery.min.js"></script>
+	<script src="./static/components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="./static/components/bootstrap-table/dist/bootstrap-table.js"></script>
+	<script src="./static/components/raphael/raphael.min.js"></script>
+	<script src="./static/components/morris.js/morris.min.js"></script>
+	<script src="./static/components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+	<script src="./static/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+	<script src="./static/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+	<script src="./static/components/jquery-knob/dist/jquery.knob.min.js"></script>
+	<script src="./static/components/moment/min/moment.min.js"></script>
+	<script src="./static/components/bootstrap-daterangepicker/daterangepicker.js"></script>
+	<script src="./static/components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+	<script src="./static/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+	<script src="./static/components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="./static/components/fastclick/lib/fastclick.js"></script>
+	<script src="./static/js/adminlte.js"></script>
+	<script src="./static/js/demo.js"></script>
+	<script src="./static/plugins/bootstrap-slider/bootstrap-slider.js"></script>
+	<script src="./static/components/select2/dist/js/select2.full.min.js"></script>
     <script src="./static/vendor.js"></script>
+    
+    <script src="./static/components/prism/prism.js"></script>
+    <link rel="stylesheet" href="./static/components/prism/prism.css"/>
 </head>
 
 <body>
 
-
-
-    <script>
-   
-
-        var data = [
-            {
-                "id": 0,
-                "name": "Item 0",
-                "price": "$0"
-            },
-            {
-                "id": 1,
-                "name": "Item 1",
-                "price": "$1"
-            },
-            {
-                "id": 2,
-                "name": "Item 2",
-                "price": "$2"
-            },
-            {
-                "id": 3,
-                "name": "Item 3",
-                "price": "$3"
-            },
-            {
-                "id": 4,
-                "name": "Item 4",
-                "price": "$4"
-            },
-            {
-                "id": 5,
-                "name": "Item 5",
-                "price": "$5"
-            }
-        ];
+	<script>
+		var data = [{
+				"id": 0,
+				"name": "Item 0",
+				"price": "$0"
+			},
+			{
+				"id": 1,
+				"name": "Item 1",
+				"price": "$1"
+			},
+			{
+				"id": 2,
+				"name": "Item 2",
+				"price": "$2"
+			},
+			{
+				"id": 3,
+				"name": "Item 3",
+				"price": "$3"
+			},
+			{
+				"id": 4,
+				"name": "Item 4",
+				"price": "$4"
+			},
+			{
+				"id": 5,
+				"name": "Item 5",
+				"price": "$5"
+			}
+		];
 
 
 
-        var menu2 = [
-            {
-                "text": "Dashboard",
-                "state": "open",
-                "checked": false,
-                "attributes": "",
-                "iconCls": "fi-folder",
-                "openMode": "",
-                children: [
-                    {
-                        "text": "Dashboard v1",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "views/a.html",
-                        "iconCls": "fi-folder",
-                        "openMode": "ajax-jsx"
-                    },
-                    {
-                        "text": "Dashboard v2",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "http://www.baidu.com",
-                        "iconCls": "fi-folder",
-                        "openMode": "iframe",
-                        "frameStyle": {
-                            'height': '1000px',
-                            'width': '100%',
-                            'border':'none'
-                        }
-                    }
-                ]
-            },
-            {
-                "text": "Layout options",
-                "state": "close",
-                "checked": false,
-                "attributes": "",
-                "iconCls": "fi-folder",
-                "openMode": "",
-                children: [
-                    {
-                        "text": "Top Navigation",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    },
-                    {
-                        "text": "Boxed",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    },
-                    {
+		var menu2 = [{
+				"text": "Dashboard",
+				"state": "open",
+				"checked": false,
+				"attributes": "",
+				"iconCls": "fi-folder",
+				"openMode": "",
+				children: [{
+						"text": "Dashboard v1",
+						"state": "open",
+						"checked": false,
+						"attributes": "views/a.html",
+						"iconCls": "fi-folder",
+						"openMode": "ajax-jsx"
+					},
+					{
+						"text": "Dashboard v2",
+						"state": "open",
+						"checked": false,
+						"attributes": "http://www.baidu.com",
+						"iconCls": "fi-folder",
+						"openMode": "iframe",
+						"frameStyle": {
+							'height': '1000px',
+							'width': '100%',
+							'border': 'none'
+						}
+					}
+				]
+			},
+			{
+				"text": "Layout options",
+				"state": "close",
+				"checked": false,
+				"attributes": "",
+				"iconCls": "fi-folder",
+				"openMode": "",
+				children: [{
+						"text": "Top Navigation",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					},
+					{
+						"text": "Boxed",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					},
+					{
 
-                        "text": "Fixed",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    }, {
-                        "text": "Collapsed Sidebar",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    }
-                ]
-            },
-            {
-                "text": "Widgets",
+						"text": "Fixed",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					}, {
+						"text": "Collapsed Sidebar",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					}
+				]
+			},
+			{
+				"text": "Widgets",
                 "state": "open",
                 "checked": false,
                 "attributes": "views/widgets.html",
                 "iconCls": "fi-folder",
                 "openMode": "ajax-jsx",
-            },
-            {
-                "text": "Charts",
-                "state": "close",
-                "checked": false,
-                "attributes": "",
-                "iconCls": "fi-folder",
-                "openMode": "",
-                children: [
-                    {
-                        "text": "ChartJS",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    },
-                    {
-                        "text": "Morris",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    },
-                    {
+			},
+			{
+				"text": "Charts",
+				"state": "close",
+				"checked": false,
+				"attributes": "",
+				"iconCls": "fi-folder",
+				"openMode": "",
+				children: [{
+						"text": "ChartJS",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					},
+					{
+						"text": "Morris",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					},
+					{
 
-                        "text": "Flot",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    },
-                    {
-                        "text": "Inline charts",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    }
-                ]
-            },
-            {
-                "text": "UI Elements",
-                "state": "close",
-                "checked": false,
-                "attributes": "",
-                "iconCls": "fi-folder",
-                "openMode": "",
-                children: [
-                    {
-                        "text": "General",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "views/general.html",
-                        "iconCls": "fi-folder",
-                        "openMode": "ajax-jsx"
-                    },
-                    {
-                        "text": "Icons",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "views/icon.html",
-                        "iconCls": "fi-folder",
-                        "openMode": "ajax-jsx"
-                    },
-                    {
+						"text": "Flot",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					},
+					{
+						"text": "Inline charts",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					}
+				]
+			},
+			{
+				"text": "UI Elements",
+				"state": "close",
+				"checked": false,
+				"attributes": "",
+				"iconCls": "fi-folder",
+				"openMode": "",
+				children: [{
+						"text": "General",
+						"state": "open",
+						"checked": false,
+						"attributes": "views/general.html",
+						"iconCls": "fi-folder",
+						"openMode": "ajax-jsx"
+					},
+					{
+						"text": "Icons",
+						"state": "open",
+						"checked": false,
+						"attributes": "views/icon.html",
+						"iconCls": "fi-folder",
+						"openMode": "ajax-jsx"
+					},
+					{
 
-                        "text": "Buttons",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "views/button.html",
-                        "iconCls": "fi-folder",
-                        "openMode": "ajax-jsx"
-                    },
-                    {
-                        "text": "Siders",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    },
-                    {
-                        "text": "Timeline",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "views/timeline.html",
-                        "iconCls": "fi-folder",
-                        "openMode": "ajax-jsx"
-                    },
-                    {
-                        "text": "Modals",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    }
-                ]
-            },
-            {
-                "text": "Froms",
-                "state": "close",
-                "checked": false,
-                "attributes": "",
-                "iconCls": "fi-folder",
-                "openMode": "",
-                children: [
-                    {
-                        "text": "General Elements",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    },
-                    {
-                        "text": "Adanced Elements",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    },
-                    {
+						"text": "Buttons",
+						"state": "open",
+						"checked": false,
+						"attributes": "views/button.html",
+						"iconCls": "fi-folder",
+						"openMode": "ajax-jsx"
+					},
+					{
+						"text": "Siders",
+						"state": "open",
+						"checked": false,
+						"attributes": "views/slider.html",
+						"iconCls": "fi-folder",
+						"openMode": "ajax-jsx"
+					},
+					{
+						"text": "Timeline",
+						"state": "open",
+						"checked": false,
+						"attributes": "views/timeline.html",
+						"iconCls": "fi-folder",
+						"openMode": "ajax-jsx"
+					},
+					{
+						"text": "Modals",
+						"state": "open",
+						"checked": false,
+						"attributes": "views/modals.html",
+						"iconCls": "fi-folder",
+						"openMode": "ajax-jsx"
+					}
+				]
+			},
+			{
+				"text": "Froms",
+				"state": "close",
+				"checked": false,
+				"attributes": "",
+				"iconCls": "fi-folder",
+				"openMode": "",
+				children: [{
+						"text": "General Elements",
+						"state": "open",
+						"checked": false,
+						"attributes": "views/form.html",
+						"iconCls": "fi-folder",
+						"openMode": "ajax-jsx"
+					},
+					{
+						"text": "Adanced Elements",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					},
+					{
 
-                        "text": "Editors",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    }
-                ]
-            },
-            {
-                "text": "Tables",
-                "state": "close",
-                "checked": false,
-                "attributes": "",
-                "iconCls": "fi-folder",
-                "openMode": "",
-                children: [
-                {
-                        "text": "Simple tables",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "views/tables/simple_tables.html",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    },
-                    {
-                        "text": "Tree Table",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "views/tables/simple_tables.html",
-                        "iconCls": "fi-folder",
-                        "openMode": "ajax-jsx"
-                    },
-                    {
-                        "text": "Data tables",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    }
-                ]
-            },
-            {
-                "text": "Calendar",
-                "state": "close",
-                "checked": false,
-                "attributes": "",
-                "iconCls": "fi-folder",
-                "openMode": ""
-            },
-            {
-                "text": "Mailbox",
-                "state": "close",
-                "checked": false,
-                "attributes": "",
-                "iconCls": "fi-folder",
-                "openMode": "",
-                children: [
-                    {
-                        "text": "Inbox",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    },
-                    {
-                        "text": "Compose",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    },
-                    {
-                        "text": "Read",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    }
-                ]
-            },
-            {
-                "text": "Examples",
-                "state": "close",
-                "checked": false,
-                "attributes": "",
-                "iconCls": "fi-folder",
-                "openMode": "",
-                children: [
-                    {
-                        "text": "Invoice",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    },
-                    {
-                        "text": "Profile",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    },
-                    {
-                        "text": "Login",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    },
-                    {
-                        "text": "Register",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    },
-                    {
-                        "text": "Lookscreen",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    },
-                    {
-                        "text": "404 Error",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    },
-                    {
-                        "text": "500 Error",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    },
-                    {
-                        "text": "Blank Page",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    },
-                    {
-                        "text": "Pace Page",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    }
-                ]
-            },
-            {
-                "text": "Multilevel",
-                "state": "close",
-                "checked": false,
-                "attributes": "",
-                "iconCls": "fi-folder",
-                "openMode": "",
-                children: [
-                    {
-                        "text": "Level One",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    },
-                    {
-                        "text": "Level One",
-                        "state": "close",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": "",
-                        children: [
-                            {
-                                "text": "Level Two",
-                                "state": "open",
-                                "checked": false,
-                                "attributes": "",
-                                "iconCls": "fi-folder",
-                                "openMode": ""
-                            },
-                            {
-                                "text": "Level Two",
-                                "state": "open",
-                                "checked": false,
-                                "attributes": "",
-                                "iconCls": "fi-folder",
-                                "openMode": "",
-                                children: [
-                                    {
-                                        "text": "Level Three",
-                                        "state": "open",
-                                        "checked": false,
-                                        "attributes": "",
-                                        "iconCls": "fi-folder",
-                                        "openMode": ""
-                                    },
-                                    {
-                                        "text": "Level Three",
-                                        "state": "open",
-                                        "checked": false,
-                                        "attributes": "",
-                                        "iconCls": "fi-folder",
-                                        "openMode": ""
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "text": "Level One",
-                        "state": "open",
-                        "checked": false,
-                        "attributes": "",
-                        "iconCls": "fi-folder",
-                        "openMode": ""
-                    }
-                ]
-            },
-            {
-                "text": "Documentation",
-                "state": "close",
-                "checked": false,
-                "attributes": "",
-                "iconCls": "fi-folder",
-                "openMode": ""
-            }
-        ]
+						"text": "Editors",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					}
+				]
+			},
+			{
+				"text": "Tables",
+				"state": "close",
+				"checked": false,
+				"attributes": "",
+				"iconCls": "fi-folder",
+				"openMode": "",
+				children: [{
+						"text": "Simple tables",
+						"state": "open",
+						"checked": false,
+						"attributes": "views/simple_tables.html",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					},
+					{
+						"text": "Tree Table",
+						"state": "open",
+						"checked": false,
+						"attributes": "views/tree_tables.html",
+						"iconCls": "fi-folder",
+						"openMode": "ajax-jsx"
+					},
+					{
+						"text": "Data tables",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					}
+				]
+			},
+			{
+				"text": "Calendar",
+				"state": "close",
+				"checked": false,
+				"attributes": "",
+				"iconCls": "fi-folder",
+				"openMode": ""
+			},
+			{
+				"text": "Mailbox",
+				"state": "close",
+				"checked": false,
+				"attributes": "",
+				"iconCls": "fi-folder",
+				"openMode": "",
+				children: [{
+						"text": "Inbox",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					},
+					{
+						"text": "Compose",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					},
+					{
+						"text": "Read",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					}
+				]
+			},
+			{
+				"text": "Examples",
+				"state": "close",
+				"checked": false,
+				"attributes": "",
+				"iconCls": "fi-folder",
+				"openMode": "",
+				children: [{
+						"text": "Invoice",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					},
+					{
+						"text": "Profile",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					},
+					{
+						"text": "Login",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					},
+					{
+						"text": "Register",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					},
+					{
+						"text": "Lookscreen",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					},
+					{
+						"text": "404 Error",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					},
+					{
+						"text": "500 Error",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					},
+					{
+						"text": "Blank Page",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					},
+					{
+						"text": "Pace Page",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					}
+				]
+			},
+			{
+				"text": "Multilevel",
+				"state": "close",
+				"checked": false,
+				"attributes": "",
+				"iconCls": "fi-folder",
+				"openMode": "",
+				children: [{
+						"text": "Level One",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					},
+					{
+						"text": "Level One",
+						"state": "close",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": "",
+						children: [{
+								"text": "Level Two",
+								"state": "open",
+								"checked": false,
+								"attributes": "",
+								"iconCls": "fi-folder",
+								"openMode": ""
+							},
+							{
+								"text": "Level Two",
+								"state": "open",
+								"checked": false,
+								"attributes": "",
+								"iconCls": "fi-folder",
+								"openMode": "",
+								children: [{
+										"text": "Level Three",
+										"state": "open",
+										"checked": false,
+										"attributes": "",
+										"iconCls": "fi-folder",
+										"openMode": ""
+									},
+									{
+										"text": "Level Three",
+										"state": "open",
+										"checked": false,
+										"attributes": "",
+										"iconCls": "fi-folder",
+										"openMode": ""
+									}
+								]
+							}
+						]
+					},
+					{
+						"text": "Level One",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					}
+				]
+			},
+			{
+				"text": "Documentation",
+				"state": "close",
+				"checked": false,
+				"attributes": "",
+				"iconCls": "fi-folder",
+				"openMode": ""
+			}
+		]
 
-     
+	</script>
+	<script class="jsx" type="text/html">
 
-   
-    </script>
-    <script class="jsx" type="text/html">
+		<ZZStyleLayout>
+			<Topbar logo={{ img: './static/tmp/google.png', text: '司空管理中心' }} user={{ username: '二花爱猫咪123', img:
+			  './static/tmp/photo.jpg' }} />
+			<div class="content-wrapper">
+				<Sidebar data={{ menu: menu2 }} />
+				<div class="content" id="content">
+					<Content></Content>
+				</div>
+			</div>
+		</ZZStyleLayout>
+	</script>
 
-        <ZZStyleLayout>
-            <Topbar logo={{ img: './static/tmp/google.png', text: '司空管理中心' }} user={{ username: '二花爱猫咪123', img:
-                './static/tmp/photo.jpg' }} />
-            <div class="content-wrapper">
-                <Sidebar data={{ menu: menu2 }} />
-                <div class="content" id="content">
-                    <Content></Content>
-                </div>
-            </div>
-        </ZZStyleLayout>
-    </script>
 
-    <script src="./index.js"></script>
-    <script>
-        EasyJSX.config.easyJSXDir = '/static/easy-jsx'
-        EasyJSX.renderJSXScriptElements(document.getElementsByClassName('jsx'))
-
-        if(location.pathname != '/'){
-            EasyJSX.util.openJsx($('#content'),'views/' + location.pathname + '.html')
-        }        
-    </script>
 </body>
+<script>
+    EasyJSX.util.setConfig({
+        apiServer: 'http://localhost:3001'
+    })
+    EasyJSX.renderJSXScriptElements(document.getElementsByClassName('jsx'))
+    var util = EasyJSX.util;
+    var query = util.parseQuery(location.search);
+    if (query.contentPageUrl && query.openMode) {
+        util.openContentPage($('#content'), query.contentPageUrl, query.openMode)
+    }
+</script>
 
 </html>

@@ -1,10 +1,18 @@
 import { Component, h } from 'preact'
 
 export default class Sliders extends Component {
+
+    componentWillMount() {
+        this.counter = true
+    }
     componentDidMount() {
-        $(function () {
-            $('.slider').slider()
-        })
+        let _this = this
+        if (this.counter) {
+            this.counter = false
+            $(function () {
+                $('.slider').slider()
+            })
+        }
     }
     render() {
         let props = this.props
@@ -12,6 +20,7 @@ export default class Sliders extends Component {
             <input
                 type="text"
                 value=""
+                id={props.type}
                 className="slider form-control"
                 data-slider-min={props.min}
                 data-slider-max={props.max}

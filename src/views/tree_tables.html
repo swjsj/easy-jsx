@@ -1,0 +1,71 @@
+
+
+<div>
+        <TreeTable datagrid={{
+            url: '/organization',
+            idField: 'id',
+            treeField: 'name',
+            parentField: 'pid',
+            fit: true,
+            fitColumns: false,
+            border: false,
+            frozenColumns: [[{
+                title: 'id',
+                field: 'id',
+                width: 40,
+                hidden: true
+            }]],
+            columns: [[{
+                field: 'id',
+                title: '编号',
+                width: 40
+            }, {
+                field: 'name',
+                title: '部门名称',
+                width: 180
+            }, {
+                field: 'seq',
+                title: '排序',
+                width: 40
+            }, {
+                field: 'iconCls',
+                title: '图标',
+                width: 120
+            }, {
+                width: '130',
+                title: '创建时间',
+                field: 'createTime'
+            }, {
+                field: 'pid',
+                title: '上级资源ID',
+                width: 150,
+                hidden: true
+            }, {
+                field: 'address',
+                title: '地址',
+                width: 120
+            }, {
+                field: 'action',
+                title: '操作',
+                width: 130,
+                formatter: function (value, row, index) {
+                    var str = '';
+                    // <@shiro.hasPermission name="/organization/edit">
+                    str += `<a href="javascript:void(0)" class="organization-easyui-linkbutton-edit" data-options="plain:true,iconCls:\'fi-pencil icon-blue\'" onclick="editOrganizationFun(` + row.id + `);" >编辑</a>`
+                    // </@shiro.hasPermission>
+                    // <@shiro.hasPermission name="/organization/delete">
+                    str += '&nbsp;&nbsp;|&nbsp;&nbsp;';
+                    str += `<a href="javascript:void(0)" class="organization-easyui-linkbutton-del" data-options="plain:true,iconCls:\'fi-x icon-red\'" onclick="deleteOrganizationFun(` + row.id + `);" >删除</a>`
+                    // </@shiro.hasPermission>
+                    return str;
+                }
+            }]],
+            onLoadSuccess: function (data) {
+                $('.organization-easyui-linkbutton-edit').linkbutton({ text: '编辑' });
+                $('.organization-easyui-linkbutton-del').linkbutton({ text: '删除' });
+            },
+            toolbar: '#orgToolbar'
+        }}></TreeTable>
+
+        
+</div>

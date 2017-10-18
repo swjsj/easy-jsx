@@ -49,17 +49,7 @@ export default class Sidebar extends Component {
             }
         }else{
             event.stopPropagation();
-            var $content = $('#content')
-            console.log(item.attributes)
-            if(item.openMode == "ajax"){
-                util.openHtml($content,item.attributes)
-            }
-            if(item.openMode == "ajax-jsx"){
-                util.openJsx($content,item.attributes);
-            }
-            if(item.openMode == "iframe"){
-               util.openIframe($content,item.attributes)
-            }
+            util.openContentPage( $('#content'),item.attributes,item.openMode)
         }
     }
 

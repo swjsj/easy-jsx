@@ -1,7 +1,7 @@
-(function(global, factory) {
+(function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
         typeof define === 'function' && define.amd ? define(factory) : global.JSXParser = factory();
-})(this, function() {
+})(this, function () {
     function oneObject(str) {
         var obj = {}
         str.split(",").forEach(_ => obj[_] = true)
@@ -13,7 +13,7 @@
     var hiddenTag = oneObject('style,script,noscript,template')
 
 
-    var JSXParser = function(a, f) {
+    var JSXParser = function (a, f) {
         if (!(this instanceof JSXParser)) {
             return parse(a, f)
         }
@@ -21,7 +21,7 @@
         this.getOne = f
     }
     JSXParser.prototype = {
-        parse: function() {
+        parse: function () {
             return parse(this.input, this.getOne)
         }
     }
@@ -42,16 +42,29 @@
         return ret
     }
 
+    //解析jsx字符串
+    //解析，分为两步，先是进行词发分析，将输入转换成一个一个的Token，然后是进行语法分析。一个一个的Token组成语句，对应一定的语法。根据这些Toke，匹配一定的语法。词法分析器，lexer，是语法分析器，parser，的基础。
+
     function lexer(string, getOne) {
-        var tokens = []
-        var breakIndex = 120
+
+        //用来限制循环次数 其实没太大必要
+        //var breakIndex = 12000 
+
+        //正在解析的尚未关闭的标签
         var stack = []
+
+        //原始字符串
         var origString = string
+        //原始字符串长度
         var origLength = string.length
 
-        stack.last = function() {
+
+
+        stack.last = function () {
             return stack[stack.length - 1]
         }
+
+        //返回结构 词法分析生成的token node数组
         var ret = []
 
         function addNode(node) {
@@ -65,17 +78,17 @@
 
         var lastNode
         do {
-            if (--breakIndex === 0) {
-                break
-            }
+            // if (--breakIndex === 0) {
+            //     break
+            // }
             var arr = getCloseTag(string)
 
             if (arr) { //处理关闭标签
                 string = string.replace(arr[0], '')
                 const node = stack.pop()
-                    //处理下面两种特殊情况：
-                    //1. option会自动移除元素节点，将它们的nodeValue组成新的文本节点
-                    //2. table会将没有被thead, tbody, tfoot包起来的tr或文本节点，收集到一个新的tbody元素中
+                //处理下面两种特殊情况：
+                //1. option会自动移除元素节点，将它们的nodeValue组成新的文本节点
+                //2. table会将没有被thead, tbody, tfoot包起来的tr或文本节点，收集到一个新的tbody元素中
                 if (node.type === 'option') {
                     node.children = [{
                         type: '#text',
@@ -121,8 +134,8 @@
             } while (string.length);
             //处理<div>{aaa}</div>,<div>xxx{aaa}xxx</div>,<div>xxx</div>{aaa}sss的情况
             const index = string.indexOf('<') //判定它后面是否存在标签
-            const bindex = string.indexOf('{') //判定它后面是否存在jsx
-            const aindex = string.indexOf('}')
+            const bindex = string.indexOf('{') //判定它后面是否存在jsx  before index
+            const aindex = string.indexOf('}') // after index
 
             let hasJSX = (bindex < aindex) && (index === -1 || bindex < index)
             if (hasJSX) {
@@ -136,7 +149,7 @@
                 addNode(makeJSX(arr[1]))
                 lastNode = false
                 string = string.slice(arr[0].length + 1) //去掉后面的}
-            } else {
+            } else { //收集文本节点
                 if (index === -1) {
                     text = string
                     string = ''
@@ -150,7 +163,6 @@
         } while (string.length);
         return ret
     }
-
 
     function addText(lastNode, text, addNode) {
         if (/\S/.test(text)) {
@@ -166,7 +178,7 @@
         }
     }
     var rsp = /\s/
-        //它用于解析{}中的内容，如果遇到不匹配的}则返回, 根据标签切割里面的内容 
+    //它用于解析{}中的内容，如果遇到不匹配的}则返回, 根据标签切割里面的内容 
     function parseCode(string) { // <div id={ function(){<div/>} }>
         var word = '', //用于匹配前面的单词
             braceIndex = 1,
@@ -336,7 +348,7 @@
                     leftContent += '/>'
                     string = string.slice(2)
                     node.isVoidTag = true
-                } 
+                }
 
                 if (!node.isVoidTag && specalTag[tag]) { //如果是script, style, xmp等元素
                     var closeTag = '</' + tag + '>'
@@ -356,7 +368,7 @@
 
     function getText(node) {
         var ret = ''
-        node.children.forEach(function(el) {
+        node.children.forEach(function (el) {
             if (el.type === '#text') {
                 ret += el.nodeValue
             } else if (el.children && !hiddenTag[el.type]) {
