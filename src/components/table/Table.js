@@ -5,14 +5,24 @@ export default class Table extends Component {
 
 
     componentDidMount() {
-        var $table = $(this.table);
-        $table.bootstrapTable({ data: this.props.data });
-        var bsTable = $table.data('bootstrap.table')
-        bsTable.hideLoading();
-        $(this.ok).click(function () {
-            $table.bootstrapTable('refresh');
-            bsTable = $table.data('bootstrap.table')
-        });
+
+        var {datagrid} = {...this.props}; 
+        var url = util.getReqUrl(datagrid.url)
+        $.get(url,(res)=>{
+            // this.setState({
+            //     data:res
+            // })
+
+            var $table = $(this.table);
+            $table.bootstrapTable({ data: res });
+            var bsTable = $table.data('bootstrap.table')
+            bsTable.hideLoading();
+            // $(this.ok).click(function () {
+            //     $table.bootstrapTable('refresh');
+            //     bsTable = $table.data('bootstrap.table')
+            // });
+    
+        })
     }
 
     render() {
