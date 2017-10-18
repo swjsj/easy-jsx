@@ -5,4 +5,6 @@ node_modules
 .idea
 .idea/
 .idea/workspace.xml
-src/components/*.css
+src/components/**/*.css
+src/static/vendor.js
+manifest.json
