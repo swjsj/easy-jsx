@@ -1,5 +1,7 @@
 import * as parser from './parser'
-//
+
+
+import shortid from 'shortid'
 
 const leafTag = '_@@_EasyJSXLeaf'
 export function isLeaf(tree) {
@@ -57,7 +59,7 @@ export function list2tree(list, options = { idKey: 'id', pidKey: 'pid' }) {
 }
 
 
-export function renderJsx(jsxStr,elem, scope = {}) {
+export function renderJsx(jsxStr, elem, scope = {}) {
 
     var evaled = parser.evalJSX(jsxStr, {
         ...EasyJSX.components,
@@ -67,55 +69,88 @@ export function renderJsx(jsxStr,elem, scope = {}) {
 }
 
 
-export function openJsx($content,url){
-    $.get(url,function(res){
+export function openJsx($content, url) {
+    $.get(url, function (res) {
+
+        var sourcemap = {};
+        res = res.replace(/<Codebox(.*)>((.|[\r\n])*?)<\/Codebox>/gm,function(){
+            var argsStr = arguments[1];
+            var contentStr = arguments[2];
+            var id = "codebox-" + shortid.generate();
+            sourcemap[id] = contentStr;
+            return `<Codebox ${argsStr} id="${id}">${contentStr}</Codebox>`
+        })
+        console.log(res)
         $content.html('')
-        var warp = document.createElement('div'); 
-        renderJsx(res,warp)
-        $(warp).appendTo($content);
+        var $warp = $('<div>');
+        renderJsx(res, $warp[0])
+        $warp.appendTo($content);
         ///var jsxCode = 
 
+        for(var id in sourcemap){
+            var element = $warp.find('#' + id)[0];
+            element && (element.source = sourcemap[id]);
+        }
 
-        var code = $('<code class="language-jsx"></code>')[0];
-        var pre = $('<pre class="language-jsx"></pre>');
-        $(code).appendTo(pre);
-        pre.appendTo($content);
+        //处理codebox
+        //1.解析源字符串，找出所有codebox对应源码 id 
+        //2.源码和对于组件建立映射  element.id ,element.textContent
+        //3.处理事件绑定(组件内自行处理)
 
-        code.textContent = res;
-        Prism.highlightElement(code);
-
+        /**
+            <div>
+          	    <div className="view-box">
+                <Codebox>
+                    <TreeSelect data={treeSelectData} />
+                </Codebox>
+				</div>
+                <div className="view-box">
+                  <Codebox>
+					<Alert icon={<Icon type="anchor" />} title="这个是标题" type="info">
+						这里是正文这里是正文这里是正文这里是正文这里是正文
+                    </Alert>
+                  </Codebox>
+				</div>
+                <div className="view-box">
+                <Codebox>
+                    <Editor className="Editor" />
+                </Codebox>
+                </div>
+            </div>
+         */
+  
     })
 }
 
 
 
-export function openHtml($content,url){
-    $.get(url,function(res){
+export function openHtml($content, url) {
+    $.get(url, function (res) {
         $content.html(res)
     })
 }
 
-export function openIframe($content,url){
-    var frame = $(document.createElement('iframe')).attr('src',url)
-    for(var i in item.frameStyle){
-        frame.css(i,item.frameStyle[i]);
+export function openIframe($content, url,style) {
+    var frame = $(document.createElement('iframe')).attr('src', url)
+    for (var i in style) {
+        frame.css(i, style[i]);
     }
     $content.html('').append(frame);
 }
 
 
-export function openContentPage($content,pageUrl,openMode){
-    if(openMode == "ajax"){
-        openHtml($content,pageUrl)
+export function openContentPage($content, pageUrl, openMode,style) {
+    if (openMode == "ajax") {
+        openHtml($content, pageUrl)
     }
-    if(openMode == "ajax-jsx"){
-        openJsx($content,pageUrl);
+    if (openMode == "ajax-jsx") {
+        openJsx($content, pageUrl);
     }
-    if(openMode == "iframe"){
-       openIframe($content,pageUrl)
+    if (openMode == "iframe") {
+        openIframe($content, pageUrl,style)
     }
 
-    history.pushState(null,null,`?contentPageUrl=${pageUrl}&openMode=${openMode}`)
+    history.pushState(null, null, `?contentPageUrl=${pageUrl}&openMode=${openMode}`)
 }
 
 
