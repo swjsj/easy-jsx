@@ -19,6 +19,7 @@ export default {
 	Topbar: require('./topbar/Topbar').default,
 	Tree: require('./tree/Tree').default, 
 	TreeTable:require('./table/TreeTable').default,
+	InfoPalette: require('./widgets/InfoPalette').default,
 	Select:require('./select/Select').default,
 	SelectOption:require('./select/SelectOption').default,
 	TreeSelect:require('./select/TreeSelect').default,
