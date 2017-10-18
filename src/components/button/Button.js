@@ -19,7 +19,14 @@ export default class Button extends Component {
             ButtonClass = `${ButtonClass} btn-${this.props.size}`
         }
         return (
-            <button type="button" className={ButtonClass} disabled={ButtonDisabled}>{this.props.children}</button>
+            <button type="button"
+                className={ButtonClass}
+                disabled={ButtonDisabled}
+                data-toggle={this.props.toggle} 
+                data-target={this.props.target}
+            >
+                {this.props.children}
+            </button>
         )
     }
 }
