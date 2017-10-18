@@ -157,7 +157,7 @@ let treeSelectData = [
 	}, {
 		"id": 3,
 		"text": "333333333333",
-		"state": "open",
+		"state": "close",
 		"checked": false,
 		"attributes": null,
 		"iconCls": null,
@@ -166,12 +166,77 @@ let treeSelectData = [
 	}, {
 		"id": 4,
 		"text": "44444444",
-		"state": "open",
+		"state": "close",
 		"checked": false,
 		"attributes": null,
 		"iconCls": null,
 		"pid": 3,
 		"openMode": null
+	}
+]
+
+var TimelineData = [
+	{
+		timeLabel: {
+			type: 'bg-red',
+			content: '10 Feb. 2014'
+		},
+		timelineItem: {
+			icon: {
+				type: 'envelope',
+				colorType: 'bg-blue'
+			},
+			content: {
+				time: {
+					content: '12:05',
+					icon: {
+						type: 'clock-o',
+						colorType: ''
+					}
+				},
+				header: {
+					link: 'www.baidu.comn',
+					content: 'Support Team'
+				},
+				body: {
+					content: '...Content goes here'
+				},
+				footer: {
+					content: '<a className="btn btn-primary btn-xs">...</a>'
+				}
+			}
+		}
+	},
+	{
+		timeLabel: {
+			type: 'bg-red',
+			content: '10 Feb. 2014'
+		},
+		timelineItem: {
+			icon: {
+				type: 'envelope',
+				colorType: 'bg-blue'
+			},
+			content: {
+				time: {
+					content: '12:05',
+					icon: {
+						type: 'clock-o',
+						colorType: ''
+					}
+				},
+				header: {
+					link: 'www.baidu.comn',
+					content: 'Support Team'
+				},
+				body: {
+					content: '...Content goes here'
+				},
+				footer: {
+					content: '<a className="btn btn-primary btn-xs">...</a>'
+				}
+			}
+		}
 	}
 ]
 export default ()=>(
@@ -180,9 +245,9 @@ export default ()=>(
 				{/* <div className="view-box">
 					<Tree data={treeData} />
 				</div> */}
-				{/* <div className="view-box">
+				<div className="view-box">
 					<TreeSelect data={treeSelectData} />
-				</div> */}
+				</div>
 				<div className="view-box">
 					<Alert icon={<Icon type="anchor" />} title="这个是标题" type="info">
 						这里是正文这里是正文这里是正文这里是正文这里是正文
@@ -263,7 +328,7 @@ export default ()=>(
 					<Icon type="anchor" />
 				</div>
 				<div className="view-box">
-					<Timeline />
+					<Timeline data={TimelineData}/>
 				</div>
 				<div className="view-box">
 					<Sliders id="" />
@@ -278,7 +343,7 @@ export default ()=>(
 
 			<Icon path="/blog" />
 			<Sliders path="/blog/:title" />
-			<Timeline path="/credit" />
+			<Timeline path="/credit" data={TimelineData}/>
 
 	</div>
 );

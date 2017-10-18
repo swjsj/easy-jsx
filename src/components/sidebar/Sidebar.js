@@ -18,11 +18,11 @@ export default class Sidebar extends Component {
         var viewList = menuTree.map((item) => { return this.getTreeItemView(item) })
         return viewList;
     }
-    getAngle(option) {
-        if (option.children) {
+    getAngle(item) {
+        if (item.children) {
             return (
                 <span className="pull-right-container">
-                    <Icon type="angle-left" />
+                    <Icon type={this.isVisiableItem(item)?"angle-down": "angle-left"} />
                 </span>
             )
         }
@@ -37,41 +37,35 @@ export default class Sidebar extends Component {
         if(item.children){
             var parent = target.parent();
             if(parent.hasClass('menu-open')){
-                target.next().addClass('hide')
+                target.next().addClass('hide');
+                target.find('i').removeClass('fa-angle-down').addClass('fa-angle-left')
+                
                 parent.removeClass('menu-open');
             }else{
                 target.next().removeClass('hide')
+                target.find('i').removeClass('fa-angle-left').addClass('fa-angle-down')
+                
                 parent.addClass('menu-open');
             }
         }else{
-            event.stopPropagation()
+            event.stopPropagation();
+            var $content = $('#content')
             console.log(item.attributes)
             if(item.openMode == "ajax"){
-                $.get(item.attributes,function(res){
-                    $('#content').html(res)
-                })
+                util.openHtml($content,item.attributes)
             }
             if(item.openMode == "ajax-jsx"){
-                $.get(item.attributes,function(res){
-                    $('#content').html('')
-                    var warp = document.createElement('div'); 
-                    util.renderJsx(res,warp)
-                    $(warp).appendTo($('#content'))
-                })
+                util.openJsx($content,item.attributes);
             }
             if(item.openMode == "iframe"){
-                var frame = $('iframe').attr('src',item.attributes)
-                for(var i in item.frameStyle){
-                    frame.css(i,item.frameStyle[i]);
-                }
-                $('#content').html('').append(frame);
+               util.openIframe($content,item.attributes)
             }
         }
     }
 
     getTreeItemView(item) {
         var view = <li className={"treeview " + (this.isVisiableItem(item) ? "menu-open" : '')}>
-            <a onClick={this.click.bind(this,item)}>
+            <a onClick={this.click.bind(this,item)} style="user-select: none;">
                 {item.text}
                 {this.getAngle(item)}
             </a>

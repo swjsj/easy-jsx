@@ -65,3 +65,27 @@ export function renderJsx(jsxStr,elem, scope = {}) {
     })
     preact.render(evaled, elem);
 }
+
+
+export function openJsx($content,url){
+    $.get(url,function(res){
+        $content.html('')
+        var warp = document.createElement('div'); 
+        renderJsx(res,warp)
+        $(warp).appendTo($content)
+    })
+}
+
+export function openHtml($content,url){
+    $.get(url,function(res){
+        $content.html(res)
+    })
+}
+
+export function openIframe($content,url){
+    var frame = $(document.createElement('iframe')).attr('src',url)
+    for(var i in item.frameStyle){
+        frame.css(i,item.frameStyle[i]);
+    }
+    $content.html('').append(frame);
+}

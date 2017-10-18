@@ -19,5 +19,5 @@ export default {
 	Topbar: require('./topbar/Topbar').default,
 	Tree: require('./tree/Tree').default, 
 	TreeTable:require('./table/TreeTable').default,
-	Infobox: require('./infobox/Infobox').default
+	InfoPalette: require('./widgets/InfoPalette').default
 }

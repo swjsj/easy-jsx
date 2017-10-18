@@ -12,7 +12,10 @@
     .progress {
         background: rgba(0,0,0,0.2);
         margin: 5px -10px 5px -10px;
-        height: 2px
+        height: 2px;
+        .progress-bar {
+            background: #fff
+        }
     }
 }
 .info-box-icon {
@@ -41,7 +44,7 @@
     font-weight: bold;
     font-size: 18px;
 }
-.info-box-text {
+.progress-description, .info-box-text {
     display: block;
     font-size: 14px;
     white-space: nowrap;
@@ -51,8 +54,11 @@
 .info-box-text {
     text-transform: uppercase;
 }
+.progress-description {
+    margin: 0
+}
 .bg-aqua{
-    background-color: #00c0ef !important
+    background-color: #00BFEF !important
 }
 .bg-green{
     background-color: #00a65a !important

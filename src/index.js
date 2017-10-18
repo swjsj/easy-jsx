@@ -5,6 +5,8 @@ export var parser = require('./components/util/parser')
 
 export var config = require('./config').default
 
+import * as util from '././components/util';
+export {util as util}
 
 import _components from './components'
 // import jQuery from 'jquery'

@@ -1,166 +1,506 @@
 @headerHight: 50px;
 @sidebarWidth: 230px;
-
 // body{
 // background: #333333;
 // }
-
 .zzstyle {
-    ul{
-        margin: 0;
-        padding: 0;
-    }
-    a{
-        text-decoration: none;
-    }
-    @sidebarBackground: #222d32;
-    @sidebarMenuBackground: #181f23;
-    @sidebarMenuBackgroundHover: #1c2529;
-    @sidebarMenuColor: #b8c7ce;
-    @sidebarMenuColorHover: #fff;
-    @sidebarTreeviewMenuBackgrund: #2c3b41;
-    @sidebarTreeviewMenuColor: #8aa4af;
-    .topbar {
-        background: #ffffff;
-        box-shadow: 0 1px 0 0 #efefef;
-        width: 100%;
-        height: @headerHight;
-        line-height: @headerHight;
-        vertical-align: middle;
-        position: relative;
-        z-index: 820;
-        .logo {
-            float: left;
-            margin-left: 30px;
-            span {
-                font-family: MicrosoftYaHei;
-                font-size: 14px;
-                color: #000000;
-                letter-spacing: 0;
-                line-height: 14px;
-                text-align: left;
-                margin-left: 30px;
-                font-weight: bold;
-                height: @headerHight;
-                line-height: @headerHight;
-            }
-        }
-        .user {
-            float: right;
-            img {
-                background: #d8d8e1;
-                width: 28px;
-                height: 28px;
-                border-radius: 100%;
-                line-height: @headerHight;
-            }
-            .username {
-                padding-left: 10px;
-                margin-right: 10px;
-                font-family: MicrosoftYaHei;
-                font-size: 12px;
-                color: #333333;
-                letter-spacing: 0;
-                line-height: @headerHight;
-                text-align: left;
-            }
-            .edit-passwd {
-                padding-left: 20px;
-                opacity: 0.9;
-                font-family: MicrosoftYaHei;
-                font-size: 12px;
-                color: #4a5d82;
-                letter-spacing: 0;
-                line-height: @headerHight;
-                text-align: center;
-                border: none;
-            }
-            .exit {
-                font-family: MicrosoftYaHei;
-                font-size: 12px;
-                color: #999999;
-                text-align: center;
-                border: none;
-                line-height: @headerHight;
-            }
-        }
-    }
-    .content-wrapper {     
-        position: relative;
-        .sidebar {
-            background: @sidebarBackground;
-            position: absolute;
-            top: 0;
-            left: 0;
-            min-height: 100%;
-            width: @sidebarWidth;
-            z-index: 810;
-            margin-bottom: -2000px;
-            padding-bottom: 2000px;
-            overflow: hidden;
-        }
-        .content {
-            margin-left: @sidebarWidth;
-            padding-top: @headerHight;
-            padding-left: 30px;
-            background: #ffffff;
-        }
-    }
-    .sidebar-menu{
-        &>li>a{
-            background: @sidebarMenuBackground;
-            color: @sidebarMenuColor;
-            position: relative;
-            padding: 12px 5px 12px 15px;
-            display: block;
-            font-size: 14px;
-            cursor: pointer;
-            &:hover,a:focus,&:active{
-                background: @sidebarMenuBackgroundHover;
-                color: @sidebarMenuColorHover;
-            }
-            .pull-right-container{
-                position: absolute;
-                right: 10px;
-                top: 50%;
-                margin-top: -10px;
-            }
-        }
-        .treeview-menu{
-            background: @sidebarTreeviewMenuBackgrund;
-            &>li>a{
-                padding: 5px 5px 5px 15px;
-                display: block;
-                font-size: 12px;
-                color: @sidebarTreeviewMenuColor;
-                cursor: pointer;
-                &:hover,a:focus,&:active{
-                    color: @sidebarMenuColorHover;
-                }
-            }
-        }
-    }
-    table{
-        width: 100%;
-        font-size: 12px;
-        color: #666;
-        th{
-            padding: 17px 10px 15px;
-            background:#efefef;
-            text-align: center;
-            font-weight: normal;
-            border:1px solid #efefef;
-        }
-        td{
-            text-align: center;
-            padding: 17px 10px 15px;
-            border:1px solid #efefef;
-            a{
-                color:#4a5d82;
-            }
-        }
-        tr:nth-child(2n){
-            background: #f8f9f9;
-        }
-    }
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+	a {
+		text-decoration: none;
+	}
+	@sidebarBackground: #222d32;
+	@sidebarMenuBackground: #181f23;
+	@sidebarMenuBackgroundHover: #1c2529;
+	@sidebarMenuColor: #b8c7ce;
+	@sidebarMenuColorHover: #fff;
+	@sidebarTreeviewMenuBackgrund: #2c3b41;
+	@sidebarTreeviewMenuColor: #8aa4af;
+	.topbar {
+		background: #ffffff;
+		box-shadow: 0 1px 0 0 #efefef;
+		width: 100%;
+		height: @headerHight;
+		line-height: @headerHight;
+		vertical-align: middle;
+		position: relative;
+		z-index: 820;
+		.logo {
+			float: left;
+			margin-left: 30px;
+			span {
+				font-family: MicrosoftYaHei;
+				font-size: 14px;
+				color: #000000;
+				letter-spacing: 0;
+				line-height: 14px;
+				text-align: left;
+				margin-left: 30px;
+				font-weight: bold;
+				height: @headerHight;
+				line-height: @headerHight;
+			}
+		}
+		.user {
+			float: right;
+			img {
+				background: #d8d8e1;
+				width: 28px;
+				height: 28px;
+				border-radius: 100%;
+				line-height: @headerHight;
+			}
+			.username {
+				padding-left: 10px;
+				margin-right: 10px;
+				font-family: MicrosoftYaHei;
+				font-size: 12px;
+				color: #333333;
+				letter-spacing: 0;
+				line-height: @headerHight;
+				text-align: left;
+			}
+			.edit-passwd {
+				padding-left: 20px;
+				opacity: 0.9;
+				font-family: MicrosoftYaHei;
+				font-size: 12px;
+				color: #4a5d82;
+				letter-spacing: 0;
+				line-height: @headerHight;
+				text-align: center;
+				border: none;
+			}
+			.exit {
+				font-family: MicrosoftYaHei;
+				font-size: 12px;
+				color: #999999;
+				text-align: center;
+				border: none;
+				line-height: @headerHight;
+			}
+		}
+	}
+	.content-wrapper {
+		position: relative;
+		.sidebar {
+			background: @sidebarBackground;
+			position: absolute;
+			top: 0;
+			left: 0;
+			min-height: 100%;
+			width: @sidebarWidth;
+			z-index: 810;
+			padding-bottom: 2000px;
+			margin-bottom: -2000px;
+			overflow-y: hidden;
+		}
+		.content {
+			margin-left: @sidebarWidth;
+			padding-top: @headerHight;
+			margin-right: 30px;
+			padding-left: 30px;
+			background: #ffffff;
+		}
+	}
+	.sidebar-menu {
+		&>li>a {
+			background: @sidebarMenuBackground;
+			color: @sidebarMenuColor;
+			position: relative;
+			padding: 12px 5px 12px 15px;
+			display: block;
+			font-size: 14px;
+			cursor: pointer;
+			&:hover,
+			a:focus,
+			&:active {
+				background: @sidebarMenuBackgroundHover;
+				color: @sidebarMenuColorHover;
+			}
+			.pull-right-container {
+				position: absolute;
+				right: 10px;
+				top: 50%;
+				margin-top: -10px;
+			}
+		}
+		.treeview-menu {
+			background: @sidebarTreeviewMenuBackgrund;
+			&>li>a {
+				padding: 5px 5px 5px 15px;
+				display: block;
+				font-size: 12px;
+				color: @sidebarTreeviewMenuColor;
+				cursor: pointer;
+				&:hover,
+				a:focus,
+				&:active {
+					color: @sidebarMenuColorHover;
+				}
+			}
+		}
+	}
+	table {
+		width: 100%;
+		font-size: 12px;
+		color: #666;
+		th {
+			padding: 17px 10px 15px;
+			background: #efefef;
+			text-align: center;
+			font-weight: normal;
+			border: 1px solid #efefef;
+		}
+		td {
+			text-align: center;
+			padding: 17px 10px 15px;
+			border: 1px solid #efefef;
+			a {
+				color: #4a5d82;
+			}
+		}
+		tr:nth-child(2n) {
+			background: #f8f9f9;
+		}
+	}
+}
+
+@bgTextColor: #fff;
+// gray
+@grayColor: #d2d6de;
+@grayTextColor: #000;
+@grayAactiveColor: #000;
+@grayLightColor: #f7f7f7;
+// black
+@blackColor: #111;
+@blackLightColor: #111;
+// red
+@redColor: #dd4b39;
+// yellow
+@yellowColor: #f39c12;
+@infoColor: #00c0ef;
+@blueColor: #0073b7;
+@primary: #3c8dbc;
+@successColor: #00a65a;
+@navyColor: #001f3f;
+@tealColor: #39cccc;
+@oliveColor: #3d9970;
+@limeColor: #01ff70;
+@orangeColor: #ff851b;
+@fuchsiaColor: #f012be;
+@purpleColor: #605ca8;
+@maroonColor: #d81b60;
+.bg-red,
+.bg-yellow,
+.bg-aqua,
+.bg-blue,
+.bg-light-blue,
+.bg-green,
+.bg-navy,
+.bg-teal,
+.bg-olive,
+.bg-lime,
+.bg-orange,
+.bg-fuchsia,
+.bg-purple,
+.bg-maroon,
+.bg-black,
+.bg-red-active,
+.bg-yellow-active,
+.bg-aqua-active,
+.bg-blue-active,
+.bg-light-blue-active,
+.bg-green-active,
+.bg-navy-active,
+.bg-teal-active,
+.bg-olive-active,
+.bg-lime-active,
+.bg-orange-active,
+.bg-fuchsia-active,
+.bg-purple-active,
+.bg-maroon-active,
+.bg-black-active,
+.callout.callout-danger,
+.callout.callout-warning,
+.callout.callout-info,
+.callout.callout-success,
+.alert-success,
+.alert-danger,
+.alert-error,
+.alert-warning,
+.alert-info,
+.label-danger,
+.label-info,
+.label-warning,
+.label-primary,
+.label-success,
+.modal-primary .modal-body,
+.modal-primary .modal-header,
+.modal-primary .modal-footer,
+.modal-warning .modal-body,
+.modal-warning .modal-header,
+.modal-warning .modal-footer,
+.modal-info .modal-body,
+.modal-info .modal-header,
+.modal-info .modal-footer,
+.modal-success .modal-body,
+.modal-success .modal-header,
+.modal-success .modal-footer,
+.modal-danger .modal-body,
+.modal-danger .modal-header,
+.modal-danger .modal-footer {
+	color: @bgTextColor !important
+}
+
+.bg-gray {
+	color: @grayTextColor;
+	background-color: @grayColor !important
+}
+
+.bg-gray-light {
+	background-color: @grayLightColor
+}
+
+.bg-black {
+	background-color: @blackColor !important
+}
+
+.bg-red,
+.callout.callout-danger,
+.alert-danger,
+.alert-error,
+.label-danger,
+.modal-danger .modal-body {
+	background-color: @redColor !important
+}
+
+.bg-yellow,
+.callout.callout-warning,
+.alert-warning,
+.label-warning,
+.modal-warning .modal-body {
+	background-color: @yellowColor !important
+}
+
+.bg-aqua,
+.callout.callout-info,
+.alert-info,
+.label-info,
+.modal-info .modal-body {
+	background-color: @infoColor
+}
+
+.bg-blue {
+	background-color: @blueColor
+}
+
+.bg-light-blue,
+.label-primary,
+.modal-primary .modal-body {
+	background-color: @primary
+}
+
+.bg-green,
+.callout.callout-success,
+.alert-success,
+.label-success,
+.modal-success .modal-body {
+	background-color: @successColor
+}
+
+.bg-navy {
+	background-color: @navyColor
+}
+
+.bg-teal {
+	background-color: @tealColor
+}
+
+.bg-olive {
+	background-color: @oliveColor
+}
+
+.bg-lime {
+	background-color: @limeColor
+}
+
+.bg-orange {
+	background-color: @orangeColor
+}
+
+.bg-fuchsia {
+	background-color: @fuchsiaColor
+}
+
+.bg-purple {
+	background-color: @purpleColor
+}
+
+.bg-maroon {
+	background-color: @maroonColor
+}
+
+.bg-gray-active {
+	color: @grayTextColor;
+	background-color: @grayAactiveColor !important
+}
+
+.bg-black-active {
+	background-color: #000 !important
+}
+
+.bg-red-active,
+.modal-danger .modal-header,
+.modal-danger .modal-footer {
+	background-color: #d33724 !important
+}
+
+.bg-yellow-active,
+.modal-warning .modal-header,
+.modal-warning .modal-footer {
+	background-color: #db8b0b !important
+}
+
+.bg-aqua-active,
+.modal-info .modal-header,
+.modal-info .modal-footer {
+	background-color: #00a7d0 !important
+}
+
+.bg-blue-active {
+	background-color: #005384 !important
+}
+
+.bg-light-blue-active,
+.modal-primary .modal-header,
+.modal-primary .modal-footer {
+	background-color: #357ca5 !important
+}
+
+.bg-green-active,
+.modal-success .modal-header,
+.modal-success .modal-footer {
+	background-color: #008d4c !important
+}
+
+.bg-navy-active {
+	background-color: #001a35 !important
+}
+
+.bg-teal-active {
+	background-color: #30bbbb !important
+}
+
+.bg-olive-active {
+	background-color: #368763 !important
+}
+
+.bg-lime-active {
+	background-color: #00e765 !important
+}
+
+.bg-orange-active {
+	background-color: #ff7701 !important
+}
+
+.bg-fuchsia-active {
+	background-color: #db0ead !important
+}
+
+.bg-purple-active {
+	background-color: #555299 !important
+}
+
+.bg-maroon-active {
+	background-color: #ca195a !important
+}
+
+[class^="bg-"].disabled {
+	opacity: .65;
+	filter: alpha(opacity=65)
+}
+
+.text-red {
+	color: @redColor
+}
+
+.text-yellow {
+	color: @yellowColor
+}
+
+.text-aqua {
+	color: @infoColor
+}
+
+.text-blue {
+	color: @blueColor
+}
+
+.text-black {
+	color: #111 !important
+}
+
+.text-light-blue {
+	color: @primary
+}
+
+.text-green {
+	color: @successColor
+}
+
+.text-gray {
+	color: #d2d6de !important
+}
+
+.text-navy {
+	color: @navyColor
+}
+
+.text-teal {
+	color: @tealColor
+}
+
+.text-olive {
+	color: @oliveColor
+}
+
+.text-lime {
+	color: @limeColor
+}
+
+.text-orange {
+	color: @orangeColor
+}
+
+.text-fuchsia {
+	color: @fuchsiaColor
+}
+
+.text-purple {
+	color: @purpleColor
+}
+
+.text-maroon {
+	color: @maroonColor
+}
+
+.link-muted {
+	color: #7a869d
+}
+
+.link-muted:hover,
+.link-muted:focus {
+	color: #606c84
+}
+
+.link-black {
+	color: #666
+}
+
+.link-black:hover,
+.link-black:focus {
+	color: #999
 }
