@@ -3,21 +3,29 @@ import * as util from '../util'
 import './table.less'
 export default class TreeTable extends Component {
 
-    componentDidMount() {
-        //debugger
+
+    componentWillMount(){
+        var {datagrid} = {...this.props}; 
+        console.log(util.getConfig())
+        var url = util.getReqUrl(datagrid.url)
+        $.get(url,(res)=>{
+            this.setState({
+                data:res
+            })
+        })
     }
 
 
-
     render() {
-        var { data, datagrid } = { ...this.props };
+        var {  datagrid } = { ...this.props };
+        var { data } = { ...this.state};
         var columns = datagrid.columns[0];
         var map = this.map = util.list2map(data)
         var tree = this.tree = util.list2tree(data)
         var itemList = this.getLeafView(tree);
         return (
             <div>
-                <div id="toolbar">
+                {/* <div id="toolbar">
                     <div class="form-inline" role="form">
                         <div class="form-group">
                             <span>Offset: </span>
@@ -30,7 +38,7 @@ export default class TreeTable extends Component {
 
                         <button id="ok" type="submit" class="btn btn-default" ref={(ok) => this.ok = ok}>OK</button>
                     </div>
-                </div>
+                </div> */}
 
                 <table>
                     <thead>

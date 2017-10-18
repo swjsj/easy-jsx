@@ -36,12 +36,13 @@
 	<script src="./static/js/demo.js"></script>
 	<script src="./static/plugins/bootstrap-slider/bootstrap-slider.js"></script>
 	<script src="./static/components/select2/dist/js/select2.full.min.js"></script>
-	<script src="./static/vendor.js"></script>
+    <script src="./static/vendor.js"></script>
+    
+    <script src="./static/components/prism/prism.js"></script>
+    <link rel="stylesheet" href="./static/components/prism/prism.css"/>
 </head>
 
 <body>
-
-
 
 	<script>
 		var data = [{
@@ -105,6 +106,14 @@
 							'width': '100%',
 							'border': 'none'
 						}
+					},
+					{
+						"text": "Codebox",
+						"state": "open",
+						"checked": false,
+						"attributes": "views/codebox.html",
+						"iconCls": "fi-folder",
+						"openMode": "ajax-jsx"
 					}
 				]
 			},
@@ -151,11 +160,11 @@
 			},
 			{
 				"text": "Widgets",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": "",
+                "state": "open",
+                "checked": false,
+                "attributes": "views/widgets.html",
+                "iconCls": "fi-folder",
+                "openMode": "ajax-jsx",
 			},
 			{
 				"text": "Charts",
@@ -318,9 +327,9 @@
 						"text": "Data tables",
 						"state": "open",
 						"checked": false,
-						"attributes": "",
+						"attributes": "views/data_tables.html",
 						"iconCls": "fi-folder",
-						"openMode": ""
+						"openMode": "ajax-jsx"
 					}
 				]
 			},
@@ -538,17 +547,18 @@
 		</ZZStyleLayout>
 	</script>
 
-	<script src="./index.js"></script>
-	<script>
-		EasyJSX.config.easyJSXDir = '/static/easy-jsx'
-		EasyJSX.renderJSXScriptElements(document.getElementsByClassName('jsx'))
-		var util = EasyJSX.util;
-		var query = util.parseQuery(location.search);
-		if (query.contentPageUrl && query.openMode) {
-			util.openContentPage($('#content'), query.contentPageUrl, query.openMode)
-		}
 
-	</script>
 </body>
+<script>
+    EasyJSX.util.setConfig({
+        apiServer: 'http://localhost:3001'
+    })
+    EasyJSX.renderJSXScriptElements(document.getElementsByClassName('jsx'))
+    var util = EasyJSX.util;
+    var query = util.parseQuery(location.search);
+    if (query.contentPageUrl && query.openMode) {
+        util.openContentPage($('#content'), query.contentPageUrl, query.openMode)
+    }
+</script>
 
 </html>

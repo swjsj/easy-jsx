@@ -1,3 +1,4 @@
+import * as config from './config'
 export function parseUrl(url){
 
 }
@@ -10,4 +11,10 @@ export function parseQuery(qstr) {
         query[decodeURIComponent(b[0])] = decodeURIComponent(b[1] || '');
     }
     return query;
+}
+
+
+export function getReqUrl(url){
+    console.log(config.getConfig())
+    return config.getConfig().apiServer + url;
 }
