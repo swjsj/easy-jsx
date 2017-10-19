@@ -7,9 +7,6 @@ import './codebox.less'
 export default class Codebox extends Component {
 
 
-    code() {
-
-    }
 
     initedPrism = false;
     showingCode = false;
