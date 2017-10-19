@@ -1,6 +1,6 @@
 import JSXParser from './JSXParser'
 import preact from 'preact'
-
+import * as db from './db'
 var rComponent = /^(this|[A-Z])/
 var cacheFns = {}
 var cacheStr = {}
@@ -133,7 +133,13 @@ innerClass.prototype = {
                 ret[ret.length] = JSON.stringify(el.nodeValue)
             } else if(el.type === "script"){
                 var scriptStr = el.children[0].nodeValue;
-                window.eval(scriptStr)
+                if(el.props.execute == "lazy"){
+                    var lazyScripts = db.get('lazyScripts') || [];
+                    lazyScripts.push(scriptStr);
+                    db.set('lazyScripts',lazyScripts);
+                }else{
+                    window.eval(scriptStr)
+                }
             }else if (el) {
                 ret[ret.length] = this.genTag(el)
             }

@@ -20,7 +20,7 @@ export var components = {
 
 $.fn.extend({
     component: function () {
-        return this[0] && this[0].base && this[0].base._component
+        return this[0] && this[0]._component
     }
 });
 
