@@ -1,5 +1,7 @@
 import { Component, h } from 'preact'
 import './table.less'
+import * as util from '../util'
+
 export default class Table extends Component {
 
 
