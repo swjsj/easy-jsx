@@ -6,7 +6,7 @@
     title="这个是标题" 
     onClick={()=>{alert("default")}}
     dismiss={<Button type="default" dismiss="modal">取消</Button>}
-    confirm={<Button onClick={()=>{alert("default")}} type="primary">确定</Button>}
+    confirm={<Button onClick={()=>{$('#modal-default').modal('hide')}} type="primary">确定</Button>}
     >
 		<p>这里是主体内容</p>
 	</Modals>

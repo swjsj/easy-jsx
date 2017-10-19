@@ -48,7 +48,7 @@
     function lexer(string, getOne) {
 
         //用来限制循环次数 其实没太大必要
-        //var breakIndex = 12000 
+        var breakIndex = 12000 
 
         //正在解析的尚未关闭的标签
         var stack = []
@@ -78,9 +78,9 @@
 
         var lastNode
         do {
-            // if (--breakIndex === 0) {
-            //     break
-            // }
+            if (--breakIndex === 0) {
+                break
+            }
             var arr = getCloseTag(string)
 
             if (arr) { //处理关闭标签
