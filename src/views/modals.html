@@ -1,31 +1,38 @@
 <div>
 	<Button type="default" toggle="modal" target="#modal-default">Default</Button>
-	<Modals type="default" id="modal-default" title="这个是标题" onClick={()=>{alert("default"}}>
+    <Modals 
+    type="default" 
+    id="modal-default" 
+    title="这个是标题" 
+    onClick={()=>{alert("default")}}
+    dismiss={<Button type="default" dismiss="modal">取消</Button>}
+    confirm={<Button onClick={()=>{$('#modal-default').modal('hide')}} type="primary">确定</Button>}
+    >
 		<p>这里是主体内容</p>
 	</Modals>
 
 	<Button type="primary" toggle="modal" target="#modal-primary">Primary</Button>
-	<Modals type="primary" id="modal-primary" title="这个是标题" onClick={()=>{alert("primary"}}>
+	<Modals type="primary" id="modal-primary" title="这个是标题" onClick={()=>{alert("primary")}}>
 		<p>这里是主体内容</p>
 	</Modals>
 
 	<Button type="success" toggle="modal" target="#modal-success">Success</Button>
-	<Modals type="success" id="modal-success" title="这个是标题" onClick={()=>{alert("success"}}>
+	<Modals type="success" id="modal-success" title="这个是标题" onClick={()=>{alert("success")}}>
 		<p>这里是主体内容</p>
 	</Modals>
 
 	<Button type="info" toggle="modal" target="#modal-info">Info</Button>
-	<Modals type="info" id="modal-info" title="这个是标题" onClick={()=>{alert("info"}}>
+	<Modals type="info" id="modal-info" title="这个是标题" onClick={()=>{alert("info")}}>
 		<p>这里是主体内容</p>
 	</Modals>
 
 	<Button type="danger" toggle="modal" target="#modal-danger">Danger</Button>
-	<Modals type="danger" id="modal-danger" title="这个是标题" onClick={()=>{alert("danger"}}>
+	<Modals type="danger" id="modal-danger" title="这个是标题" onClick={()=>{alert("danger")}} >
 		<p>这里是主体内容</p>
 	</Modals>
 
 	<Button type="warning" toggle="modal" target="#modal-warning">Warning</Button>
-	<Modals type="warning" id="modal-warning" title="这个是标题" onClick={()=>{alert("warning"}}>
+	<Modals type="warning" id="modal-warning" title="这个是标题" onClick={()=>{alert("warning")}}>
 		<p>这里是主体内容</p>
 	</Modals>
 </div>
