@@ -12,7 +12,7 @@ export default class DatePicker extends Component {
     }
     render() {
         return (
-            <InputGroup class={this.props.className} id={this.props.id} beforeGroup={this.props.beforeGroup} beforeBtn={this.props.beforeBtn} afterGroup={this.props.afterGroup} placeholder="" />
+            <InputGroup {...this.props}  />
         )
     }
 }
