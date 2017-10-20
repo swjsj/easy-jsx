@@ -26,5 +26,6 @@ export default {
 	InputGroup:require('./input/InputGroup').default,
 	DatePicker:require('./input/DatePicker').default,
 	InputGroupSelect:require('./input/InputGroupSelect').default,
-	Editor:require('./editor/Editor').default
+	Editor:require('./editor/Editor').default,
+	Login:require('./login/Login').default
 }
