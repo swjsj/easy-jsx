@@ -7,7 +7,7 @@ export default class Form extends Component {
             defaultClass=`${defaultClass} ${this.props.className}`
         }
         return (
-            <form action="" role="form" className={defaultClass} id={this.props.id} name={this.props.name}>
+            <form action="" role="form" {...this.props} className={defaultClass}>
                 {this.props.children}
             </form>
         )
