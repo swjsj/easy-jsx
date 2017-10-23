@@ -1,7 +1,9 @@
 import * as parser from './parser'
-
-
 import shortid from 'shortid'
+export * from './url'
+export * from './config'
+import * as db from './db';
+export {db as db}
 
 const leafTag = '_@@_EasyJSXLeaf'
 export function isLeaf(tree) {
@@ -80,7 +82,6 @@ export function openJsx($content, url) {
             sourcemap[id] = contentStr;
             return `<Codebox ${argsStr} id="${id}">${contentStr}</Codebox>`
         })
-        console.log(res)
         $content.html('')
         var $warp = $('<div>');
         renderJsx(res, $warp[0])
@@ -91,6 +92,14 @@ export function openJsx($content, url) {
             var element = $warp.find('#' + id)[0];
             element && (element.source = sourcemap[id]);
         }
+
+
+        var lazyScripts = db.get('lazyScripts') || [];
+        for(var i in lazyScripts){
+            var scriptStr = lazyScripts[i];
+            eval(scriptStr)
+        }
+        db.set('lazyScripts',[]);
 
         //处理codebox
         //1.解析源字符串，找出所有codebox对应源码 id 
@@ -153,6 +162,3 @@ export function openContentPage($content, pageUrl, openMode,style) {
     history.pushState(null, null, `?contentPageUrl=${pageUrl}&openMode=${openMode}`)
 }
 
-
-export * from './url'
-export * from './config'

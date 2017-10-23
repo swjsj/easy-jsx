@@ -24,6 +24,8 @@ export default class Button extends Component {
                 disabled={ButtonDisabled}
                 data-toggle={this.props.toggle} 
                 data-target={this.props.target}
+                data-dismiss={this.props.dismiss}
+                onClick={this.props.onClick}
             >
                 {this.props.children}
             </button>

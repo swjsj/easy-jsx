@@ -1,66 +1,74 @@
 import { Component, h } from 'preact'
 import './table.less'
+import * as util from '../util'
+
 export default class Table extends Component {
 
 
-
     componentDidMount() {
+        this.nowPage = this.props.nowPage;
+        var { datagrid } = { ...this.props };
+        this.pageNumber = datagrid.pageNumber || 1;
+        this.loadData();
+    }
 
-        var {datagrid} = {...this.props}; 
+    loadData() {
+        var { datagrid } = { ...this.props };
+        var { pageSize, sort, sortOrder,dataField } = { ...datagrid };
         var url = util.getReqUrl(datagrid.url)
-        $.get(url,(res)=>{
-            // this.setState({
-            //     data:res
-            // })
+        url += `?pageNumber=${this.pageNumber}&pageSize=${pageSize}&sort=${sort}&sortOrder=${sortOrder}`
+        $.get(url, (res) => {
+            var data = res;
+            if(dataField){
+                data = res[dataField]
+            }
+            this.setState({
+                data: data
+            })
+        })
+    }
 
-            var $table = $(this.table);
-            $table.bootstrapTable({ data: res });
-            var bsTable = $table.data('bootstrap.table')
-            bsTable.hideLoading();
-            // $(this.ok).click(function () {
-            //     $table.bootstrapTable('refresh');
-            //     bsTable = $table.data('bootstrap.table')
-            // });
-    
+    openPage(pageNumber){
+        if(pageNumber != this.pageNumber){
+            this.pageNumber = pageNumber;
+            this.loadData();
+        }
+    }
+
+
+    getTrView(item, padding) {
+        var { datagrid } = { ...this.props };
+
+        var columns = datagrid.columns[0];
+        //debugger
+
+        var tds = columns.map((col) => {
+            var html = col.formatter ? col.formatter(item[col.field], item) : item[col.field]
+            var style = "width:" + col.width + "px;"
+            var eventHander = {};
+            return <td {...eventHander} style={style} dangerouslySetInnerHTML={{ __html: html }}> </td>
+        })
+        return <tr>{tds}</tr>
+    }
+
+
+    getTBody() {
+        var data = this.state.data || [];
+
+        return data.map((item) => {
+            return this.getTrView(item, 0)
         })
     }
 
     render() {
-        var { data, datagrid } = { ...this.props };
+        var { datagrid } = { ...this.props };
         var columns = datagrid.columns[0];
+        var scope = this;
+        var { pagesList } = { ...datagrid };
         return (
             <div>
-                {/* <div id="toolbar">
-                    <div class="form-inline" role="form">
-                        <div class="form-group">
-                            <span>Offset: </span>
-                            <input name="offset" class="form-control" type="number" value="0" style={{ width: '70px' }} />
-                        </div>
-                        <div class="form-group">
-                            <span>Limit: </span>
-                            <input name="limit" class="form-control" type="number" value="5" style={{ width: '70px', marginLeft: "20px" }} />
-                        </div>
 
-                        <button id="ok" type="submit" class="btn btn-default" ref={(ok) => this.ok = ok}>OK</button>
-                    </div>
-                </div> */}
-
-                <table id="table"
-                    data-toggle="table"
-                    data-toolbar="#toolbar"
-                    data-show-refresh="true"
-                    data-show-toggle="true"
-                    data-show-columns="true"
-                    data-pagination="true"
-                    data-side-pagination="server"
-                    data-page-list="[5, 10, 20, 50, 100, 200]"
-                    ref={(table) => { this.table = table }}
-                    data-search="true"
-                    data-total-rows={100}
-                    data-page-size={10}
-                    data-silent="true"
-                    data-click-to-select="true"
-                >
+                <table id="table">
                     <thead>
                         <tr>
                             <th data-field="state" data-checkbox="true"
@@ -79,18 +87,40 @@ export default class Table extends Component {
                                     }
                                     return value;
                                 }}></th>
-                   
+
                             {
                                 columns.map((col) => {
-                                    return <th data-field={col.field} style={"width:" + col.width + "px;"} 
-                                    data-formatter={col.formatter}
+                                    return <th data-field={col.field} style={"width:" + col.width + "px;"}
+                                        data-formatter={col.formatter}
                                     >{col.title}</th>
                                 })
                             }
                         </tr>
                     </thead>
+                    <tbody>
+                        {this.getTBody()}
+                    </tbody>
                 </table>
-
+                <div class="fixed-table-pagination" style="display: block;">
+                   
+                    <div class="pull-right pagination">
+                        <ul class="pagination">
+                            <li class="page-pre">
+                                <a href="#">‹</a>
+                            </li>
+                            {
+                                pagesList.map((page) => {
+                                    return <li class={"page-number" + this.pageNumber == page ? "active" : ""}>
+                                        <a onClick={()=>{this.openPage(page)}}>{page}</a>
+                                    </li>
+                                })
+                            }
+                            <li class="page-next">
+                                <a href="#">›</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         )
     }

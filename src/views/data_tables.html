@@ -1,17 +1,11 @@
 <Table datagrid={{
-    url: '/organization',
-    idField: 'id',
-    treeField: 'name',
-    parentField: 'pid',
-    fit: true,
-    fitColumns: false,
-    border: false,
-    frozenColumns: [[{
-        title: 'id',
-        field: 'id',
-        width: 40,
-        hidden: true
-    }]],
+    url: "/organization",
+    pagination: true,           //是否显示分页
+    pageSize: 10,               //每页的记录行数
+    pageNumber: 1,              //初始化加载第一页，默认第一页
+    sort:'id',  //排序字段
+    sortOrder:'asc',//排序方式
+    pagesList:[1,2,3],//页码
     columns: [[{
         field: 'id',
         title: '编号',
@@ -61,5 +55,8 @@
         $('.organization-easyui-linkbutton-edit').linkbutton({ text: '编辑' });
         $('.organization-easyui-linkbutton-del').linkbutton({ text: '删除' });
     },
-    toolbar: '#orgToolbar'
+    toolbar: '#orgToolbar',
+    formatNoMatches: function () {
+        return '无符合条件的记录';
+    }
 }}></Table>
