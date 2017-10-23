@@ -322,6 +322,9 @@ export default ()=>(
 					</Form>
 				</div>
 				<div className="view-box">
+					<Select />
+				</div>
+				<div className="view-box">
 					<Button type="success" size="Large" flat="true">1222222</Button>
 				</div>
 				<div className="view-box">

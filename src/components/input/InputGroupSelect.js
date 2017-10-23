@@ -2,21 +2,26 @@ import { Component, h } from 'preact'
 import Input from './Input'
 export default class InputGroupSelect extends Component {
     render() {
-        let GroupBtnClass = `btn dropdown-toggle`
+        let defaultClass = `btn dropdown-toggle`
         let GroupBtnType = 'default'
         if (this.props.size) {
-            GroupBtnClass = `${GroupBtnClass} input-group-${this.props.size}`
+            defaultClass = `${defaultClass} input-group-${this.props.size}`
         }
         if (this.props.type) {
-            GroupBtnClass = `${GroupBtnClass} btn-${this.props.type}`
+            defaultClass = `${defaultClass} btn-${this.props.type}`
+        }
+        if (this.props.className) {
+            defaultClass = `${defaultClass} ${this.props.className}`
         }
         return (
-            <div className="input-group-btn">
+            <div {...this.props} className="input-group-btn">
                 <button
                     type="button"
-                    class={GroupBtnClass}
+                    {...this.props}
+                    class={defaultClass}
                     data-toggle="dropdown"
-                    aria-expanded="false">
+                    aria-expanded="false"
+                >
                     {this.props.data.text}
                     <span class="fa fa-caret-down"></span>
                 </button>

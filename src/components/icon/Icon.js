@@ -2,15 +2,18 @@ import { Component, h } from 'preact'
 
 export default class Icon extends Component {
     render() {
-        let IconClass = `fa fa-fw fa-`
+        let defaultClass = `fa fa-fw fa-`
         if (this.props.type) {
-            IconClass = `${IconClass}${this.props.type}`
+            defaultClass = `${defaultClass}${this.props.type}`
         }
         if (this.props.colorType) {
-            IconClass = `${IconClass} ${this.props.colorType}`
+            defaultClass = `${defaultClass} ${this.props.colorType}`
+        }
+        if (this.props.className) {
+            defaultClass = `${defaultClass} ${this.props.className}`
         }
         return (
-            <i className={IconClass} onClick={this.props.onClick ? this.props.onClick.bind(this) : null}></i>
+            <i {...this.props} className={defaultClass}></i>
         )
     }
 }

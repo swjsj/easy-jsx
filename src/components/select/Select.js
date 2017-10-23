@@ -6,10 +6,13 @@ export default class Select extends Component {
 			$('.select2').select2()
 		})
 	}
-
 	render() {
+		let defaultClass = `form-control select2 select2-hidden-accessible`
+		if (this.props.className) {
+			defaultClass = `${defaultClass} ${this.props.className}`
+		}
 		return (
-			<select className="form-control select2 select2-hidden-accessible" style="width: 100%;">
+			<select {...this.props} className={defaultClass}>
 				{this.props.children}
 			</select>
 		)

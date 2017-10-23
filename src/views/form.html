@@ -1,84 +1,94 @@
-<Form className="form-horizontal">
-	<FormItem>
-		<Select>
-			<SelectOption>Alaska</SelectOption>
-			<SelectOption selected="selected">California</SelectOption>
-			<SelectOption>Delaware</SelectOption>
-			<SelectOption>Tennessee</SelectOption>
-			<SelectOption>Texas</SelectOption>
-			<SelectOption>Washington</SelectOption>
-		</Select>
-	</FormItem>
-	<FormItem>
-		<Input type="checkbox" />
-	</FormItem>
-	<FormItem>
-		<Input type="radio" />
-	</FormItem>
-	<FormItem>
-		<InputGroup beforeBtn={{
-            text: '这个是下拉按钮',
-            type: 'warning',
-            content: [
-                {
-                    link: 'www.baidu.com',
-                    text: '第一个'
-                },
-                {
-                    link: 'www.baidu.com',
-                    text: '第二个'
-                },
-                {
-                    link: 'www.baidu.com',
-                    text: '第三个'
-                },
-                {
-                    link: 'www.baidu.com',
-                    text: '第四个'
-                }
-            ]
-        }} afterGroup={<Icon type="anchor" />} placeholder="" />
-	</FormItem>
-	<FormItem>
-		<Input />
-	</FormItem>
-	<FormItem>
-		<div className="row">
-			<div className="col-xs-3">
-				<Input  name="a1"/>
+<Form className="form-horizontal" id="fsf">
+	<Codebox>
+		<FormItem>
+			<Select>
+				<SelectOption>Alaska</SelectOption>
+				<SelectOption selected="selected">California</SelectOption>
+				<SelectOption>Delaware</SelectOption>
+				<SelectOption>Tennessee</SelectOption>
+				<SelectOption>Texas</SelectOption>
+				<SelectOption>Washington</SelectOption>
+			</Select>
+		</FormItem>
+	</Codebox>
+	<Codebox>
+		<FormItem>
+			<Input type="checkbox" name="erty" />
+		</FormItem>
+	</Codebox>
+	<Codebox>
+		<FormItem>
+			<Input type="radio" />
+		</FormItem>
+	</Codebox>
+	<Codebox>
+		<FormItem>
+			<InputGroup beforeBtn={{ text: '这个是下拉按钮', type: 'warning', content: [ { link: 'www.baidu.com', text: '第一个' }, { link:
+			  'www.baidu.com', text: '第二个' }, { link: 'www.baidu.com', text: '第三个' }, { link: 'www.baidu.com', text: '第四个' } ] }} afterGroup={<Icon
+			  type="anchor" />} placeholder="" />
+		</FormItem>
+	</Codebox>
+	<Codebox>
+		<FormItem>
+			<Input />
+		</FormItem>
+	</Codebox>
+	<Codebox>
+		<FormItem>
+			<div className="row">
+				<div className="col-xs-3">
+					<Input name="a1" />
+				</div>
+				<div className="col-xs-3">
+					<Input name="a2" />
+				</div>
+				<div className="col-xs-3">
+					<Input name="a3" />
+				</div>
+				<div className="col-xs-3">
+					<Input name="a4" />
+				</div>
 			</div>
-			<div className="col-xs-3">
-				<Input name="a2"/>
+		</FormItem>
+	</Codebox>
+	<Codebox>
+		<FormItem>
+			<label htmlFor="" className="control-label">请输入手机号</label>
+			<Input />
+		</FormItem>
+	</Codebox>
+	<Codebox>
+		<FormItem>
+			<label htmlFor="" className="control-label">请输入</label>
+			<Textarea />
+		</FormItem>
+	</Codebox>
+	<Codebox>
+		<FormItem>
+			<div className="row">
+				<div className="col-xs-4">
+					<label htmlFor="" className="control-label">请输入手机号</label>
+				</div>
+				<div className="col-xs-8">
+					<Input />
+				</div>
 			</div>
-			<div className="col-xs-3">
-				<Input name="a3"/>
-			</div>
-			<div className="col-xs-3">
-				<Input name="a4"/>
-			</div>
-		</div>
-	</FormItem>
-	<FormItem>
-		<label htmlFor="" className="control-label">请输入手机号</label>
-		<Input />
-	</FormItem>
-	<FormItem>
-		<div className="row">
-			<div className="col-xs-4">
-				<label htmlFor="" className="control-label">请输入手机号</label>
-			</div>
-			<div className="col-xs-8">
-				<Input />
-			</div>
-		</div>
-	</FormItem>
-	<FormItem>
-		<InputGroup beforeGroup={<Input type="checkbox" />} afterGroup={<Icon type="anchor" />} placeholder="" />
-	</FormItem>
-	<FormItem>
-		<Editor className="Editor" />
-	</FormItem>
-	<FormItem>
-		<DatePicker beforeGroup={<Icon type="anchor" />} id="datepicker" />
-	</FormItem>
+		</FormItem>
+	</Codebox>
+	<Codebox>
+		<FormItem>
+			<InputGroup beforeGroup={<Input type="checkbox" />} afterGroup={
+			<Icon type="anchor" />} placeholder="" />
+		</FormItem>
+	</Codebox>
+	<Codebox>
+		<FormItem>
+			<Editor className="Editor" />
+		</FormItem>
+	</Codebox>
+	<Codebox>
+		<FormItem>
+			<DatePicker beforeGroup={<Icon type="anchor" />} id="datepicker" />
+		</FormItem>
+	</Codebox>
 </Form>

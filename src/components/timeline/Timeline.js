@@ -27,8 +27,12 @@ export default class Timeline extends Component {
     }
 
     render() {
+        let defaultClass = `timeline`
+        if (this.props.className) {
+            defaultClass = `${defaultClass} ${this.props.className}`
+        }
         return (
-            <ul className="timeline" >
+            <ul {...this.props} className={defaultClass} >
                 {this.getTimeline()}
             </ul>
         )

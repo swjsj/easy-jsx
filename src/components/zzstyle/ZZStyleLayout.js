@@ -1,5 +1,5 @@
 import { h } from 'preact'
-import './zzstyle.less'
+import './zzstyle.less';
 
 //则忠Style
 export default ({children }) => (

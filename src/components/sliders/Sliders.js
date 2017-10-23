@@ -15,21 +15,15 @@ export default class Sliders extends Component {
         }
     }
     render() {
-        let props = this.props
+        let defaultClass = `slider form-control`
+		if (this.props.className) {
+			defaultClass = `${defaultClass} ${this.props.className}`
+		}
         return (
             <input
                 type="text"
-                value=""
-                id={props.type}
+                {...this.props}
                 className="slider form-control"
-                data-slider-min={props.min}
-                data-slider-max={props.max}
-                data-slider-step={props.step}
-                data-slider-value={props.value}
-                data-slider-orientation={props.orientation}
-                data-slider-selection={props.selection}
-                data-slider-tooltip={props.tooltip}
-                data-slider-id={props.type}
             />
         )
     }

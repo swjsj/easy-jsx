@@ -2,10 +2,16 @@ import { Component, h } from 'preact'
 
 export default class Alert extends Component {
     render() {
-        let AlertClass = `alert alert-${this.props.type} ${this.props.className} alert-dismissible `
+        let defaultClass = `alert alert-dismissible`
+        if(this.props.className){
+            defaultClass=`${defaultClass} ${this.props.className}`
+        }
+        if(this.props.type){
+            defaultClass=`${defaultClass} alert-${this.props.type}`
+        }
         return (
-            <div class={AlertClass}>
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <div {...this.props} className={defaultClass}>
+                <button type="button" className="close" data-dismiss="alert" aria-hidden="true">×</button>
                 <h4>
                     {this.props.icon ? this.props.icon : null}
                     {this.props.title}
