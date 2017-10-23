@@ -534,7 +534,7 @@
 <script>
 		(function () {
 			EasyJSX.util.setConfig({
-				apiServer: 'http://localhost:3001'
+				apiServer: 'http://' + location.host.split(':')[0] + ':3001'
 			})
 			EasyJSX.renderJSXScriptElements(document.getElementsByClassName('jsx'))
 			var query = EasyJSX.util.parseQuery(location.search);
