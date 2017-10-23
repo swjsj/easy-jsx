@@ -50,7 +50,7 @@ export default class TreeSelect extends Component {
 		if (this.props.className) {
 			defaultClass = `${defaultClass} ${this.props.className}`
 		}
-		if (isSelect) {
+		if (this.state.isSelect) {
 			value = this.state.value
 		} else {
 			value = this.props.value ? this.props.value : this.state.value
