@@ -20,6 +20,8 @@ export default {
 	Tree: require('./tree/Tree').default, 
 	TreeTable:require('./table/TreeTable').default,
 	InfoPalette: require('./widgets/InfoPalette').default,
+	InfoPaletteSmall: require('./widgets/InfoPaletteSmall').default,
+	Messaging: require('./widgets/Messaging').default,
 	Select:require('./select/Select').default,
 	SelectOption:require('./select/SelectOption').default,
 	TreeSelect:require('./select/TreeSelect').default,

@@ -27,36 +27,51 @@ export default class Sidebar extends Component {
             )
         }
     }
-
+    gitIcon(item){
+        if(item.icon){
+            return(
+                <Icon type={item.icon} />
+            )
+        }else{
+            return null
+        }
+    }
     isVisiableItem(item) {
         return item.state == "open"
     }
 
     click(item,event){
         var target = $(event.currentTarget);
+        var parent = target.parent();
+        if(parent.hasClass('menu-open')){
+            //target.next().addClass('hide');
+            target.find('.pull-right-container>i').removeClass('fa-angle-down').addClass('fa-angle-left')
+            parent.removeClass('menu-open');
+
+            target.next().slideUp();
+        }else{
+            target.next().removeClass('hide')
+            target.find('.pull-right-container>i').removeClass('fa-angle-left').addClass('fa-angle-down')
+            parent.addClass('menu-open');
+
+            parent.siblings().removeClass("menu-open").find(".treeview-menu").slideUp();
+            parent.siblings().find('.pull-right-container>i').removeClass('fa-angle-down').addClass('fa-angle-left')
+            target.next().slideDown();
+            parent.addClass("active").siblings().removeClass("active");
+        }
+        parent.find("li").removeClass("active");
         if(item.children){
-            var parent = target.parent();
-            if(parent.hasClass('menu-open')){
-                target.next().addClass('hide');
-                target.find('i').removeClass('fa-angle-down').addClass('fa-angle-left')
-                
-                parent.removeClass('menu-open');
-            }else{
-                target.next().removeClass('hide')
-                target.find('i').removeClass('fa-angle-left').addClass('fa-angle-down')
-                
-                parent.addClass('menu-open');
-            }
+
         }else{
             event.stopPropagation();
             util.openContentPage( $('#content'),item.attributes,item.openMode,item.frameStyle)
         }
     }
-
     getTreeItemView(item) {
         var view = <li className={"treeview " + (this.isVisiableItem(item) ? "menu-open" : '')}>
             <a onClick={this.click.bind(this,item)} style="user-select: none;">
-                {item.text}
+                {this.gitIcon(item)}
+                <span>{item.text}</span>
                 {this.getAngle(item)}
             </a>
             <ul className={"treeview-menu " + (this.isVisiableItem(item) ? ' ':' hide')}
@@ -70,6 +85,7 @@ export default class Sidebar extends Component {
     render() {
         return (
             <section className="sidebar">
+                <div className="sidebar-bg"></div>
                 <ul className="sidebar-menu tree" data-widget="tree">
                     {this.getTreeView()}
                 </ul>
