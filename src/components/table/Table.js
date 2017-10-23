@@ -71,7 +71,7 @@ export default class Table extends Component {
                 <table id="table">
                     <thead>
                         <tr>
-                            <th data-field="state" data-checkbox="true"
+                            {/* <th data-field="state" data-checkbox="true"
                                 data-formatter={(value, row, index) => {
 
                                     if (index === 2) {
@@ -86,7 +86,7 @@ export default class Table extends Component {
                                         }
                                     }
                                     return value;
-                                }}></th>
+                                }}></th> */}
 
                             {
                                 columns.map((col) => {
