@@ -1,6 +1,6 @@
 import { Component, h } from 'preact'
 import Tree from '../tree/Tree'
-import('./TreeSelect.less')
+import './TreeSelect.less'
 
 export default class TreeSelect extends Component {
 
@@ -56,6 +56,7 @@ export default class TreeSelect extends Component {
 			value = this.props.value ? this.props.value : this.state.value
 		}
 		return (
+			
 			<div className={defaultClass}>
 				<div className="select-tree-box form-control" onClick={this.isShowSelect.bind(this)}>
 					<input type="text" {...this.props} className="hide" value={value} />
