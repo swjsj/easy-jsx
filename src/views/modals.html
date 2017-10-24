@@ -3,7 +3,7 @@
 		<div class="col-lg-6">
 			<Codebox>
 				<Button type="default" data-toggle="modal" data-target="#modal-default">Default</Button>
-				<Modals type="default" id="modal-default" title="这个是标题" dismiss={<Button type="default" dismiss="modal">取消</Button>} confirm={
+				<Modals type="default" id="modal-default" title="这个是标题" dismiss={<Button type="default" data-dismiss="modal">取消</Button>} confirm={
 					<Button onClick={()=>{$('#modal-default').modal('hide')}} type="primary">确定</Button>} >
 					<p>这里是主体内容</p>
 				</Modals>
