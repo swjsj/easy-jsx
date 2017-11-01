@@ -50,88 +50,7 @@
 
 
 		var menu2 = [{
-			"text": "Dashboard",
-			"state": "close",
-			"checked": false,
-			"attributes": "",
-			"iconCls": "fi-folder",
-			"openMode": "",
-			"icon": "dashboard",
-			children: [{
-				"text": "Dashboard v1",
-				"state": "open",
-				"checked": false,
-				"attributes": "views/a.html",
-				"iconCls": "fi-folder",
-				"openMode": "ajax-jsx"
-			},
-			{
-				"text": "Dashboard v2",
-				"state": "open",
-				"checked": false,
-				"attributes": "http://www.baidu.com",
-				"iconCls": "fi-folder",
-				"openMode": "iframe",
-				"frameStyle": {
-					'height': '1000px',
-					'width': '100%',
-					'border': 'none'
-				}
-			},
-			{
-				"text": "Codebox",
-				"state": "open",
-				"checked": false,
-				"attributes": "views/codebox.html",
-				"iconCls": "fi-folder",
-				"openMode": "ajax-jsx"
-			}
-			]
-		},
-		{
-			"text": "Layout options",
-			"state": "close",
-			"checked": false,
-			"attributes": "",
-			"iconCls": "fi-folder",
-			"openMode": "",
-			"icon": "files-o",
-			children: [{
-				"text": "Top Navigation",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": ""
-			},
-			{
-				"text": "Boxed",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": ""
-			},
-			{
-
-				"text": "Fixed",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": ""
-			}, {
-				"text": "Collapsed Sidebar",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": ""
-			}
-			]
-		},
-		{
-			"text": "Widgets",
+			"text": "统计组件",
 			"state": "close",
 			"checked": false,
 			"attributes": "views/widgets.html",
@@ -140,50 +59,7 @@
 			"icon": "th",
 		},
 		{
-			"text": "Charts",
-			"state": "close",
-			"checked": false,
-			"attributes": "",
-			"iconCls": "fi-folder",
-			"openMode": "",
-			"icon": "pie-chart",
-			children: [{
-				"text": "ChartJS",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": ""
-			},
-			{
-				"text": "Morris",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": ""
-			},
-			{
-
-				"text": "Flot",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": ""
-			},
-			{
-				"text": "Inline charts",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": ""
-			}
-			]
-		},
-		{
-			"text": "UI Elements",
+			"text": "UI元素",
 			"state": "close",
 			"checked": false,
 			"attributes": "",
@@ -191,7 +67,7 @@
 			"openMode": "",
 			"icon": "laptop",
 			children: [{
-				"text": "General",
+				"text": "弹窗",
 				"state": "open",
 				"checked": false,
 				"attributes": "views/general.html",
@@ -199,7 +75,7 @@
 				"openMode": "ajax-jsx"
 			},
 			{
-				"text": "Icons",
+				"text": "小图标库",
 				"state": "open",
 				"checked": false,
 				"attributes": "views/icon.html",
@@ -208,7 +84,7 @@
 			},
 			{
 
-				"text": "Buttons",
+				"text": "按钮库",
 				"state": "open",
 				"checked": false,
 				"attributes": "views/button.html",
@@ -216,7 +92,7 @@
 				"openMode": "ajax-jsx"
 			},
 			{
-				"text": "Siders",
+				"text": "滑动条",
 				"state": "open",
 				"checked": false,
 				"attributes": "views/slider.html",
@@ -224,7 +100,7 @@
 				"openMode": "ajax-jsx"
 			},
 			{
-				"text": "Timeline",
+				"text": "时间轴",
 				"state": "open",
 				"checked": false,
 				"attributes": "views/timeline.html",
@@ -232,7 +108,7 @@
 				"openMode": "ajax-jsx"
 			},
 			{
-				"text": "Modals",
+				"text": "模态弹窗",
 				"state": "open",
 				"checked": false,
 				"attributes": "views/modals.html",
@@ -242,42 +118,32 @@
 			]
 		},
 		{
-			"text": "Froms",
+			"text": "Form表单组件",
 			"state": "close",
 			"checked": false,
 			"attributes": "",
 			"iconCls": "fi-folder",
 			"openMode": "",
 			"icon": "edit",
-			children: [{
-				"text": "General Elements",
-				"state": "open",
-				"checked": false,
-				"attributes": "views/form.html",
-				"iconCls": "fi-folder",
-				"openMode": "ajax-jsx"
-			},
-			{
-				"text": "Adanced Elements",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": ""
-			},
-			{
-
-				"text": "Editors",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": ""
-			}
+				children: [{
+					"text": "常用元素",
+					"state": "open",
+					"checked": false,
+					"attributes": "views/form.html",
+					"iconCls": "fi-folder",
+					"openMode": "ajax-jsx"
+				},{
+					"text": "富文本编辑器",
+					"state": "open",
+					"checked": false,
+					"attributes": "views/codebox.html",
+					"iconCls": "fi-folder",
+					"openMode": "ajax-jsx"
+				}
 			]
 		},
 		{
-			"text": "Tables",
+			"text": "Table表格",
 			"state": "close",
 			"checked": false,
 			"attributes": "",
@@ -285,7 +151,7 @@
 			"openMode": "",
 			"icon": "table",
 			children: [{
-				"text": "Simple tables",
+				"text": "简单Table",
 				"state": "open",
 				"checked": false,
 				"attributes": "views/simple_tables.html",
@@ -293,7 +159,7 @@
 				"openMode": ""
 			},
 			{
-				"text": "Tree Table",
+				"text": "树形Table",
 				"state": "open",
 				"checked": false,
 				"attributes": "views/tree_tables.html",
@@ -301,138 +167,12 @@
 				"openMode": "ajax-jsx"
 			},
 			{
-				"text": "Data tables",
+				"text": "带分页Table",
 				"state": "open",
 				"checked": false,
 				"attributes": "views/data_tables.html",
 				"iconCls": "fi-folder",
 				"openMode": "ajax-jsx"
-			}
-			]
-		},
-		{
-			"text": "Calendar",
-			"state": "close",
-			"checked": false,
-			"attributes": "",
-			"iconCls": "fi-folder",
-			"openMode": "",
-			"icon": "calendar",
-		},
-		{
-			"text": "Mailbox",
-			"state": "close",
-			"checked": false,
-			"attributes": "",
-			"iconCls": "fi-folder",
-			"openMode": "",
-			"icon": "envelope",
-			children: [{
-				"text": "Inbox",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": ""
-			},
-			{
-				"text": "Compose",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": ""
-			},
-			{
-				"text": "Read",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": ""
-			}
-			]
-		},
-		{
-			"text": "Examples",
-			"state": "close",
-			"checked": false,
-			"attributes": "",
-			"iconCls": "fi-folder",
-			"openMode": "",
-			"icon": "folder",
-			children: [{
-				"text": "Invoice",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": ""
-			},
-			{
-				"text": "Profile",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": "",
-				"icon": "calendar",
-			},
-			{
-				"text": "Login",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": ""
-			},
-			{
-				"text": "Register",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": ""
-			},
-			{
-				"text": "Lookscreen",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": ""
-			},
-			{
-				"text": "404 Error",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": ""
-			},
-			{
-				"text": "500 Error",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": ""
-			},
-			{
-				"text": "Blank Page",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": ""
-			},
-			{
-				"text": "Pace Page",
-				"state": "open",
-				"checked": false,
-				"attributes": "",
-				"iconCls": "fi-folder",
-				"openMode": ""
 			}
 			]
 		},
