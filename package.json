@@ -15,7 +15,7 @@
     "pub": "run-s build pub2java",
     "start": "serve dist -s",
     "mock": "json-server --watch db.json --port 3001",
-    "watch": "webpack-dev-server --config config/webpack --client-log-level error",
+    "watch": "webpack-dev-server --host 0.0.0.0 --config config/webpack --client-log-level error",
     "dll": "webpack --config config/webpack.dll.js",
     "stats": "webpack --config config/webpack  --profile --json > stats.json",
     "profile": "webpack --config config/webpack --profile --display-modules"
