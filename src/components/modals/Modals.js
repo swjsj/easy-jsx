@@ -1,15 +1,28 @@
 import { Component, h } from 'preact'
 
 export default class Modals extends Component {
+    getFooter() {
+        if (this.props.dismiss || this.props.confirm) {
+            return (
+                <div class="modal-footer">
+                    {this.props.dismiss ? this.props.dismiss : null}
+                    {this.props.confirm ? this.props.confirm : null}
+                </div>
+            )
+        }
+    }
     render() {
-        let ModalsClass = `modal fade`
         let type = "default"
         if (this.props.type) {
             type = this.props.type
         }
-        ModalsClass = `${ModalsClass} modal-${type}`
+        let defaultClass = `modal fade`
+        defaultClass = `${defaultClass} modal-${type}`
+        if (this.props.className) {
+            defaultClass = `${defaultClass} ${this.props.className}`
+        }
         return (
-            <div class={ModalsClass} id={this.props.id}>
+            <div {...this.props} className={defaultClass}>
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -20,10 +33,7 @@ export default class Modals extends Component {
                         <div class="modal-body">
                             {this.props.children}
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" onClick={this.props.onClick}>Save changes</button>
-                        </div>
+                        {this.getFooter()}
                     </div>
                 </div>
             </div>

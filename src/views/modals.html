@@ -1,6 +1,54 @@
-<div>
-	<button type="button" className="btn btn-default" data-toggle="modal" data-target="#modal-default">Launch Default Modal</button>
-	<Modals type="default" id="modal-default" title="这个是标题">
-		<p>这里是主体内容</p>
-	</Modals>
+<div class="view-box-warp">
+	<div class="row">
+		<div class="col-lg-6">
+			<Codebox>
+				<Button type="default" data-toggle="modal" data-target="#modal-default">Default</Button>
+				<Modals type="default" id="modal-default" title="这个是标题" dismiss={<Button type="default" data-dismiss="modal">取消</Button>} confirm={
+					<Button onClick={()=>{$('#modal-default').modal('hide')}} type="primary">确定</Button>} >
+					<p>这里是主体内容</p>
+				</Modals>
+			</Codebox>
+		</div>
+
+		<div class="col-lg-6">
+			<Codebox>
+				<Button type="primary" data-toggle="modal" data-target="#modal-primary">Primary</Button>
+				<Modals type="primary" id="modal-primary" title="这个是标题" onClick={()=>{alert("primary")}}>
+					<p>这里是主体内容</p>
+				</Modals>
+			</Codebox>
+		</div>
+		<div class="col-lg-6">
+			<Codebox>
+				<Button type="success" data-toggle="modal" data-target="#modal-success">Success</Button>
+				<Modals type="success" id="modal-success" title="这个是标题" onClick={()=>{alert("success")}}>
+					<p>这里是主体内容</p>
+				</Modals>
+			</Codebox>
+		</div>
+		<div class="col-lg-6">
+			<Codebox>
+				<Button type="info" data-toggle="modal" data-target="#modal-info">Info</Button>
+				<Modals type="info" id="modal-info" title="这个是标题" onClick={()=>{alert("info")}}>
+					<p>这里是主体内容</p>
+				</Modals>
+			</Codebox>
+		</div>
+		<div class="col-lg-6">
+			<Codebox>
+				<Button type="danger" data-toggle="modal" data-target="#modal-danger">Danger</Button>
+				<Modals type="danger" id="modal-danger" title="这个是标题" onClick={()=>{alert("danger")}} >
+					<p>这里是主体内容</p>
+				</Modals>
+			</Codebox>
+		</div>
+		<div class="col-lg-6">
+			<Codebox>
+				<Button type="warning" data-toggle="modal" data-target="#modal-warning">Warning</Button>
+				<Modals type="warning" id="modal-warning" title="这个是标题" onClick={()=>{alert("warning")}}>
+					<p>这里是主体内容</p>
+				</Modals>
+			</Codebox>
+		</div>
+	</div>
 </div>

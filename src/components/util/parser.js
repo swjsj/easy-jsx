@@ -1,6 +1,6 @@
 import JSXParser from './JSXParser'
 import preact from 'preact'
-
+import * as db from './db'
 var rComponent = /^(this|[A-Z])/
 var cacheFns = {}
 var cacheStr = {}
@@ -35,7 +35,6 @@ export function evalJSX(str, obj, config) {
         if (cacheFns[args]) {
             fn = cacheFns[args]
         } else {
-           // console.log(args)
             fn = cacheFns[args] = Function(args)
         }
         // console.log('function: ', fn.toString());
@@ -123,7 +122,6 @@ innerClass.prototype = {
         var ret = []
         for (var i = 0, el; el = children[i++];) {
             if (el.type === '#jsx') {
-
                 if (Array.isArray(el.nodeValue)) {
                     ret[ret.length] = this.genChildren(el.nodeValue, null, ' ')
                 } else {
@@ -131,7 +129,16 @@ innerClass.prototype = {
                 }
             } else if (el.type === '#text') {
                 ret[ret.length] = JSON.stringify(el.nodeValue)
-            } else if (el) {
+            } else if(el.type === "script"){
+                var scriptStr = el.children[0].nodeValue;
+                if(el.props.execute == "lazy"){
+                    var lazyScripts = db.get('lazyScripts') || [];
+                    lazyScripts.push(scriptStr);
+                    db.set('lazyScripts',lazyScripts);
+                }else{
+                    window.eval(scriptStr)
+                }
+            }else if (el) {
                 ret[ret.length] = this.genTag(el)
             }
         }

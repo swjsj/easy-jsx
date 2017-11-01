@@ -1,19 +1,31 @@
 
-import {render,h} from 'preact';
+import { render, h } from 'preact';
 import './index.sass';
 export var preact = require('preact')
 export var parser = require('./components/util/parser')
 
 import * as util from '././components/util';
-export {util as util}
+export { util as util }
 
 import _components from './components'
 // import jQuery from 'jquery'
 export var components = {
     //ZZAdmin:require('./views/ZZAdmin').default,
-    Content:require('./views/Content').default,
+    Content: require('./views/Content').default,
     ..._components
 }
+
+
+//注册jquery插件
+
+$.fn.extend({
+    component: function () {
+        return this[0] && this[0]._component
+    }
+});
+
+
+
 
 /**
  * 渲染页面中的jsx元素 
@@ -27,9 +39,9 @@ export function renderJSXScriptElements(jsxScriptArray) {
     var tArray = jsxScriptArray;
     for (var i = 0, len = tArray.length; i < len; i++) {
         var template = tArray[i];
-        var str = template.innerHTML;       
-        var evaled = parser.evalJSX(str,components)
-        var warp = document.createElement('div'); 
+        var str = template.innerHTML;
+        var evaled = parser.evalJSX(str, components)
+        var warp = document.createElement('div');
         warp.className = "rendered-jsx";
         template.after(warp);
         preact.render(evaled, warp);
@@ -42,9 +54,8 @@ export function renderJSXScriptElements(jsxScriptArray) {
 // 	elem = render(App, document.getElementById('root'));
 // } 
 
- 
+
 
 // if(location.search.indexOf('show_components') > -1){
 //     init();    
 // }
- 

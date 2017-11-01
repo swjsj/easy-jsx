@@ -2,21 +2,24 @@ import { Component, h } from 'preact'
 
 export default class Input extends Component {
     render() {
-        let InputClass = `form-control`
+        let defaultClass = `form-control`
         let InputType = 'text'
         if (this.props.size) {
-            InputClass = `${InputClass} ${this.props.size}`
+            defaultClass = `${defaultClass} ${this.props.size}`
+        }
+        if(this.props.className){
+            defaultClass = `${defaultClass} ${this.props.className}`
         }
         if (this.props.type) {
             InputType = `${this.props.type}`
         }
         if (this.props.type == "checkbox" || this.props.type == "radio") {
             return (
-                <input type={InputType} />
+                <input {...this.props}/>
             )
         } else {
             return (
-                <input type={InputType} className="form-control" placeholder={this.props.placeholder} id={this.props.id} />
+                <input {...this.props} type={InputType} className={defaultClass} />
             )
         }
     }

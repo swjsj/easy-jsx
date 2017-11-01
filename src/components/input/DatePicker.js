@@ -1,5 +1,5 @@
 import { Component, h } from 'preact'
-import InputGroup from './InputGroup'
+import Input from './Input'
 
 export default class DatePicker extends Component {
     componentDidMount() {
@@ -11,8 +11,12 @@ export default class DatePicker extends Component {
         })
     }
     render() {
+        let defaultClass = `form-control`
+        if(this.props.className){
+            defaultClass = `${defaultClass} ${this.props.className}`
+        }
         return (
-            <InputGroup class={this.props.className} id={this.props.id} beforeGroup={this.props.beforeGroup} beforeBtn={this.props.beforeBtn} afterGroup={this.props.afterGroup} placeholder="" />
+            <Input type="text" {...this.props} className={defaultClass}/>
         )
     }
 }
