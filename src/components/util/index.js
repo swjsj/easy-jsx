@@ -71,7 +71,6 @@ export function renderJsx(jsxStr, elem, scope = {}) {
 
 export function openJsx($content, url) {
     $.get(url, function (res) {
-
         var sourcemap = {};
         res = res.replace(/<Codebox(.*)>((.|[\r\n])*?)<\/Codebox>/gm,function(){
             var argsStr = arguments[1];
