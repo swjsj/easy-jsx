@@ -11,30 +11,37 @@
 			</Select>
 		</FormItem>
 	</Codebox>
+
 	<Codebox>
 		<FormItem>
-			<Input type="checkbox" name="erty" />
+			复选框：<Input type="checkbox" name="erty" />
 		</FormItem>
 	</Codebox>
+
 	<Codebox>
 		<FormItem>
-			<Input type="radio" />
+			单选按钮：<Input type="radio" />
 		</FormItem>
 	</Codebox>
+
 	<Codebox>
 		<FormItem>
+			下拉框 + 尾标Icon：
 			<InputGroup beforeBtn={{ text: '这个是下拉按钮', type: 'warning', content: [ { link: 'www.baidu.com', text: '第一个' }, { link:
 			  'www.baidu.com', text: '第二个' }, { link: 'www.baidu.com', text: '第三个' }, { link: 'www.baidu.com', text: '第四个' } ] }} afterGroup={<Icon
 			  type="anchor" />} placeholder="" />
 		</FormItem>
 	</Codebox>
+
 	<Codebox>
 		<FormItem>
-			<Input />
+			默认输入框：<Input />
 		</FormItem>
 	</Codebox>
+
 	<Codebox>
 		<FormItem>
+			传入样式输入框:
 			<div className="row">
 				<div className="col-xs-3">
 					<Input name="a1" />
@@ -51,20 +58,26 @@
 			</div>
 		</FormItem>
 	</Codebox>
+
 	<Codebox>
 		<FormItem>
+			Lable + 输入框（折行显示）：
 			<label htmlFor="" className="control-label">请输入手机号</label>
 			<Input />
 		</FormItem>
 	</Codebox>
+
 	<Codebox>
 		<FormItem>
+			Label + Textarea文本域：
 			<label htmlFor="" className="control-label">请输入</label>
 			<Textarea />
 		</FormItem>
 	</Codebox>
+
 	<Codebox>
 		<FormItem>
+			Lable + 输入框（同行显示）：
 			<div className="row">
 				<div className="col-xs-4">
 					<label htmlFor="" className="control-label">请输入手机号</label>
@@ -75,19 +88,18 @@
 			</div>
 		</FormItem>
 	</Codebox>
+	
 	<Codebox>
 		<FormItem>
-			<InputGroup beforeGroup={<Input type="checkbox" />} afterGroup={
-			<Icon type="anchor" />} placeholder="" />
+			复选框 + 输入框 + 尾标icon：
+			<InputGroup beforeGroup={<Input type="checkbox" />} 
+			afterGroup={<Icon type="anchor" />} />
 		</FormItem>
 	</Codebox>
+
 	<Codebox>
 		<FormItem>
-			<Editor className="Editor" />
-		</FormItem>
-	</Codebox>
-	<Codebox>
-		<FormItem>
+			日期选择器：
 			<DatePicker beforeGroup={<Icon type="anchor" />} id="datepicker" />
 		</FormItem>
 	</Codebox>
