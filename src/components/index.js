@@ -22,7 +22,6 @@ export default {
 	InfoPalette: require('./widgets/InfoPalette').default,
 	InfoPaletteSmall: require('./widgets/InfoPaletteSmall').default,
 	Messaging: require('./widgets/Messaging').default,
-	Select:require('./select/Select').default,
 	SelectOption:require('./select/SelectOption').default,
 	TreeSelect:require('./select/TreeSelect').default,
 	Input:require('./input/Input').default,

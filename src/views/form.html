@@ -14,18 +14,21 @@
 
 	<Codebox>
 		<FormItem>
+			<br />
 			复选框：<Input type="checkbox" name="erty" />
 		</FormItem>
 	</Codebox>
 
 	<Codebox>
 		<FormItem>
+			<br />
 			单选按钮：<Input type="radio" />
 		</FormItem>
 	</Codebox>
 
 	<Codebox>
 		<FormItem>
+			<br />
 			下拉框 + 尾标Icon：
 			<InputGroup beforeBtn={{ text: '这个是下拉按钮', type: 'warning', content: [ { link: 'www.baidu.com', text: '第一个' }, { link:
 			  'www.baidu.com', text: '第二个' }, { link: 'www.baidu.com', text: '第三个' }, { link: 'www.baidu.com', text: '第四个' } ] }} afterGroup={<Icon
@@ -35,12 +38,14 @@
 
 	<Codebox>
 		<FormItem>
+			<br />
 			默认输入框：<Input />
 		</FormItem>
 	</Codebox>
 
 	<Codebox>
 		<FormItem>
+			<br />
 			传入样式输入框:
 			<div className="row">
 				<div className="col-xs-3">
@@ -61,6 +66,7 @@
 
 	<Codebox>
 		<FormItem>
+			<br />
 			Lable + 输入框（折行显示）：
 			<label htmlFor="" className="control-label">请输入手机号</label>
 			<Input />
@@ -69,6 +75,7 @@
 
 	<Codebox>
 		<FormItem>
+			<br />
 			Label + Textarea文本域：
 			<label htmlFor="" className="control-label">请输入</label>
 			<Textarea />
@@ -77,6 +84,7 @@
 
 	<Codebox>
 		<FormItem>
+			<br />
 			Lable + 输入框（同行显示）：
 			<div className="row">
 				<div className="col-xs-4">
@@ -91,6 +99,7 @@
 	
 	<Codebox>
 		<FormItem>
+			<br />
 			复选框 + 输入框 + 尾标icon：
 			<InputGroup beforeGroup={<Input type="checkbox" />} 
 			afterGroup={<Icon type="anchor" />} />
@@ -99,8 +108,14 @@
 
 	<Codebox>
 		<FormItem>
+			<br />
 			日期选择器：
 			<DatePicker beforeGroup={<Icon type="anchor" />} id="datepicker" />
 		</FormItem>
 	</Codebox>
+
+	<Codebox>
+		<FormItem><br />三级联动：<SelectArea /></FormItem>
+	</Codebox>
+	
 </Form>
