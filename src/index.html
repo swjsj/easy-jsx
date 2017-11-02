@@ -47,6 +47,86 @@
 
 	<script>
 		
+		let treeData = [
+			{
+				"id": 1,
+				"text": "订单管理",
+				"state": "close",
+				"checked": false,
+				"attributes": null,
+				"iconCls": null,
+				"pid": null,
+				"openMode": null
+			}, {
+				"id": 2,
+				"text": "订单管理二级",
+				"state": "close",
+				"checked": false,
+				"attributes": null,
+				"iconCls": null,
+				"pid": 1,
+				"openMode": null
+			}, {
+				"id": 3,
+				"text": "系统管理",
+				"state": "close",
+				"checked": false,
+				"attributes": null,
+				"iconCls": null,
+				"pid": null,
+				"openMode": null
+			}, {
+				"id": 4,
+				"text": "系统管理二级",
+				"state": "close",
+				"checked": false,
+				"attributes": null,
+				"iconCls": null,
+				"pid": 3,
+				"openMode": null
+			}
+		]
+
+
+		let treeSelectData = [
+			{
+				"id": 1,
+				"text": "1111111",
+				"state": "open",
+				"checked": false,
+				"attributes": null,
+				"iconCls": null,
+				"pid": null,
+				"openMode": null
+			}, {
+				"id": 2,
+				"text": "222222222",
+				"state": "open",
+				"checked": false,
+				"attributes": null,
+				"iconCls": null,
+				"pid": 1,
+				"openMode": null
+			}, {
+				"id": 3,
+				"text": "333333333333",
+				"state": "close",
+				"checked": false,
+				"attributes": null,
+				"iconCls": null,
+				"pid": null,
+				"openMode": null
+			}, {
+				"id": 4,
+				"text": "44444444",
+				"state": "close",
+				"checked": false,
+				"attributes": null,
+				"iconCls": null,
+				"pid": 3,
+				"openMode": null
+			}
+		]
 
 
 		var menu2 = [{
@@ -191,6 +271,32 @@
 				"iconCls": "fi-folder",
 				"openMode": "ajax-jsx"
 			}
+			]
+		},
+		{
+			"text": "树形结构",
+			"state": "close",
+			"checked": false,
+			"attributes": "",
+			"iconCls": "fi-folder",
+			"openMode": "",
+			"icon": "table",
+			children: [{
+				"text": "树形结构",
+				"state": "open",
+				"checked": false,
+				"attributes": "views/tree.html",
+				"iconCls": "fi-folder",
+				"openMode": "ajax-jsx"
+				},
+				{
+					"text": "下拉框树形结构",
+					"state": "open",
+					"checked": false,
+					"attributes": "views/treeSelect.html",
+					"iconCls": "fi-folder",
+					"openMode": "ajax-jsx"
+				}
 			]
 		},
 		{
