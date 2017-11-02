@@ -2,19 +2,17 @@ import { Component, h } from 'preact'
 
 export default class Select extends Component {
 	componentDidMount() {
-		$(function () {
-			$('.select2').select2()
-		})
+		let $this = this
 	}
 	render() {
-		let defaultClass = `form-control select2 select2-hidden-accessible`
+		let defaultClass = `form-control`
 		if (this.props.className) {
 			defaultClass = `${defaultClass} ${this.props.className}`
 		}
 		return (
-			<select {...this.props} className={defaultClass}>
+			<select {...this.props} className={defaultClass} onChange={(event) => { this.props.onChange(event.target.value, event) }}>
 				{this.props.children}
-			</select>
+			</select >
 		)
 	}
 }

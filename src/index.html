@@ -80,7 +80,48 @@
 				"checked": false,
 				"attributes": "views/icon.html",
 				"iconCls": "fi-folder",
-				"openMode": "ajax-jsx"
+				"openMode": "",
+				children: [{
+						"text": "Top Navigation",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					},
+					{
+						"text": "Boxed",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					},
+					{
+
+						"text": "Fixed",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					}, {
+						"text": "Collapsed Sidebar",
+						"state": "open",
+						"checked": false,
+						"attributes": "",
+						"iconCls": "fi-folder",
+						"openMode": ""
+					}
+				]
+			},
+			{
+				"text": "Widgets",
+				"state": "open",
+				"checked": false,
+				"attributes": "views/widgets.html",
+				"iconCls": "fi-folder",
+				"openMode": "ajax-jsx",
 			},
 			{
 
@@ -256,17 +297,18 @@
 			"icon": "book",
 		}
 		]
+		
 	</script>
 	<script class="jsx" type="text/html">
-
 		<ZZStyleLayout>
 			<Topbar logo={{ img: './static/tmp/AdminLTE.png', text: '' }} user={{ username: '二花爱猫咪123', img: './static/tmp/photo.jpg' }}
 			/>
 			<div class="content-wrapper">
-				<Sidebar data={{ menu: menu2 }} />
-				<div class="content" id="content">
-					<Content></Content>
-				</div>
+				<Sidebar data={{ menu: menu2 }} onClick={(item)=>{changeTab(item)}} />
+					<div class="content" id="content">
+						<Content>
+						</Content>
+					</div>
 			</div>
 		</ZZStyleLayout>
 	</script>
