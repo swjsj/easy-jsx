@@ -49,6 +49,7 @@ export default class Sidebar extends Component {
             }
         }else{
             event.stopPropagation();
+            // this.props.onClick(item)
             util.openContentPage( $('#content'),item.attributes,item.openMode,item.frameStyle)
         }
     }

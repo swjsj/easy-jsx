@@ -79,7 +79,7 @@ export function openJsx($content, url) {
             sourcemap[id] = contentStr;
             return `<Codebox ${argsStr} id="${id}">${contentStr}</Codebox>`
         })
-        console.log(res)
+        //console.log(res)
         $content.html('')
         var $warp = $('<div>');
         renderJsx(res, $warp[0])

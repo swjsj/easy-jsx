@@ -35,8 +35,6 @@ export function evalJSX(str, obj, config) {
         if (cacheFns[args]) {
             fn = cacheFns[args]
         } else {
-            console.log(args)
-
             fn = cacheFns[args] = Function(args)
         }
         // console.log('function: ', fn.toString());

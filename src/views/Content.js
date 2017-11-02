@@ -1,4 +1,4 @@
-import { h } from 'preact'
+import { h, Component } from 'preact'
 import { Router } from 'preact-router';
 
 import Button from '../components/button/Button'
@@ -18,6 +18,7 @@ import Modals from '../components/modals/Modals'
 import Alert from '../components/alert/Alert'
 import Tree from '../components/tree/Tree'
 import TreeSelect from '../components/select/TreeSelect'
+import SelectArea from '../components/selectArea/SelectArea'
 
 // track pages on route change
 const onChange = obj => window.ga && ga.send('pageview', { dp: obj.url });
@@ -239,114 +240,122 @@ var TimelineData = [
 		}
 	}
 ]
-export default ()=>(
-	<div>
-			<div path="/">
-				{/* <div className="view-box">
+export default class Content extends Component {
+	render() {
+		return (
+			<div>
+				{this.props.children}
+				<div path="/">
+					{/* <div className="view-box">
 					<Tree data={treeData} />
 				</div> */}
-				<div className="view-box">
-					<TreeSelect data={treeSelectData} />
-				</div>
-				<div className="view-box">
-					<Alert icon={<Icon type="anchor" />} title="这个是标题" type="info">
-						这里是正文这里是正文这里是正文这里是正文这里是正文
+					<div className="view-box">
+						<SelectArea />
+					</div>
+					<div className="view-box">
+						<TreeSelect data={treeSelectData} />
+					</div>
+					<div className="view-box">
+						<Alert icon={<Icon type="anchor" />} title="这个是标题" type="info">
+							这里是正文这里是正文这里是正文这里是正文这里是正文
 					</Alert>
-				</div>
-				<div className="view-box">
-					<Editor className="Editor" />
-				</div>
-				<div className="view-box">
-					<DatePicker beforeGroup={<Icon type="anchor" />} id="datepicker" />
-				</div>
-				{/* <div className="view-box">
+					</div>
+					<div className="view-box">
+						<Editor className="Editor" />
+					</div>
+					<div className="view-box">
+						<DatePicker beforeGroup={<Icon type="anchor" />} id="datepicker" />
+					</div>
+					{/* <div className="view-box">
 					<Sidebar data={slidebardata} />
 				</div> */}
-				<div className="view-box">
-					<Form className="form-horizontal">
-						<FormItem>
-							<Select>
-								<SelectOption>Alaska</SelectOption>
-								<SelectOption selected="selected">California</SelectOption>
-								<SelectOption>Delaware</SelectOption>
-								<SelectOption>Tennessee</SelectOption>
-								<SelectOption>Texas</SelectOption>
-								<SelectOption>Washington</SelectOption>
-							</Select>
-						</FormItem>
-						<FormItem>
-							<Input type="checkbox" />
-						</FormItem>
-						<FormItem>
-							<Input type="radio" />
-						</FormItem>
-						<FormItem>
-							<InputGroup beforeBtn={InputGroupBtn} afterGroup={<Icon type="anchor" />} placeholder="" />
-						</FormItem>
-						<FormItem>
-							<Input />
-						</FormItem>
-						<FormItem>
-							<div className="row">
-								<div className="col-xs-3">
-									<Input />
+					<div className="view-box">
+						<Form className="form-horizontal">
+							<FormItem>
+								<Select>
+									<SelectOption>Alaska</SelectOption>
+									<SelectOption selected="selected">California</SelectOption>
+									<SelectOption>Delaware</SelectOption>
+									<SelectOption>Tennessee</SelectOption>
+									<SelectOption>Texas</SelectOption>
+									<SelectOption>Washington</SelectOption>
+								</Select>
+							</FormItem>
+							<FormItem>
+								<Input type="checkbox" />
+							</FormItem>
+							<FormItem>
+								<Input type="radio" />
+							</FormItem>
+							<FormItem>
+								<InputGroup beforeBtn={InputGroupBtn} afterGroup={<Icon type="anchor" />} placeholder="" />
+							</FormItem>
+							<FormItem>
+								<Input />
+							</FormItem>
+							<FormItem>
+								<div className="row">
+									<div className="col-xs-3">
+										<Input />
+									</div>
+									<div className="col-xs-3">
+										<Input />
+									</div>
+									<div className="col-xs-3">
+										<Input />
+									</div>
+									<div className="col-xs-3">
+										<Input />
+									</div>
 								</div>
-								<div className="col-xs-3">
-									<Input />
+							</FormItem>
+							<FormItem>
+								<label htmlFor="" className="control-label">请输入手机号</label>
+								<Input />
+							</FormItem>
+							<FormItem>
+								<div className="row">
+									<div className="col-xs-4">
+										<label htmlFor="" className="control-label">请输入手机号</label>
+									</div>
+									<div className="col-xs-8">
+										<Input />
+									</div>
 								</div>
-								<div className="col-xs-3">
-									<Input />
-								</div>
-								<div className="col-xs-3">
-									<Input />
-								</div>
-							</div>
-						</FormItem>
-						<FormItem>
-							<label htmlFor="" className="control-label">请输入手机号</label>
-							<Input />
-						</FormItem>
-						<FormItem>
-							<div className="row">
-								<div className="col-xs-4">
-									<label htmlFor="" className="control-label">请输入手机号</label>
-								</div>
-								<div className="col-xs-8">
-									<Input />
-								</div>
-							</div>
-						</FormItem>
-						<FormItem>
-							<InputGroup beforeGroup={<Input type="checkbox" />} afterGroup={<Icon type="anchor" />} placeholder="" />
-						</FormItem>
-					</Form>
+							</FormItem>
+							<FormItem>
+								<InputGroup beforeGroup={<Input type="checkbox" />} afterGroup={<Icon type="anchor" />} placeholder="" />
+							</FormItem>
+						</Form>
+					</div>
+					<div className="view-box">
+						<Select />
+					</div>
+					<div className="view-box">
+						<Button type="success" size="Large" flat="true">1222222</Button>
+					</div>
+					<div className="view-box">
+						<Icon type="anchor" />
+					</div>
+					<div className="view-box">
+						<Timeline data={TimelineData} />
+					</div>
+					<div className="view-box">
+						<Sliders id="" />
+					</div>
+					<div className="view-box">
+						<button type="button" className="btn btn-default" data-toggle="modal" data-target="#modal-default">Launch Default Modal</button>
+						<Modals type="default" id="modal-default" title="这个是标题">
+							<p>这里是主体内容</p>
+						</Modals>
+					</div>
 				</div>
-				<div className="view-box">
-					<Select />
-				</div>
-				<div className="view-box">
-					<Button type="success" size="Large" flat="true">1222222</Button>
-				</div>
-				<div className="view-box">
-					<Icon type="anchor" />
-				</div>
-				<div className="view-box">
-					<Timeline data={TimelineData}/>
-				</div>
-				<div className="view-box">
-					<Sliders id="" />
-				</div>
-				<div className="view-box">
-					<button type="button" className="btn btn-default" data-toggle="modal" data-target="#modal-default">Launch Default Modal</button>
-					<Modals type="default" id="modal-default" title="这个是标题">
-						<p>这里是主体内容</p>
-					</Modals>
-				</div>
+
+				<Icon path="/blog" />
+				<Sliders path="/blog/:title" />
+				<Timeline path="/credit" data={TimelineData} />
+
 			</div>
-
-			<Icon path="/blog" />
-			<Sliders path="/blog/:title" />
-			<Timeline path="/credit" data={TimelineData}/>
-
-	</div>
-);
+		)
+	}
+}

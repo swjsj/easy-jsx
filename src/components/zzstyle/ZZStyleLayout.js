@@ -1,10 +1,16 @@
-import { h } from 'preact'
+import { h, Component } from 'preact'
 import './zzstyle.less';
 
 //则忠Style
-export default ({children }) => (
-    <div class="zzstyle">
-        {children}
-    </div>
-)
-
+export default class ZZStyleLayout extends Component {
+    state = {
+        tabAry: []
+    }
+    render() {
+        return (
+            <div className="zzstyle">
+                {this.props.children}
+            </div>
+        )
+    }
+}

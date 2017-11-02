@@ -29,5 +29,7 @@ export default {
 	InputGroupSelect:require('./input/InputGroupSelect').default,
 	Textarea:require('./input/Textarea').default,
 	Editor:require('./editor/Editor').default,
+	SelectArea:require('./selectArea/SelectArea').default,
+	Tab:require('./tab/Tab').default,
 	Codebox:require('./codebox/Codebox').default
 }
