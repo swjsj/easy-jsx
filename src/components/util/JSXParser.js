@@ -136,7 +136,7 @@
             const index = string.indexOf('<') //判定它后面是否存在标签
             const bindex = string.indexOf('{') //判定它后面是否存在jsx  before index
             const aindex = string.indexOf('}') // after index
-            console.log(string)
+            //console.log(string)
             let hasJSX = (bindex > -1) && (bindex < aindex) && (index === -1 || bindex < index)
             //console.log(hasJSX,index,bindex,aindex)
         //false 2 124 11
