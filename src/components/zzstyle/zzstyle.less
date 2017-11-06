@@ -154,14 +154,38 @@
 				}
 			}
 		}
+		
+		.navbar-custom-menu{
+			float: right;
+			.navbar-nav{
+				li{
+					position: relative;
+					float: left;
+					a{
+						.label {
+							position: absolute;
+							top: 9px;
+							right: 7px;
+							text-align: center;
+							font-size: 9px;
+							padding: 2px 3px;
+							line-height: .9;
+						}
+					}
+				}
+			}
+		}
+		
 		.user {
 			float: right;
 			img {
 				background: #d8d8e1;
 				width: 28px;
 				height: 28px;
+				margin-left: 10px;
 				border-radius: 100%;
 				line-height: @headerHight;
+				margin-top: -5px;
 			}
 			.username {
 				padding-left: 10px;
@@ -209,6 +233,7 @@
 				padding-bottom: 2000px;
 				margin-bottom: -2000px;
 				overflow-y: hidden;
+				transition: transform .3s ease-in-out,width .3s ease-in-out;
 			}
 		}
 		.content {

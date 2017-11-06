@@ -514,11 +514,27 @@
 			"icon": "book",
 		}
 		]
+		
+		var toolData = [
+                {
+                    icon: 'envelope-o',
+                    number: '8',
+                    label_bg: 'label-success'
+                },{
+                    icon: 'bell-o',
+                    number: '10',
+                    label_bg: 'label-warning'
+                },{
+                    icon: 'flag-o',
+                    number: '10',
+                    label_bg: 'label-danger'
+                }
+            ]
 	</script>
 	<script class="jsx" type="text/html">
 
 		<ZZStyleLayout>
-			<Topbar logo={{ img: './static/tmp/google.png', text: '' }} user={{ username: '二花爱猫咪123', img: './static/tmp/photo.jpg' }}
+			<Topbar logo={{ img: './static/tmp/google.png', text: '' }} user={{ username: '二花爱猫咪123', img: './static/tmp/photo.jpg' }} data={{tool: toolData}}
 			/>
 			<div class="content-wrapper">
 				<Sidebar data={{ menu: menu2 }} />
