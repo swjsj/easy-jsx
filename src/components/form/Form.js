@@ -1,5 +1,6 @@
 import { Component, h } from 'preact'
-
+//import $ from 'jquery';
+import 'bootstrap-validator'
 export default class Form extends Component {
     render() {
         let defaultClass = `form`

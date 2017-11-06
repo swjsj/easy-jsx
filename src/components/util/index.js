@@ -73,7 +73,6 @@ export function renderJsx(jsxStr, elem, scope = {}) {
 
 export function openJsx($content, url) {
     $.get(url, function (res) {
-
         var sourcemap = {};
         res = res.replace(/<Codebox(.*)>((.|[\r\n])*?)<\/Codebox>/gm,function(){
             var argsStr = arguments[1];
@@ -82,6 +81,7 @@ export function openJsx($content, url) {
             sourcemap[id] = contentStr;
             return `<Codebox ${argsStr} id="${id}">${contentStr}</Codebox>`
         })
+        //console.log(res)
         $content.html('')
         var $warp = $('<div>');
         renderJsx(res, $warp[0])
@@ -161,4 +161,3 @@ export function openContentPage($content, pageUrl, openMode,style) {
 
     history.pushState(null, null, `?contentPageUrl=${pageUrl}&openMode=${openMode}`)
 }
-

@@ -47,9 +47,10 @@ export default class Topbar extends Component {
         var logo = this.props.logo;
         var user = this.props.user;
 
-        return <div class="topbar">
+        return
+        <div class="topbar">
             <div class="logo">
-                <span class="logo-mini">SK</span>
+                <span class="logo-mini">{logo.minText || 'SK'}</span>
                 <span class="logo-lg-2">
                     <img src={logo.img} alt={logo.alt} />
                     <span>{logo.text}</span>

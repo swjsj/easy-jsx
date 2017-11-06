@@ -44,9 +44,6 @@
 			}
 			.sidebar-menu{
 				width: @sidebarMiniWidth;
-				-webkit-transform: translate(0, 0);
-				-ms-transform: translate(0, 0);
-				-o-transform: translate(0, 0);
 				transform: translate(0, 0);
 				&>li>a>span{
 					display: none;
@@ -98,9 +95,7 @@
 		position: relative;
 		z-index: 820;
 		.logo {
-			-webkit-transition: width .3s ease-in-out;
-			-o-transition: width .3s ease-in-out;
-			transition: width .3s ease-in-out;
+			// transition: width .3s ease-in-out;
 			display: block;
 			float: left;
 			height: 50px;
@@ -128,9 +123,7 @@
 			}
 		}
 		.navbar {
-			-webkit-transition: margin-left .3s ease-in-out;
-			-o-transition: margin-left .3s ease-in-out;
-			transition: margin-left .3s ease-in-out;
+			// transition: margin-left .3s ease-in-out;
 			margin-bottom: 0;
 			margin-left: 230px;
 			border: none;
@@ -230,8 +223,8 @@
 				background: @sidebarBackground;
 				width: @sidebarWidth;
 				min-height: 100%;
-				padding-bottom: 2000px;
-				margin-bottom: -2000px;
+				padding-bottom: 20000px;
+				margin-bottom: -20000px;
 				overflow-y: hidden;
 				transition: transform .3s ease-in-out,width .3s ease-in-out;
 			}
@@ -247,10 +240,7 @@
 	.sidebar-menu {
 		position: relative;
 		width: @sidebarWidth;
-		-webkit-transition: -webkit-transform .3s ease-in-out,width .3s ease-in-out;
-		-moz-transition: -moz-transform .3s ease-in-out,width .3s ease-in-out;
-		-o-transition: -o-transform .3s ease-in-out,width .3s ease-in-out;
-		transition: transform .3s ease-in-out,width .3s ease-in-out;
+		// transition: transform .3s ease-in-out,width .3s ease-in-out;
 		white-space: nowrap;
 		&>li{
 			position: relative;

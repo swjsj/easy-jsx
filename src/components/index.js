@@ -22,7 +22,6 @@ export default {
 	InfoPalette: require('./widgets/InfoPalette').default,
 	InfoPaletteSmall: require('./widgets/InfoPaletteSmall').default,
 	Messaging: require('./widgets/Messaging').default,
-	Select:require('./select/Select').default,
 	SelectOption:require('./select/SelectOption').default,
 	TreeSelect:require('./select/TreeSelect').default,
 	Input:require('./input/Input').default,
@@ -31,5 +30,7 @@ export default {
 	InputGroupSelect:require('./input/InputGroupSelect').default,
 	Textarea:require('./input/Textarea').default,
 	Editor:require('./editor/Editor').default,
+	SelectArea:require('./selectArea/SelectArea').default,
+	Tab:require('./tab/Tab').default,
 	Codebox:require('./codebox/Codebox').default
 }
