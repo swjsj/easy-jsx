@@ -136,8 +136,11 @@
             const index = string.indexOf('<') //判定它后面是否存在标签
             const bindex = string.indexOf('{') //判定它后面是否存在jsx  before index
             const aindex = string.indexOf('}') // after index
-
-            let hasJSX = (bindex < aindex) && (index === -1 || bindex < index)
+            //console.log(string)
+            let hasJSX = (bindex > -1) && (bindex < aindex) && (index === -1 || bindex < index)
+            //console.log(hasJSX,index,bindex,aindex)
+        //false 2 124 11
+        //true 2 -1 11
             if (hasJSX) {
                 if (bindex !== 0) { // 收集jsx之前的文本节点
                     text += string.slice(0, bindex)
